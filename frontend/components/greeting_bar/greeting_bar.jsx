@@ -7,31 +7,29 @@ class Greeting extends React.Component {
     const currentUser = this.props.currentUser;
     let userGreeting;
     
-    debugger
-    
     if (currentUser) {
-      debugger
       userGreeting = 
-      (<>
-        <h2 className='user-greeting'>Welcome, {currentUser.first_name}</h2>
+      (<div className='user-greeting'>
+        <h2 className='logo-text'>Welcome, {currentUser.first_name}</h2>
         <img className='user-photo' src="https://unsplash.com/photos/pe9T4ROjpzQ"/>
         <button className='logout-button' onClick={this.props.logout}>Log Out</button>
-      </>)
+      </div>)
     } else {
-      debugger
       userGreeting = 
-      (<>
-        <Link to='/signup' className='session-button'>Join Us</Link>
-        <Link to='/login' className='session-button'>Log In</Link>
-      </>)
+      (<div className='user-greeting'>
+        <Link to='/signup' className='signup-button'>Join Us</Link>
+        <Link to='/login' className='login-button'>Log In</Link>
+      </div>)
     }
 
     return(
-      <div className='greeting-bar'>
-        <h1 className='app-name'>SPIRITED</h1>
-        <input type="text" placeholder='search will go here'/>
+      <span className='greeting-bar'>
+        <div className='greeting-top-left'>
+          <h1 className='app-name'>SPIRITED</h1>
+          <input className='search-input' type="text" placeholder='Search will go here...'/>
+        </div>
         {userGreeting}
-      </div>
+      </span>
     )
   }
 }
