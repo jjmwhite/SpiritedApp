@@ -16,11 +16,11 @@ const msp = state => {
 
 const mdp = dispatch => {
   return ({
-    login: (userForm) => dispatch(login(userForm)),
-    otherForm: (
+    formAction: (userForm) => dispatch(login(userForm)),
+    closeModal: () => dispatch(closeModal()),
+    changeForm: (
       <button onClick={() => dispatch(openModal('signup'))}>Sign Up</button>
-    ),
-    closeModal: () => dispatch(closeModal())
+    )
   })
 }
 

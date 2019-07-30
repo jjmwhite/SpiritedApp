@@ -1,6 +1,7 @@
 import GreetingBar from './greeting_bar';
-import { logout } from '../../actions/session_actions';
 import { connect } from 'react-redux';
+import { logout } from '../../actions/session_actions';
+import { openModal, closeModal } from '../../actions/modal_actions';
 
 const msp = state => {
   if (state.session.currentUser === null) {
@@ -12,6 +13,7 @@ const msp = state => {
 
 const mdp = dispatch => {
   return ({
+    openModal: (type) => dispatch(openModal(type)),
     logout: () => dispatch(logout())
   })
 }

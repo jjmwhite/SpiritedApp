@@ -1,9 +1,10 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+// import { Link } from 'react-router-dom';
 
 class Greeting extends React.Component {
 
   render() {
+    const openModal = this.props.openModal;
     const currentUser = this.props.currentUser;
     let userGreeting;
     
@@ -17,8 +18,11 @@ class Greeting extends React.Component {
     } else {
       userGreeting = 
       (<div className='user-greeting'>
-        <Link to='/signup' className='signup-button'>Join Us</Link>
-        <Link to='/login' className='login-button'>Log In</Link>
+        <button className='signup-button' onClick={() => openModal('signup')}>Join Us</button>
+        <button className='login-button' onClick={() => openModal('login')}>Log In</button>
+
+        {/* <Link to='/signup' className='signup-button'>Join Us</Link>
+        <Link to='/login' className='login-button'>Log In</Link> */}
       </div>)
     }
 

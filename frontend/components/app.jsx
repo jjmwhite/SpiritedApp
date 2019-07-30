@@ -1,11 +1,15 @@
 import React from 'react';
 import GreetingBarContainer from './greeting_bar/greeting_bar_container';
+import Modal from './modal/modal';
 
 const App = () => {
   return (
-    <div className='app-body'>
-      <GreetingBarContainer />
-    </div>
+    <>
+      <Modal />
+      <div className='app-body'>
+        <GreetingBarContainer />
+      </div>
+    </>
   )
 }
 
