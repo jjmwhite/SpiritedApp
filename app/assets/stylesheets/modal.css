@@ -22,6 +22,11 @@
     align-items: center;
 }
 
+.signup-header {
+    display: flex;
+    flex-direction: column;
+}
+
 .signup-form > form {
     width: 250px;
 }

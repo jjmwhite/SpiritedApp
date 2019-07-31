@@ -3,10 +3,11 @@ import React from 'react';
 class SessionForm extends React.Component {
 
   constructor(props) {
-    debugger
+    // debugger
     super(props);
     this.state = this.props.user;
     this.handleSubmit = this.handleSubmit.bind(this);
+    this.handleDemo = this.handleDemo.bind(this);
   }
 
   handleChange(input) {
@@ -16,7 +17,7 @@ class SessionForm extends React.Component {
   }
 
   handleSubmit(e) {
-    debugger
+    // debugger
     e.preventDefault();
     this.props.closeModal();
     this.props.formAction(this.state);
@@ -26,15 +27,15 @@ class SessionForm extends React.Component {
     e.preventDefault();
     this.setState({
       email: 'test@test.com',
-      password: 'password123'
+      password: 'password123',
     })
     this.props.formAction(this.state)
   }
 
   render() {
-    debugger
+    // debugger
     if (this.props.formType === 'signup') {
-      debugger
+      // debugger
       return (
         <div className='session-window'>
           <span className='signup-header'>
@@ -54,7 +55,7 @@ class SessionForm extends React.Component {
         </div>
       )
     } else {
-      debugger
+      // debugger
       return (
         <div className='session-window'>
           <span className='login-header'>
