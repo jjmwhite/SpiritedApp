@@ -1,0 +1,121 @@
+/*  MODAL */
+
+.modal-background {
+  background-color: rgba(0, 0, 0, 0.5);
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  z-index: 100;
+}
+
+.modal-window {
+  position: fixed;
+  height: 720px;
+  width: 500px;
+  left: 30%;
+  top: 15%;
+  background: white;
+  border-radius: 10px;
+}
+
+.session-window {
+  display: flex;
+  flex-direction: column;
+  padding: 50px;
+  width: 300px;
+  position: absolute;
+  left: 50px;
+}
+
+.session-window > p {
+    font-size: 16px;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 100;
+    line-height: 1.3;
+}
+
+.session-form {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+.checkbox > input, .checkbox > label {
+  font-size: 12px;
+  margin-right: 10px;
+}
+
+.session-form > input {
+  height: 40px;
+  margin: 20px 0px;
+  border-radius: 3px;
+  border: 1px solid lightgray;
+  background: #fbfafa;
+  box-sizing: border-box;
+  font-size: 18px;
+  font-weight: lighter;
+  padding: 15px;
+  font-family: 'Open Sans', sans-serif;
+}
+
+.session-form > button {
+  background: #186e94;
+  color: white;
+  border: none;
+  border-radius: 3px;
+  height: 40px;
+  font-size: 12px;
+  margin-top: 30px;
+}
+
+.session-window > button {
+  background: #3B1A79;
+  color: white;
+  border: none;
+  border-radius: 3px;
+  height: 40px;
+  font-size: 12px;
+  margin-top: 30px;
+}
+
+/* SIGNUP */
+
+.signup-header {
+  display: flex;
+  justify-content: flex-start;
+  align-items: baseline;
+}
+
+.signup-header > span {
+  font-size: 28px;
+  font-family: 'Ubuntu', sans-serif;
+  font-weight: 800;
+  color: #135470;
+}
+
+.signup-header > div {
+  font-size: 30px;
+  font-weight: lighter;
+  padding: 0px 5px;
+  font-family: 'Open Sans', sans-serif;
+}
+
+.signup-header > button {
+  background: none;
+  border: none;
+  font-size: 26px;
+  font-weight: 100;
+  font-family: 'Open Sans', sans-serif;
+  padding: 0;
+}
+
+
+/* LOGIN */
+
+.login-header > button {
+  float: left;
+  border: none;
+
+}

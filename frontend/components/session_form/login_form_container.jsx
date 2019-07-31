@@ -19,7 +19,7 @@ const mdp = dispatch => {
     formAction: (userForm) => dispatch(login(userForm)),
     closeModal: () => dispatch(closeModal()),
     changeForm: (
-      <button onClick={() => dispatch(openModal('signup'))}>Sign Up</button>
+      <button onClick={() => dispatch(openModal('signup'))}>Join Spirited</button>
     )
   })
 }

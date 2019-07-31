@@ -29,7 +29,7 @@ class SessionForm extends React.Component {
       email: 'test@test.com',
       password: 'password123',
     })
-    this.props.formAction(this.state)
+    this.props.demoAction(this.state)
   }
 
   render() {
@@ -38,16 +38,21 @@ class SessionForm extends React.Component {
       // debugger
       return (
         <div className='session-window'>
-          <span className='signup-header'>
-            <h3>Sign Up</h3>
+          <header className='signup-header'>
+            <span>Join Spirited</span>
+            <div>|</div>
             {this.props.changeForm}
-            <p>Text about joining here!</p>
-          </span>
+          </header>
+          <p>Create a profile to save, rate, and discover your new favorite malts!</p>
           <form className='session-form'>
-            <input type="text" value={this.state.email} placeholder='Email' onChange={this.handleChange('email')}/>
-            <input type="password" value={this.state.password} placeholder='Password' onChange={this.handleChange('password')}/>
-            <input type="text" value={this.state.first_name} placeholder='First Name' onChange={this.handleChange('first_name')}/>
-            <input type="text" value={this.state.last_name} placeholder='Last Name' onChange={this.handleChange('last_name')}/>           
+            <input type='text' value={this.state.email} placeholder='Email' onChange={this.handleChange('email')}/>
+            <input type='password' value={this.state.password} placeholder='Password' onChange={this.handleChange('password')}/>
+            <input type='text' value={this.state.first_name} placeholder='First Name' onChange={this.handleChange('first_name')}/>
+            <input type='text' value={this.state.last_name} placeholder='Last Name' onChange={this.handleChange('last_name')}/>           
+            <div className='checkbox'>
+              <input name='checkbox' type='checkbox' />
+              <label for='checkbox'>I certify that I am of legal drinking age.</label>
+            </div>
             <button onClick={this.handleSubmit}>Continue</button>
           </form>
           <button onClick={this.handleDemo}>Demo Login</button>
@@ -58,13 +63,13 @@ class SessionForm extends React.Component {
       // debugger
       return (
         <div className='session-window'>
-          <span className='login-header'>
-            <h3>Log In</h3>
+          <header className='login-header'>
             {this.props.changeForm}
-          </span>
+            <span>Log In</span>
+          </header>
           <form className='session-form'>
-            <input type="text" value={this.state.email} placeholder='Email' onChange={this.handleChange('email')}/>
-            <input type="password" value={this.state.password} placeholder='Password' onChange={this.handleChange('password')}/>
+            <input type='text' value={this.state.email} placeholder='Email' onChange={this.handleChange('email')}/>
+            <input type='password' value={this.state.password} placeholder='Password' onChange={this.handleChange('password')}/>
             <button onClick={this.handleSubmit}>Continue</button>
           </form>
           <button onClick={this.handleDemo}>Demo Login</button>
