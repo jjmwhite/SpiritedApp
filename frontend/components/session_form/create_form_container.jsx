@@ -5,6 +5,7 @@ import { signup, login } from '../../actions/session_actions'
 import { openModal, closeModal } from '../../actions/modal_actions';
 
 const msp = state => {
+  debugger
   return ({
     formType: 'signup',
     user: { 
@@ -12,7 +13,8 @@ const msp = state => {
       password: '',
       first_name: '',
       last_name: ''
-    }
+    },
+    errors: state.errors.session || []
   })
 }
 

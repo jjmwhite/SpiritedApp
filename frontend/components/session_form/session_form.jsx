@@ -1,9 +1,10 @@
 import React from 'react';
+import SessionErrors from './session_errors';
 
 class SessionForm extends React.Component {
 
   constructor(props) {
-    // debugger
+    debugger
     super(props);
     this.state = this.props.user;
     this.handleSubmit = this.handleSubmit.bind(this);
@@ -17,10 +18,9 @@ class SessionForm extends React.Component {
   }
 
   handleSubmit(e) {
-    // debugger
     e.preventDefault();
-    this.props.closeModal();
-    this.props.formAction(this.state);
+    this.props.formAction(this.state)
+              // .then(this.props.closeModal())
   }
 
   handleDemo(e) {
@@ -33,7 +33,10 @@ class SessionForm extends React.Component {
   }
 
   render() {
+    debugger
+
     if (this.props.formType === 'signup') {
+      debugger
       return (
         <div className='session-window'>
           <header className='session-header'>
@@ -53,11 +56,13 @@ class SessionForm extends React.Component {
             </div>
             <button onClick={this.handleSubmit}>Continue</button>
           </form>
+          <SessionErrors errors={this.props.errors}/>
           <button onClick={this.handleDemo}>Demo Login</button>
 
         </div>
       )
     } else {
+      debugger
       return (
         <div className='session-window'>
           <header className='session-header'>
@@ -70,6 +75,7 @@ class SessionForm extends React.Component {
             <input type='password' value={this.state.password} placeholder='Password' onChange={this.handleChange('password')}/>
             <button onClick={this.handleSubmit}>Continue</button>
           </form>
+          <SessionErrors errors={this.props.errors} />
           <button onClick={this.handleDemo}>Demo Login</button>
         </div>
       )

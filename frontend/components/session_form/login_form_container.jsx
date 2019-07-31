@@ -11,12 +11,14 @@ const msp = state => {
       email: '',
       password: '',
     },
+    errors: state.errors.session || []
   })
 }
 
 const mdp = dispatch => {
   return ({
     formAction: (userForm) => dispatch(login(userForm)),
+    demoAction: (userForm) => dispatch(login(userForm)),
     closeModal: () => dispatch(closeModal()),
     changeForm: (
       <button onClick={() => dispatch(openModal('signup'))}>Join Spirited</button>
