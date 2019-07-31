@@ -1,15 +1,16 @@
 .greeting-bar {
   display: flex;
-  margin-top: 24px;
-  margin-left: 20px;
-  margin-right: 30px;
   align-items: center;
   justify-content: space-between;
+  box-shadow: 0px 10px 7px lightgray;
+  padding-top: 10px;
+  padding-bottom: 10px;
 }
 
 .greeting-top-left {
   display: flex;
   align-items: center;
+  margin-left: 100px;
 }
 
 .app-name {
@@ -24,12 +25,14 @@
   border: 1px solid lightgray;
   border-radius: 25px;
   height: 20px;
+  margin-left: 15px;
 }
 
 .user-greeting {
   color: #053F58;
   display: inline-flex;
   align-items: center;
+  margin-right: 100px;
 }
 
 .user-greeting > h2 {
