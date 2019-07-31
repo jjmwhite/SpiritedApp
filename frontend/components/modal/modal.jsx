@@ -25,7 +25,7 @@ const Modal = ({ modal, closeModal }) => {
       component = <LoginFormContainer />;
       // return component;
       break;
-    case 'create':
+    case 'signup':
       component = <CreateFormContainer />;
       // return component;
       break;

@@ -20,9 +20,6 @@ class Greeting extends React.Component {
       (<div className='user-greeting'>
         <button className='signup-button' onClick={() => openModal('signup')}>Join Us</button>
         <button className='login-button' onClick={() => openModal('login')}>Log In</button>
-
-        {/* <Link to='/signup' className='signup-button'>Join Us</Link>
-        <Link to='/login' className='login-button'>Log In</Link> */}
       </div>)
     }
 

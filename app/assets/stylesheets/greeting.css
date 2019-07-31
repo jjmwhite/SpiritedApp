@@ -45,9 +45,14 @@
   padding-top: 8px;
   padding-bottom: 10px;
   color: #053F58;
+  font-weight: 600;
+  font-size: 15px;
 }
 
 .signup-button {
   color: #053F58;
   padding-right: 10px;
+  border: none;
+  font-weight: 600;
+  font-size: 15px;
 }
