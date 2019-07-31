@@ -49,7 +49,7 @@ class SessionForm extends React.Component {
             <input type='text' value={this.state.last_name} placeholder='Last Name' onChange={this.handleChange('last_name')}/>           
             <div className='checkbox'>
               <input name='checkbox' type='checkbox' />
-              <label for='checkbox'>I certify that I am of legal drinking age.</label>
+              <label>I certify that I am of legal drinking age.</label>
             </div>
             <button onClick={this.handleSubmit}>Continue</button>
           </form>
