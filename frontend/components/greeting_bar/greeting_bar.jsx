@@ -11,8 +11,8 @@ class Greeting extends React.Component {
     if (currentUser) {
       userGreeting = 
       (<div className='user-greeting'>
-        <h2 className='logo-text'>Welcome, {currentUser.first_name}</h2>
-        <img className='user-photo' src="https://unsplash.com/photos/pe9T4ROjpzQ"/>
+        <h2>Welcome, {currentUser.first_name}</h2>
+        <img src={"https://upload.wikimedia.org/wikipedia/commons/d/d3/SCOport-fr-economy.png"}/>
         <button className='logout-button' onClick={this.props.logout}>Log Out</button>
       </div>)
     } else {

@@ -16,22 +16,24 @@
 
 /**** RESET CSS ****/
  html, body, header, main,
- section, article, p,
- h1, h2, h3, h4, h5, h6 {
-   border: 0;
-   margin: 0;
-   padding: 0;
+ section, article, p {
+  border: 0;
+  margin: 0;
+  padding: 0;
 
-   font-family: 'Open Sans', sans-serif;
-   text-align: inherit;
-   text-decoration: inherit;
-   color: inherit;
+  font-family: 'Open Sans', sans-serif;
+  text-align: inherit;
+  text-decoration: inherit;
+  color: inherit;
 
-   background: transparent;
+  background: transparent;
  }
 
  h1, h2, h3, h4, h5, h6  {
-   font-family: 'Ubuntu', sans-serif;
+  border: 0;
+  margin: 0;
+  padding: 0;
+  font-family: 'Ubuntu', sans-serif;
  }
 
  

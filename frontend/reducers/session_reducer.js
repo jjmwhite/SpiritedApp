@@ -2,7 +2,7 @@ import { RECEIVE_CURRENT_USER, LOGOUT_CURRENT_USER } from '../actions/session_ac
 import { merge } from 'lodash';
 
 const _nullSession = {
-  currentUser: null
+  currentUserId: null
 };
 
 const sessionReducer = (state = _nullSession, action) => {
@@ -10,7 +10,7 @@ const sessionReducer = (state = _nullSession, action) => {
   let newState;
   switch (action.type) {
     case RECEIVE_CURRENT_USER:
-      newState = merge({}, { currentUser: action.user.id })
+      newState = merge({}, { currentUserId: action.user.id })
       return newState;
     case LOGOUT_CURRENT_USER:
       newState = _nullSession;
