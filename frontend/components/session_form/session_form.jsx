@@ -4,11 +4,15 @@ import SessionErrors from './session_errors';
 class SessionForm extends React.Component {
 
   constructor(props) {
-    debugger
     super(props);
     this.state = this.props.user;
     this.handleSubmit = this.handleSubmit.bind(this);
     this.handleDemo = this.handleDemo.bind(this);
+    this.closeModal = this.props.closeModal.bind(this);
+  }
+
+  componentWillUnmount() {
+    this.props.clearSessionErrors()
   }
 
   handleChange(input) {
@@ -20,7 +24,7 @@ class SessionForm extends React.Component {
   handleSubmit(e) {
     e.preventDefault();
     this.props.formAction(this.state)
-              // .then(this.props.closeModal())
+              .then(this.props.closeModal)
   }
 
   handleDemo(e) {
@@ -30,13 +34,12 @@ class SessionForm extends React.Component {
       password: 'password123',
     })
     this.props.demoAction(this.state)
+              .then(this.props.closeModal())
   }
 
   render() {
-    debugger
 
     if (this.props.formType === 'signup') {
-      debugger
       return (
         <div className='session-window'>
           <header className='session-header'>
@@ -62,7 +65,6 @@ class SessionForm extends React.Component {
         </div>
       )
     } else {
-      debugger
       return (
         <div className='session-window'>
           <header className='session-header'>

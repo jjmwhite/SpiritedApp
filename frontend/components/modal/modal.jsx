@@ -43,6 +43,4 @@ const Modal = ({ modal, closeModal }) => {
 
 }
 
-
-
 export default connect(msp, mdp)(Modal)

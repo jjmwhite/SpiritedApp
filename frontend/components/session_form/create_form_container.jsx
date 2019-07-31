@@ -1,13 +1,13 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import SessionForm from './session_form';
-import { signup, login } from '../../actions/session_actions'
+import { signup, login, clearSessionErrors } from '../../actions/session_actions'
 import { openModal, closeModal } from '../../actions/modal_actions';
 
 const msp = state => {
-  debugger
   return ({
     formType: 'signup',
+    otherForm: 'login',
     user: { 
       email: '',
       password: '',
@@ -25,7 +25,8 @@ const mdp = dispatch => {
     closeModal: () => dispatch(closeModal()),
     changeForm: (
       <button onClick={() => dispatch(openModal('login'))}>Login</button>
-    )
+    ),
+    clearSessionErrors: () => dispatch(clearSessionErrors())
   })
 }
 
