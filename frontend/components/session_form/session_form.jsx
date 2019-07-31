@@ -33,12 +33,10 @@ class SessionForm extends React.Component {
   }
 
   render() {
-    // debugger
     if (this.props.formType === 'signup') {
-      // debugger
       return (
         <div className='session-window'>
-          <header className='signup-header'>
+          <header className='session-header'>
             <span>Join Spirited</span>
             <div>|</div>
             {this.props.changeForm}
@@ -60,11 +58,11 @@ class SessionForm extends React.Component {
         </div>
       )
     } else {
-      // debugger
       return (
         <div className='session-window'>
-          <header className='login-header'>
+          <header className='session-header'>
             {this.props.changeForm}
+            <div>|</div>
             <span>Log In</span>
           </header>
           <form className='session-form'>

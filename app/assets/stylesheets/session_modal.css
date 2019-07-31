@@ -11,7 +11,7 @@
 }
 
 .modal-window {
-  position: fixed;
+  position: absolute;
   height: 720px;
   width: 500px;
   left: 30%;
@@ -80,42 +80,31 @@
   margin-top: 30px;
 }
 
-/* SIGNUP */
-
-.signup-header {
+.session-header {
   display: flex;
   justify-content: flex-start;
   align-items: baseline;
 }
 
-.signup-header > span {
+.session-header > span {
   font-size: 28px;
   font-family: 'Ubuntu', sans-serif;
   font-weight: 800;
   color: #135470;
 }
 
-.signup-header > div {
+.session-header > div {
   font-size: 30px;
   font-weight: lighter;
   padding: 0px 5px;
   font-family: 'Open Sans', sans-serif;
 }
 
-.signup-header > button {
+.session-header > button {
   background: none;
   border: none;
   font-size: 26px;
   font-weight: 100;
   font-family: 'Open Sans', sans-serif;
   padding: 0;
-}
-
-
-/* LOGIN */
-
-.login-header > button {
-  float: left;
-  border: none;
-
 }
