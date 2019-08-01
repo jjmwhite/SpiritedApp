@@ -20,4 +20,5 @@ class Bottle < ApplicationRecord
   belongs_to :distillery
   has_one :region, through: :distillery, source: :region
 
+  has_one_attached :photo
 end

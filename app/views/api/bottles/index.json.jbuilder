@@ -8,5 +8,6 @@
     json.age bottle.age 
     json.release_year bottle.release_year
     json.price bottle.price
+    json.photoUrl url_for(bottle.photo)
   end
 end

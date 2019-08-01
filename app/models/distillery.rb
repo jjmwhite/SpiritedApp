@@ -16,4 +16,5 @@ class Distillery < ApplicationRecord
   belongs_to :region 
   has_many :bottles
 
+  has_one_attached :photo
 end
