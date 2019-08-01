@@ -16,7 +16,7 @@ class BottleIndex extends React.Component {
     } else {
       // debugger
       const allBottles = this.props.bottles.map( bottle => {
-        return <BottleCardVert bottle={bottle} fetchBottle={this.props.fetchBottle} />
+        return <BottleCardVert key={bottle.id} bottle={bottle} fetchBottle={this.props.fetchBottle} />
       })
 
       return(
