@@ -1,7 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-// import * as SessionApiUtil from './util/session_api_util';
-import * as sessionActions from './actions/session_actions';
+import * as bottleActions from './actions/bottle_actions';
 import configureStore from './store/store';
 import Root from './components/root';
 
@@ -23,13 +22,12 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   // TESTING //
-
-  window.login = sessionActions.login;
-  window.signup = sessionActions.signup;
-  window.logout = sessionActions.logout;
+  
   window.getState = store.getState;
   window.dispatch = store.dispatch;
-  // window.currentUser = store.session.currentUser
+
+  window.fetchBottle = bottleActions.fetchBottle;
+  window.createBottle = bottleActions.createBottle;
 
   /////////////
 
