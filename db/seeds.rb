@@ -1,3 +1,8 @@
+User.destroy_all
+Region.destroy_all
+Distillery.destroy_all
+Bottle.destroy_all
+
 ### USERS ###
 user1 = User.create!(email: 'test@test.com', first_name: 'Jessica', last_name: 'White', password:'password123', session_token: 'lkasdjhKJB987hjhk')
 user2 = User.create!(email: 'theres_no_e_in_whisky@yahoo.co.uk', first_name: 'Reggie', last_name: 'Blankenship', password:'password123', session_token: 'jdfhlkghfg9834572')

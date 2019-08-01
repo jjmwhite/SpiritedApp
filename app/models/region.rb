@@ -14,4 +14,6 @@ class Region < ApplicationRecord
   has_many :distilleries
   has_many :bottles, through: :distilleries, source: :bottles
 
+  has_one_attached :photo
+
 end
