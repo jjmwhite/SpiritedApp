@@ -1,0 +1,1 @@
+json.extract! bottle, :id, :name, :description, :age, :release_year, :distillery_id
