@@ -20,10 +20,17 @@ export const receiveBottle = (bottle) => {
   })
 }
 
-export const removeBottle = (bottle) => {
+export const destroyBottle = (bottle) => {
   return({
     type: REMOVE_BOTTLE,
     bottleId: bottle.id
+  })
+}
+
+export const receiveBottleErrors = (errors) => {
+  return({
+    type: RECEIVE_BOTTLE_ERRORS,
+    errors: errors.responseJSON
   })
 }
 
@@ -33,21 +40,15 @@ export const clearBottleErrors = () => {
   })
 }
 
-export const receiveBottleErrors = (errors) => {
-  return({
-    type: RECEIVE_BOTTLE_ERRORS,
-    errors
-  })
-}
-
 export const fetchBottles = () => dispatch => {
   return BottleApiUtil.fetchBottles()
                       .then( (bottles) => dispatch(receiveAllBottles(bottles)));
 }
 
-export const fetchBottle = () => dispatch => {
-  return BottleApiUtil.fetchBottle()
-                      .then( (bottle) => dispatch(receiveBottle(bottle)));
+export const fetchBottle = (id) => dispatch => {
+  return BottleApiUtil.fetchBottle(id)
+                      .then( (bottle) => dispatch(receiveBottle(bottle)))
+                      .fail((errors) => dispatch(receiveBottleErrors(errors)));;
 }
 
 export const createBottle = (bottle) => dispatch => {
@@ -64,6 +65,6 @@ export const updateBottle = (bottle) => dispatch => {
 
 export const removeBottle = (bottle) => dispatch => {
   return BottleApiUtil.removeBottle(bottle)
-                      .then( (bottle) => dispatch(removeBottle(bottle)))
+                      .then( (bottle) => dispatch(destroy(bottle)))
                       .fail( (errors) => dispatch(receiveBottleErrors(errors)));
 }

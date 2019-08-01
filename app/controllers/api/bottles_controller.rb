@@ -6,6 +6,12 @@ class Api::BottlesController < ApplicationController
 
   def show
     @bottle = Bottle.find_by(id: params[:id])
+
+    if @bottle
+      render :show
+    else
+      render json: ['bottle not found'], status: 404
+    end
   end
 
   def create
