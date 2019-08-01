@@ -1,4 +1,4 @@
-class BottlesController < ApplicationController
+class Api::BottlesController < ApplicationController
 
   def index
     @bottles = Bottle.all

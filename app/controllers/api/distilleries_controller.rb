@@ -1,4 +1,4 @@
-class DistilleriesController < ApplicationController
+class Api::DistilleriesController < ApplicationController
 
   def index
     @distilleries = Distillery.all

@@ -1,2 +1,5 @@
-json.extract! region, :id, :name
-json.array! region.distilleries, :id 
+json.id region.id
+json.name region.name
+json.distilleries do 
+  json.array! region.distilleries, :id
+end
