@@ -9,7 +9,7 @@ const BottleCardVert = ({ bottle, fetchBottle }) => {
         <span>{bottle.region}</span>
         <h4>{bottle.name}</h4>
         <span>{bottle.distillery}</span>
-        <span>{bottle.price}</span>
+        <span>${bottle.price}</span>
         <input type="image" src="" onClick={fetchBottle}/>
       </div>
     </section>
