@@ -17,7 +17,9 @@ class Bottle < ApplicationRecord
   validates :name, presence: true, uniqueness: true
   validates :description, :distillery_id, :price, presence: true
 
-  belongs_to :distillery
+  belongs_to :distillery, class_name: :Distillery, foreign_key: :distillery_id
   has_one :region, through: :distillery, source: :region
+
+  has_one_attached :photo
 
 end

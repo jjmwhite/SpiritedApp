@@ -13,7 +13,8 @@
 class Distillery < ApplicationRecord
   validates :name, :region_id, :description, presence: true
 
-  belongs_to :region 
-  has_many :bottles
+  belongs_to :region, class_name: :Region, foreign_key: :region_id
+  has_many :bottles, class_name: :Bottle, foreign_key: :distillery_id
 
+  has_one_attached :photo
 end

@@ -11,7 +11,7 @@
 class Region < ApplicationRecord
   validates :name, presence: true, uniqueness: true
 
-  has_many :distilleries
+  has_many :distilleries, class_name: :Distillery, foreign_key: :region_id
   has_many :bottles, through: :distilleries, source: :bottles
 
   has_one_attached :photo
