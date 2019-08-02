@@ -13,7 +13,6 @@ const App = () => {
 
         <Route path='/' component={BottleIndexContainer} />
 
-<<<<<<< HEAD
         <footer>
           <div className='footer-main'>
             <ul>
@@ -38,8 +37,6 @@ const App = () => {
             <img src={linkedIn} alt="Visit Jessica's LinkedIn"/>
           </div>
         </footer>
-=======
->>>>>>> 43d379442af49545a33c4035745390ab1e337d36
       </div>
     </>
   )

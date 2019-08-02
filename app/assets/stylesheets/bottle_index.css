@@ -10,25 +10,16 @@
   flex-direction: column;
   height: 420px;
   background: #F2F0ED;
-<<<<<<< HEAD
   margin: 8px;
   width: 292px;
   min-width: 200px;
-=======
-  margin: 25px;
-  min-width: 200px;
-  padding-top: 15px;
->>>>>>> 43d379442af49545a33c4035745390ab1e337d36
 }
 
 .bottle-card-vert > img {
   height: 250px;
-<<<<<<< HEAD
   align-self: flex-end;
   position: relative;
   top: 20px;
-=======
->>>>>>> 43d379442af49545a33c4035745390ab1e337d36
 }
 
 .bottle-vert-detail {
@@ -37,10 +28,7 @@
   background: #F7F6F5;
   height: 170px;
   padding-top: 10px;
-<<<<<<< HEAD
   padding-left: 12px;
-=======
->>>>>>> 43d379442af49545a33c4035745390ab1e337d36
 }
 
 .bottle-vert-detail > input {
@@ -84,8 +72,4 @@
 
 .bottle-vert-detail > a:hover {
   text-decoration: underline;
-<<<<<<< HEAD
 }
-=======
-}
->>>>>>> 43d379442af49545a33c4035745390ab1e337d36
