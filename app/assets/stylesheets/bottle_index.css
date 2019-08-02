@@ -13,13 +13,13 @@
   margin: 8px;
   width: 292px;
   min-width: 200px;
-  padding-top: 15px;
 }
 
 .bottle-card-vert > img {
   height: 250px;
-  width: 200px;
-  align-self: center;
+  align-self: flex-end;
+  position: relative;
+  top: 20px;
 }
 
 .bottle-vert-detail {

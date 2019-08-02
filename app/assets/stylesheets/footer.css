@@ -1,0 +1,58 @@
+.footer-main {
+  background: #F0EDE9;
+  font-size: 14px;
+  font-family: 'Open Sans', sans-serif;
+}
+
+footer > div > ul {
+  display: flex;
+  height: 220px;
+  padding: 35px 80px;
+}
+
+footer > div > ul > li {
+  margin: 20px;
+  display: flex;
+  align-items: center;
+}
+
+footer > div > ul > li > img {
+  float: left;
+  padding: 10px;
+  height: 50px;
+}
+
+footer > div > ul > li > figcaption {
+  text-align: left;
+  font-size: 14px;
+  font-family: 'Open Sans', sans-serif;
+  font-weight: lighter;
+}
+
+.footer-contact {
+  background: #e4e0da;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 80px;
+}
+
+.footer-contact > h1 {
+  font-size: 22px;
+  font-family: 'Ubuntu', sans-serif;
+  color: #135470;
+}
+
+.footer-contact > p {
+  font-size: 16px;
+  margin-top: 4px;
+  margin-left: 10px;
+  margin-right: 15px;
+  font-family: 'Ubuntu', sans-serif;
+  font-weight: 100;
+}
+
+.footer-contact > img {
+  height: 25px;
+  margin: 5px;
+}

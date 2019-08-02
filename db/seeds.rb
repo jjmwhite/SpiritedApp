@@ -50,8 +50,8 @@ bottle1 = Bottle.create!(name: 'Laphroaig 10',
                         age: 10,
                         price: 38.99
                         )
-  photo1 = open('https://spirited-app-seeds.s3.amazonaws.com/laphroaig_10_by-TWE.jpg')
-  bottle1.photo.attach(io: photo1, filename: 'laphroaig_10_by-TWE.jpg')
+  photo1 = open('https://spirited-app-seeds.s3.amazonaws.com/laphroaig_10-TW.png')
+  bottle1.photo.attach(io: photo1, filename: 'laphroaig_10-TW.png')
 
 bottle2 = Bottle.create!(name: 'Macallan 12', 
                         description: 'Bright caramel, fig and vanilla. The Macallan\'s flagship whisky is justly famous and a perfect introductory dram for new scotch drinkers.',
@@ -59,8 +59,8 @@ bottle2 = Bottle.create!(name: 'Macallan 12',
                         age: 12,
                         price: 38.99
                         )
-  photo2 = open('https://spirited-app-seeds.s3.amazonaws.com/macallan_12_by-TWE.jpg')
-  bottle2.photo.attach(io: photo2, filename: 'macallan_12_by-TWE.jpg')
+  photo2 = open('https://spirited-app-seeds.s3.amazonaws.com/macallan_12-TW.png')
+  bottle2.photo.attach(io: photo2, filename: 'macallan_12-TW.png')
 
 bottle3 = Bottle.create!(name: 'Lagavulin 16', 
                         description: 'Smokey, dried fruit, and barley, with a slightly oily texture. The celebrated signature expression from Lagavulin Distillery perfectly marries sweet and peat.',
@@ -68,15 +68,15 @@ bottle3 = Bottle.create!(name: 'Lagavulin 16',
                         age: 16,
                         price: 69.99
                         )
-  photo3 = open('https://spirited-app-seeds.s3.amazonaws.com/lagavulin_16_by-TWE.jpg')
-  bottle3.photo.attach(io: photo3, filename: 'lagavulin_16_by-TWE.jpg')
+  photo3 = open('https://spirited-app-seeds.s3.amazonaws.com/lagavulin_16-TW.png')
+  bottle3.photo.attach(io: photo3, filename: 'lagavulin_16-TW.png')
 
-bottle4 = Bottle.create!(name: 'Laphroaig 28', 
-                        description: 'Peat and rich stone fruit, with a long, light finish. The 2018 edition of Laphaoig\'s annual limited release, praised as their best yet in the series.',
+bottle4 = Bottle.create!(name: 'Laphroaig 27', 
+                        description: 'Peat and rich stone fruit, with a long, light finish. The 2016 edition of Laphaoig\'s annual limited release, praised as their best yet in the series.',
                         distillery_id: 1,
-                        age: 28,
-                        release_year: 2018,
+                        age: 27,
+                        release_year: 2016,
                         price: 650.00
                         )
-  photo4 = open('https://spirited-app-seeds.s3.amazonaws.com/laphroaig_28_by-TWE.jpg')
-  bottle4.photo.attach(io: photo4, filename: 'laphroaig_28_by-TWE.jpg')
+  photo4 = open('https://spirited-app-seeds.s3.amazonaws.com/laphroaig_27-TW.png')
+  bottle4.photo.attach(io: photo4, filename: 'laphroaig_27-TW.png')

@@ -13,6 +13,30 @@ const App = () => {
 
         <Route path='/' component={BottleIndexContainer} />
 
+        <footer>
+          <div className='footer-main'>
+            <ul>
+              <li>
+                <img src={awardIcon} alt="ribbon"/>
+                <figcaption>Find the world's best whiskies</figcaption>
+              </li>
+              <li>
+                <img src={reviewIcon} alt="star"/>
+                <figcaption>Rate and review your favorites</figcaption>
+              </li>
+              <li>
+                <img src={notesIcon} alt="comment"/>
+                <figcaption>Read tasting notes before you buy</figcaption>
+              </li>
+            </ul>
+          </div>
+          <div className='footer-contact'>
+            <h1>Spirited</h1>
+            <p>a 'Vivino.com' clone by Jessica White</p>
+            <img src={github} alt="View on Github"/>
+            <img src={linkedIn} alt="Visit Jessica's LinkedIn"/>
+          </div>
+        </footer>
       </div>
     </>
   )
