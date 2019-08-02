@@ -10,13 +10,16 @@
   flex-direction: column;
   height: 420px;
   background: #F2F0ED;
-  margin: 25px;
+  margin: 8px;
+  width: 292px;
   min-width: 200px;
   padding-top: 15px;
 }
 
 .bottle-card-vert > img {
   height: 250px;
+  width: 200px;
+  align-self: center;
 }
 
 .bottle-vert-detail {
@@ -25,6 +28,7 @@
   background: #F7F6F5;
   height: 170px;
   padding-top: 10px;
+  padding-left: 12px;
 }
 
 .bottle-vert-detail > input {
