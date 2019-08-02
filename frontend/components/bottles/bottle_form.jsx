@@ -27,9 +27,8 @@ class BottleForm extends React.Component {
 
   render() {
     debugger
-    // Eventually want to map distilleries to this as a dropdown...
     const distilleries = this.props.distilleries.map( (distillery, idx) => {
-      return <li key={`${distillery.name}-${idx}`} value={this.state.distillery}>{distillery.name}</li>
+      return <option key={`${distillery.name}-${idx}`} value={distillery.id}>{distillery.name}</option>
     })
     
     return(
@@ -38,27 +37,24 @@ class BottleForm extends React.Component {
         <label>Name: </label>
         <input type="text" value={this.state.name} onChange={this.handleChange('name')}/>
 
-        <button className='form-dropdown-button'>Select Distillery</button>
-        <ul className='form-dropdown-content'>
+        <select value={this.state.distillery} onChange={this.handleChange('distillery')}>
+          <option>Select Distillery</option>
           {distilleries}
-        </ul>
+        </select>
 
-        {/* <label>Distillery: </label>
-        <input type="text" value={this.state.distillery} onChange={this.handleChange('distillery')}/> */}
-
-        <label>Age (if applicable):</label>
-        <input type="number" min='0' max='100' value={this.state.age} onChange={this.handleChange('age')}/>
+        <label>Bottle Age (if applicable):</label>
+        <input type="number" value={this.state.age} onChange={this.handleChange('age')}/>
         
         <label>Release Year (if applicable):</label>
-        <input type="number" min='1800' max='2019' value={this.state.release_year} onChange={this.handleChange('release_year')}/>
+        <input type="number" value={this.state.release_year} onChange={this.handleChange('release_year')}/>
 
         <label>Description:</label>
-        <textarea value={this.state.description} id="" cols="30" rows="10" onChange={this.handleChange('description')}></textarea>
+        <textarea value={this.state.description} id="" cols="30" rows="5" onChange={this.handleChange('description')}></textarea>
 
-        <label>Avg. Price: </label>
+        <label>Average Price (in USD): </label>
         <input type="number" value={this.state.price} onChange={this.handleChange('price')}/>
 
-        <button onClick={this.handleSubmit}>Submit</button> 
+        <button className='submit' onClick={this.handleSubmit}>Submit</button> 
         <BottleErrors errors={this.props.errors} />
       </form>
     )

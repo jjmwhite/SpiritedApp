@@ -42,6 +42,7 @@ export const clearBottleErrors = () => {
 }
 
 export const fetchBottles = () => dispatch => {
+  debugger
   return BottleApiUtil.fetchBottles()
                       .then( (bottles) => dispatch(receiveAllBottles(bottles)));
 }

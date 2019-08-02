@@ -1,3 +1,4 @@
+debugger
 json.bottles @bottles.each do |bottle|
   json.set! bottle.id do
     json.id bottle.id
@@ -8,7 +9,9 @@ json.bottles @bottles.each do |bottle|
     json.age bottle.age 
     json.release_year bottle.release_year
     json.price bottle.price
-    json.photoUrl url_for(bottle.photo)
+    if bottle.photo.attached?
+      json.photoUrl url_for(bottle.photo)
+    end
   end
 
   

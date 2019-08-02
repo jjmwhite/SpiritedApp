@@ -1,6 +1,6 @@
 .bottle-modal-window {
   position: fixed;
-  height: 500px;
+  height: 700px;
   width: 700px;
   top: 50%;
   left: 50%;
@@ -23,13 +23,55 @@
 }
 
 .bottle-form > label {
-  font-size: 14px;
+  font-size: 18px;
   font-family: 'Open Sans', sans-serif;
   font-weight: bolder;
   margin: 10px 0 5px 0;
 }
 
-.bottle-form > button {
+.bottle-form > input {
+  height: 40px;
+  border-radius: 3px;
+  border: 1px solid lightgray;
+  background: #fbfafa;
+  box-sizing: border-box;
+  font-size: 18px;
+  font-weight: lighter;
+  padding: 15px;
+  font-family: 'Open Sans', sans-serif;
+}
+
+.bottle-form > select {
+  background: transparent;
+  font-size: 18px;
+  font-family: 'Open Sans', sans-serif;
+  margin: 20px 0px;
+}
+
+.bottle-form > select > option {
+  background: white;
+  box-shadow: 3px 3px 4px 0px lightgrey;
+  font-size: 18px;
+  font-weight: lighter;
+  font-family: 'Open Sans', sans-serif;
+  padding: 15px;
+}
+
+.bottle-form > select > option:hover {
+  border-bottom: 1px solid lightgrey;
+  display: block;
+}
+
+.bottle-form > select > option:hover {
+  background: whitesmoke;
+}
+
+.bottle-form > textarea {
+  font-size: 18px;
+  padding: 15px;
+}
+
+.submit {
   margin-top: 50px;
   width: 292px;
   align-self: center;
@@ -40,6 +82,6 @@
   font-size: 16px
 }
 
-.bottle-form > button:hover {
+.submit:hover {
   background: #D7A831;
 }

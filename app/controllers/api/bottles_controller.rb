@@ -40,4 +40,10 @@ class Api::BottlesController < ApplicationController
     render json: ['Bottle successfully removed']
   end
 
+  private
+
+  def bottle_params
+    params.require(:bottle).permit(:name, :description, :distillery_id, :age, :release_year, :price, :photoUrl)
+  end
+
 end

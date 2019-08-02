@@ -10,7 +10,7 @@ const msp = state => {
     bottle: {
       name: '',
       description: '',
-      distillery: '',
+      distillery_id: 0,
       age: 0,
       release_year: 0,
       price: 0
