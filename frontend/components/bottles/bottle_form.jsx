@@ -6,7 +6,7 @@ class BottleForm extends React.Component {
     super(props)
     this.state = this.props.bottle
     this.handleSubmit = this.handleSubmit.bind(this)
-    this.closeBottleModal = this.closeBottleModal.bind(this);
+    this.closeBottleModal = this.props.closeBottleModal.bind(this);
   }
 
   componentWillUnmount() {
@@ -26,28 +26,32 @@ class BottleForm extends React.Component {
   }
 
   render() {
-    const distilleries = this.props.distilleries.map( dist, idx => {
-      return <li key={`${distillery.name}-${idx}`} value={this.state.distillery}>{distillery.name}</li>
-    })
+
+    // Eventually want to map distilleries to this as a dropdown...
+    // const distilleries = this.props.distilleries.map( dist, idx => {
+    //   return <li key={`${distillery.name}-${idx}`} value={this.state.distillery}>{distillery.name}</li>
+    // })
+    // <button className='form-dropdown-button'>Select Distillery</button>
+    //   <ul className='form-dropdown-content'>
+    //     {distilleries}
+    // </ul>
 
     return(
       <form className='bottleForm'>
         <label>Name: </label>
-        <input type="text" value={this.state.name}/>
+        <input type="text" value={this.state.name} onChange={this.handleChange('name')}/>
 
-        <button className='form-dropdown-button'>Select Distillery</button>
-        <ul className='form-dropdown-content'>
-          {distilleries}
-        </ul>
+        <label>Distillery: </label>
+        <input type="text" value={this.state.distillery} onChange={this.handleChange('distillery')}/>
 
         <label>Age (if applicable):</label>
-        <input type="number" min='0' max='100' value={this.state.age}/>
+        <input type="number" min='0' max='100' value={this.state.age} onChange={this.handleChange('age')}/>
         
         <label>Release Year (if applicable):</label>
-        <input type="number" min='1800' max='2019' value={this.state.release_year}/>
+        <input type="number" min='1800' max='2019' value={this.state.release_year} onChange={this.handleChange('release_year')}/>
 
         <label>Description:</label>
-        <textarea value={this.state.description} id="" cols="30" rows="10"></textarea>
+        <textarea value={this.state.description} id="" cols="30" rows="10" onChange={this.handleChange('description')}></textarea>
 
         <button onClick={this.handleSubmit}>Submit</button> 
         <BottleErrors errors={this.props.errors} />
