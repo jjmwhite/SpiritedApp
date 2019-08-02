@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 const BottleCardVert = ({ bottle, fetchBottle }) => {
 
@@ -6,11 +7,12 @@ const BottleCardVert = ({ bottle, fetchBottle }) => {
     <section key={bottle.name} className='bottle-card-vert'>
       <img src={bottle.photoUrl} alt={bottle.name}/>
       <div className='bottle-vert-detail'>
-        <span>{bottle.region}</span>
+        <Link to={`/regions/${bottle.region.id}`}>{bottle.region}</Link>
         <h4>{bottle.name}</h4>
-        <span>{bottle.distillery}</span>
+        <Link to={`/distilleries/${bottle.distillery.id}`}>{bottle.distillery}</Link>
         <span>${bottle.price}</span>
-        <input type="image" src="" onClick={fetchBottle}/>
+        <input type="image" src={starOutline} onClick={fetchBottle}/>
+        <label>Add Review</label>
       </div>
     </section>
   )
