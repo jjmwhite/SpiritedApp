@@ -8,4 +8,8 @@ json.set! bottle.id do
   json.release_year bottle.release_year
   json.price bottle.price
   json.photoUrl url_for(bottle.photo)
+<<<<<<< HEAD
 end
+=======
+end
+>>>>>>> 43d379442af49545a33c4035745390ab1e337d36
