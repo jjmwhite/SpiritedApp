@@ -1,40 +1,38 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { closeModal } from '../../actions/modal_actions'
+import { closeSessionModal } from '../../actions/session_modal_actions'
 import LoginFormContainer from '../session_form/login_form_container';
 import CreateFormContainer from '../session_form/create_form_container';
 
 const msp = state => {
   return ({
-    modal: state.ui.modal
+    sessionModal: state.ui.sessionModal
   })
 }
 
 const mdp = dispatch => {
   return ({
-    closeModal: () => dispatch(closeModal())
+    closeSessionModal: () => dispatch(closeSessionModal())
   })
 }
 
-const Modal = ({ modal, closeModal }) => {
-  if (!modal) return null;
+const SessionModal = ({ sessionModal, closeSessionModal }) => {
+  if (!sessionModal) return null;
 
   let component;
-  switch (modal) {
+  switch (sessionModal) {
     case 'login':
       component = <LoginFormContainer />;
-      // return component;
       break;
     case 'signup':
       component = <CreateFormContainer />;
-      // return component;
       break;
     default:
       return null;
   }
 
   return (
-      <div className='modal-background' onClick={() => closeModal()}>
+      <div className='modal-background' onClick={() => closeSessionModal()}>
         <div className='modal-window' onClick={(e) => e.stopPropagation()}>
           {component}
         </div>
@@ -43,4 +41,4 @@ const Modal = ({ modal, closeModal }) => {
 
 }
 
-export default connect(msp, mdp)(Modal)
+export default connect(msp, mdp)(SessionModal)

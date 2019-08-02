@@ -8,7 +8,7 @@ class SessionForm extends React.Component {
     this.state = this.props.user;
     this.handleSubmit = this.handleSubmit.bind(this);
     this.handleDemo = this.handleDemo.bind(this);
-    this.closeModal = this.props.closeModal.bind(this);
+    this.closeSessionModal = this.props.closeSessionModal.bind(this);
   }
 
   componentWillUnmount() {
@@ -24,7 +24,7 @@ class SessionForm extends React.Component {
   handleSubmit(e) {
     e.preventDefault();
     this.props.formAction(this.state)
-              .then(this.props.closeModal)
+              .then(this.props.closeSessionModal)
   }
 
   handleDemo(e) {
@@ -34,7 +34,7 @@ class SessionForm extends React.Component {
       password: 'password123',
     })
     this.props.demoAction(this.state)
-              .then(this.props.closeModal())
+              .then(this.props.closeSessionModal())
   }
 
   render() {

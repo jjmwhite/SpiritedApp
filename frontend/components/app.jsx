@@ -1,13 +1,13 @@
 import React from 'react';
 import { Route, Switch } from 'react-router-dom';
 import GreetingBarContainer from './greeting_bar/greeting_bar_container';
-import Modal from './modal/modal';
+import SessionModal from './session_modal/session_modal';
 import BottleIndexContainer from './bottles/bottle_index_container';
 
 const App = () => {
   return (
     <>
-      <Modal />
+      <SessionModal />
       <div className='app-body'>
         <GreetingBarContainer />
 

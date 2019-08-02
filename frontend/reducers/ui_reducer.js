@@ -1,6 +1,6 @@
 import { combineReducers } from 'redux';
-import modalReducer from './modal_reducer';
+import sessionModalReducer from './session_modal_reducer';
 
 export default combineReducers({
-  modal: modalReducer
+  sessionModal: sessionModalReducer
 })

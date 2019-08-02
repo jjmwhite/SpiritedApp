@@ -2,7 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 import SessionForm from './session_form';
 import { login, clearSessionErrors } from '../../actions/session_actions'
-import { openModal, closeModal } from '../../actions/modal_actions';
+import { openSessionModal, closeSessionModal } from '../../actions/session_modal_actions';
 
 const msp = state => {
   return ({
@@ -20,9 +20,9 @@ const mdp = dispatch => {
   return ({
     formAction: (userForm) => dispatch(login(userForm)),
     demoAction: (userForm) => dispatch(login(userForm)),
-    closeModal: () => dispatch(closeModal()),
+    closeSessionModal: () => dispatch(closeSessionModal()),
     changeForm: (
-      <button onClick={() => dispatch(openModal('signup'))}>Join Spirited</button>
+      <button onClick={() => dispatch(openSessionModal('signup'))}>Join Spirited</button>
     ),
     clearSessionErrors: () => dispatch(clearSessionErrors())
   })
