@@ -7,7 +7,7 @@ const msp = (state, ownProps) => {
   const bottleId = ownProps.match.params.bottleId;
   const bottle = this.state.bottles[bottleId];
   return ({
-    formType: 'updateBottle',
+    formType: 'Edit This Bottle',
     bottle,
     distilleries: state.entities.distilleries,
     errors: state.errors.bottles || []

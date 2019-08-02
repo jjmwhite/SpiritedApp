@@ -9,21 +9,22 @@ class BottleIndex extends React.Component {
 
   render() {    
     const openBottleModal = this.props.openBottleModal;
-
     if ( this.props.bottles === {} ) {
       return(
        <div className='loading'>Loading...</div> 
       )
     } else {
       const allBottles = this.props.bottles.map( bottle => {
-        return <BottleCardVert key={bottle.id} bottle={bottle} fetchBottle={this.props.fetchBottle} />
+        return <BottleCardVert key={bottle.name} bottle={bottle} fetchBottle={this.props.fetchBottle} />
       })
 
       return(
-        <div className='bottle-index-container'>
-          {allBottles}
-          <button onClick={() => openBottleModal('createBottle')}>Create Bottle</button>
-        </div>
+        <>
+          <div className='bottle-index-container'>
+            {allBottles}
+          </div>
+          <button className='index-bottle-create-button' onClick={() => openBottleModal('Add a New Bottle')}>Create Bottle</button>
+        </>
       )
     }
   }

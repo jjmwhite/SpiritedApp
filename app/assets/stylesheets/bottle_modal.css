@@ -1,0 +1,45 @@
+.bottle-modal-window {
+  position: fixed;
+  height: 500px;
+  width: 700px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: white;
+  border-radius: 10px;
+  padding: 30px;
+}
+
+.bottle-form {
+  display: flex;
+  flex-direction: column;
+}
+
+.bottle-form > h1 {
+  font-family: 'Ubuntu', sans-serif;
+  color: #135470;
+  align-self: center;
+  font-size: 34px;
+}
+
+.bottle-form > label {
+  font-size: 14px;
+  font-family: 'Open Sans', sans-serif;
+  font-weight: bolder;
+  margin: 10px 0 5px 0;
+}
+
+.bottle-form > button {
+  margin-top: 50px;
+  width: 292px;
+  align-self: center;
+  border-radius: 25px;
+  background: #EDC358;
+  color: #135470;
+  height: 40px;
+  font-size: 16px
+}
+
+.bottle-form > button:hover {
+  background: #D7A831;
+}

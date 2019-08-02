@@ -1,4 +1,4 @@
-@bottles.each do |bottle|
+json.bottles @bottles.each do |bottle|
   json.set! bottle.id do
     json.id bottle.id
     json.name bottle.name
@@ -9,5 +9,15 @@
     json.release_year bottle.release_year
     json.price bottle.price
     json.photoUrl url_for(bottle.photo)
+  end
+
+  
+end
+
+json.distilleries @bottles.each do |bottle|
+  json.set! bottle.distillery.id do
+    json.id bottle.distillery.id 
+    json.name bottle.distillery.name
+    json.region bottle.distillery.region.name
   end
 end

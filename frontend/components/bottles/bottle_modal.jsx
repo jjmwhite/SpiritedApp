@@ -21,10 +21,10 @@ const BottleModal = ({ bottleModal, closeBottleModal }) => {
 
   let component;
   switch (bottleModal) {
-    case 'createBottle':
+    case 'Add a New Bottle':
       component = <BottleCreateContainer />;
       break;
-    case 'updateBottle':
+    case 'Edit This Bottle':
       component = <BottleEditContainer />;
       break;
     default:

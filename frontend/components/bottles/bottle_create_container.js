@@ -5,7 +5,7 @@ import { closeBottleModal } from '../../actions/bottle_modal_actions';
 
 const msp = state => {
   return({
-    formType: 'createBottle',
+    formType: 'Add a New Bottle',
     bottle: {
       name: '',
       description: '',

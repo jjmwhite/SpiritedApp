@@ -73,3 +73,18 @@
 .bottle-vert-detail > a:hover {
   text-decoration: underline;
 }
+
+.index-bottle-create-button {
+  margin: 0 auto;
+  display: block;
+  background: #EDC358;
+  height: 40px;
+  width: 292px;
+  border-radius: 25px;
+  color: #135470;
+  font-size: 16px;
+}
+
+.index-bottle-create-button:hover {
+  background: #D7A831;
+}

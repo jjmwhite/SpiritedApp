@@ -1,7 +1,7 @@
 class Api::BottlesController < ApplicationController
 
   def index
-    @bottles = Bottle.all
+    @bottles = Bottle.all.includes(:distillery, :region)
   end
 
   def show

@@ -37,7 +37,8 @@ class BottleForm extends React.Component {
     // </ul>
 
     return(
-      <form className='bottleForm'>
+      <form className='bottle-form'>
+        <h1>{this.props.formType}</h1>
         <label>Name: </label>
         <input type="text" value={this.state.name} onChange={this.handleChange('name')}/>
 
@@ -52,6 +53,9 @@ class BottleForm extends React.Component {
 
         <label>Description:</label>
         <textarea value={this.state.description} id="" cols="30" rows="10" onChange={this.handleChange('description')}></textarea>
+
+        <label>Avg. Price: </label>
+        <input type="number" value={this.state.price} onChange={this.handleChange('price')}/>
 
         <button onClick={this.handleSubmit}>Submit</button> 
         <BottleErrors errors={this.props.errors} />

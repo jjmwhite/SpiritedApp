@@ -6,10 +6,11 @@ export const REMOVE_BOTTLE = 'REMOVE_BOTTLE';
 export const RECEIVE_BOTTLE_ERRORS = 'RECEIVE_BOTTLE_ERRORS';
 export const CLEAR_BOTTLE_ERRORS = 'CLEAR_BOTTLE_ERRORS';
 
-export const receiveAllBottles = (bottles) => {
+export const receiveAllBottles = (payload) => {
+  debugger
   return({
     type: RECEIVE_ALL_BOTTLES,
-    bottles
+    payload
   })
 }
 

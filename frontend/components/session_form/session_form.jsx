@@ -29,11 +29,10 @@ class SessionForm extends React.Component {
 
   handleDemo(e) {
     e.preventDefault();
-    this.setState({
+    this.props.demoAction({
       email: 'test@test.com',
       password: 'password123',
     })
-    this.props.demoAction(this.state)
               .then(this.props.closeSessionModal())
   }
 
