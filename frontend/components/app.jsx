@@ -2,6 +2,7 @@ import React from 'react';
 import { Route, Switch } from 'react-router-dom';
 import GreetingBarContainer from './greeting_bar/greeting_bar_container';
 import SessionModal from './session_modal/session_modal';
+import BottleModal from './bottles/bottle_modal';
 import BottleIndexContainer from './bottles/bottle_index_container';
 
 const App = () => {
@@ -10,9 +11,12 @@ const App = () => {
       <SessionModal />
       <div className='app-body'>
         <GreetingBarContainer />
+        <BottleModal />
 
         <Switch>
-          {/* <Route path='/bottles/:id' component={BottleShowContainer} /> */}
+          {/* <Route path='/bottles/:id' component={BottleShowContainer} /> */
+          /* <Route path='/bottles/create' component={BottleModal} />
+          <Route path='/bottles/:id/edit' component={BottleModal} /> */}
           <Route path='/' component={BottleIndexContainer} />
         </Switch>
 
