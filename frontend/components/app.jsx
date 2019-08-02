@@ -1,5 +1,5 @@
 import React from 'react';
-import { Route } from 'react-router-dom';
+import { Route, Switch } from 'react-router-dom';
 import GreetingBarContainer from './greeting_bar/greeting_bar_container';
 import Modal from './modal/modal';
 import BottleIndexContainer from './bottles/bottle_index_container';
@@ -11,7 +11,10 @@ const App = () => {
       <div className='app-body'>
         <GreetingBarContainer />
 
-        <Route path='/' component={BottleIndexContainer} />
+        <Switch>
+          {/* <Route path='/bottles/:id' component={BottleShowContainer} /> */}
+          <Route path='/' component={BottleIndexContainer} />
+        </Switch>
 
         <footer>
           <div className='footer-main'>

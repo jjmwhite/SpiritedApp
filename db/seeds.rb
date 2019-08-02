@@ -43,6 +43,7 @@ dist3 = Distillery.create!(name: 'Macallan', region_id: 4, description: 'One of 
 
 
 ### BOTTLES ###
+## bottle images borrowed from http://totalwine.com
 
 bottle1 = Bottle.create!(name: 'Laphroaig 10', 
                         description: 'Strongly smokey with cardamon and sea salt. Laphroaig\'s iconic 10 year expression is Islay\'s most widely-known malt, bringing to mind all the warmth of a seaside campfire.',

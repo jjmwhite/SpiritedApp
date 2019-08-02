@@ -8,6 +8,8 @@ footer > div > ul {
   display: flex;
   height: 220px;
   padding: 35px 80px;
+  align-items: center;
+  justify-content: center;
 }
 
 footer > div > ul > li {
