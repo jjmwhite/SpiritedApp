@@ -4,7 +4,6 @@ import { fetchBottle, fetchBottles } from '../../actions/bottle_actions';
 import { openBottleModal } from '../../actions/bottle_modal_actions';
 
 const msp = state => {
-  debugger
   const bottles = Object.values(state.entities.bottles);
   return({
     bottles,
@@ -12,7 +11,6 @@ const msp = state => {
 }
 
 const mdp = dispatch => {
-  // debugger
   return({
     fetchBottles: () => dispatch(fetchBottles()),
     fetchBottle: (id) => dispatch(fetchBottle(id)),

@@ -26,24 +26,25 @@ class BottleForm extends React.Component {
   }
 
   render() {
-
+    debugger
     // Eventually want to map distilleries to this as a dropdown...
-    // const distilleries = this.props.distilleries.map( dist, idx => {
-    //   return <li key={`${distillery.name}-${idx}`} value={this.state.distillery}>{distillery.name}</li>
-    // })
-    // <button className='form-dropdown-button'>Select Distillery</button>
-    //   <ul className='form-dropdown-content'>
-    //     {distilleries}
-    // </ul>
-
+    const distilleries = this.props.distilleries.map( (distillery, idx) => {
+      return <li key={`${distillery.name}-${idx}`} value={this.state.distillery}>{distillery.name}</li>
+    })
+    
     return(
       <form className='bottle-form'>
         <h1>{this.props.formType}</h1>
         <label>Name: </label>
         <input type="text" value={this.state.name} onChange={this.handleChange('name')}/>
 
-        <label>Distillery: </label>
-        <input type="text" value={this.state.distillery} onChange={this.handleChange('distillery')}/>
+        <button className='form-dropdown-button'>Select Distillery</button>
+        <ul className='form-dropdown-content'>
+          {distilleries}
+        </ul>
+
+        {/* <label>Distillery: </label>
+        <input type="text" value={this.state.distillery} onChange={this.handleChange('distillery')}/> */}
 
         <label>Age (if applicable):</label>
         <input type="number" min='0' max='100' value={this.state.age} onChange={this.handleChange('age')}/>

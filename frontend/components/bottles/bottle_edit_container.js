@@ -6,10 +6,13 @@ import { closeBottleModal } from '../../actions/bottle_modal_actions';
 const msp = (state, ownProps) => {
   const bottleId = ownProps.match.params.bottleId;
   const bottle = this.state.bottles[bottleId];
+  const distilleries = Object.values(state.entities.distilleries);
+  
+  debugger
   return ({
     formType: 'Edit This Bottle',
     bottle,
-    distilleries: state.entities.distilleries,
+    distilleries,
     errors: state.errors.bottles || []
   })
 }
