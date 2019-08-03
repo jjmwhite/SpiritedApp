@@ -1,7 +1,6 @@
 .footer-main {
   background: #F0EDE9;
   font-size: 14px;
-  font-family: 'Open Sans', sans-serif;
   margin-top: 80px;
 }
 
@@ -28,7 +27,6 @@ footer > div > ul > li > img {
 footer > div > ul > li > figcaption {
   text-align: left;
   font-size: 14px;
-  font-family: 'Open Sans', sans-serif;
   font-weight: lighter;
 }
 

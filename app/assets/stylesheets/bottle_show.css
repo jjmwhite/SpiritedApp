@@ -3,55 +3,77 @@
   display: flex;
   align-items: center;
   flex-direction: column;
+  height: 460px;
 }
 
 .bottle-show-section {
-    background: white;
-    width: 80%;
-    margin-top: 30px;
-    display: flex;
-    box-shadow: 0px 10px 7px lightgrey;
-    position: relative;
+  background: white;
+  width: 80%;
+  margin-top: 30px;
+  display: flex;
+  box-shadow: 0px 10px 7px lightgrey;
+  position: relative;
+  max-width: 1220px;
 }
 
 .bottle-show-section > img {
-    height: 400px;
-    padding: 30px 0;
+  height: 400px;
+  padding: 30px 0;
 }
 
 .bottle-show-details {
-    display: flex;
-    flex-direction: column;
-    padding: 50px;
+  display: flex;
+  flex-direction: column;
+  padding: 50px;
 }
 
 .bottle-show-details > h1 {
-    font-size: 28px;
-    font-family: 'Ubuntu', sans-serif;
-    margin-bottom: 20px;
+  font-size: 28px;
+  font-family: 'Ubuntu', sans-serif;
+  margin-bottom: 20px;
 }
 
 .bottle-show-details > a {
-    font-size: 22px;
-    text-decoration: underline;
-    color: black;
-    margin-bottom: 20px;
+  font-size: 22px;
+  text-decoration: none;
+  color: black;
+  margin-bottom: 20px;
+}
+
+.bottle-show-details > a:hover {
+  text-decoration: underline;
 }
 
 .bottle-show-details > p {
-    font-size: 18px;
-    font-family: 'Montserrat', sans-serif;
-    line-height: 1.3;
-    margin-bottom: 20px;
+  font-size: 18px;
+  line-height: 1.3;
+  margin-bottom: 20px;
 }
 
 .bottle-show-details > span {
-    font-size: 22px;
-    margin-bottom: 18px;
-    font-weight: bolder;
+  font-size: 22px;
+  margin-bottom: 18px;
+  font-weight: bolder;
 }
 
-.bottle-show-details > button {
-    align-self: flex-end;
-    margin-right: 50px;
+.show-bottle-edit-button:hover {
+  align-self: flex-end;
+  margin-right: 50px;
+  border: none;
+  color: #135470;
+  font-size: 12px;
+  cursor: pointer;
+}
+
+.show-bottle-edit-button:hover {
+  text-decoration: underline;
+}
+
+.rating-details-standin {
+  background: antiquewhite;
+  height: 300px;
+  align-self: center;
+  margin: 0 50px 0 30px;
+  min-width: 270px;
+  max-width: 400px;
 }

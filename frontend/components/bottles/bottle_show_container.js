@@ -3,12 +3,12 @@ import BottleShow from './bottle_show';
 import { fetchBottle, createBottle, updateBottle, removeBottle } from '../../actions/bottle_actions';
 import { openBottleModal } from '../../actions/bottle_modal_actions';
 
-const msp = (state, ownProps) => {
+const msp = (state = {}, ownProps) => {
   debugger
   const bottleId = ownProps.match.params.bottleId;
   const bottle = state.entities.bottles[bottleId];
   const distillery = state.entities.distilleries[bottle.distillery_id]
-  const region = state.entities.regions[bottle.disillery.region_id]
+  const region = state.entities.regions[distillery.region_id]
   return({
     bottle,
     region,

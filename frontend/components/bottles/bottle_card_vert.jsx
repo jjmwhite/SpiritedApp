@@ -16,14 +16,13 @@ const msp = (state, ownProps) => {
 }
 
 const BottleCardVert = ({ bottle, distillery, region, fetchBottle }) => {
-  debugger
   return(
     <section key={bottle.name} className='bottle-card-vert'>
       <img src={bottle.photoUrl} alt={bottle.name}/>
       <div className='bottle-vert-detail'>
-        <Link to={`/regions/${region.id}`}>{region.name}</Link>
-        <h4>{bottle.name}</h4>
-        <Link to={`/distilleries/${distillery.id}`}>{distillery.name}</Link>
+        <Link to={`/regions/${region.id}`} className='bottle-subtitle'>{region.name}</Link>
+        <Link to={`/bottles/${bottle.id}`}><h4>{bottle.name}</h4></Link>
+        <Link to={`/distilleries/${distillery.id}`} className='bottle-subtitle'>{distillery.name}</Link>
         <span>${bottle.price}</span>
         <input type="image" src={starOutline} onClick={fetchBottle}/>
         <label>Add Review</label>

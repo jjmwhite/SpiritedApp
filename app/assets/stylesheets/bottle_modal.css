@@ -56,7 +56,6 @@
 .bottle-form > select {
   background: transparent;
   font-size: 18px;
-  font-family: 'Open Sans', sans-serif;
   border: 1px solid lightgray;
   height: 40px;
 }
@@ -66,7 +65,6 @@
   box-shadow: 3px 3px 4px 0px lightgrey;
   font-size: 18px;
   font-weight: lighter;
-  font-family: 'Open Sans', sans-serif;
   padding: 15px;
 }
 
