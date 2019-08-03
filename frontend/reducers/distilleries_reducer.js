@@ -12,7 +12,6 @@ const distilleriesReducer = (state = {}, action) => {
     case RECEIVE_DISTILLERY:
       newState = merge({}, prevState, { [action.distillery.id]: action.distillery })
     case RECEIVE_ALL_BOTTLES:
-      debugger
       action.payload.distilleries.each
       newState = merge({}, ...action.payload.distilleries)
       return newState;

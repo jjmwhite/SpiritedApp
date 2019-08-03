@@ -4,6 +4,8 @@
     json.name dist.name
     json.description dist.description
     json.region dist.region.name
-    json.photoUrl url_for(dist.photo)
+    if dist.photo.attached?
+      json.photoUrl url_for(dist.photo)
+    end
   end
 end

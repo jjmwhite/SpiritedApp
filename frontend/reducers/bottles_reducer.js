@@ -6,7 +6,6 @@ const bottlesReducer = (state = {}, action) => {
   let newState;
   switch (action.type) {
     case RECEIVE_ALL_BOTTLES:
-      debugger
       newState = merge({}, ...action.payload.bottles);
       return newState;
     case RECEIVE_BOTTLE:

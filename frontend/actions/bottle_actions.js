@@ -7,7 +7,6 @@ export const RECEIVE_BOTTLE_ERRORS = 'RECEIVE_BOTTLE_ERRORS';
 export const CLEAR_BOTTLE_ERRORS = 'CLEAR_BOTTLE_ERRORS';
 
 export const receiveAllBottles = (payload) => {
-  debugger
   return({
     type: RECEIVE_ALL_BOTTLES,
     payload
@@ -42,7 +41,6 @@ export const clearBottleErrors = () => {
 }
 
 export const fetchBottles = () => dispatch => {
-  debugger
   return BottleApiUtil.fetchBottles()
                       .then( (bottles) => dispatch(receiveAllBottles(bottles)));
 }

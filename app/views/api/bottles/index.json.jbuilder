@@ -1,4 +1,3 @@
-debugger
 json.bottles @bottles.each do |bottle|
   json.set! bottle.id do
     json.id bottle.id

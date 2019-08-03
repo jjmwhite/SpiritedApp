@@ -8,7 +8,7 @@ const msp = (state, ownProps) => {
   const bottle = this.state.bottles[bottleId];
   const distilleries = Object.values(state.entities.distilleries);
   
-  debugger
+  // debugger
   return ({
     formType: 'Edit This Bottle',
     bottle,
