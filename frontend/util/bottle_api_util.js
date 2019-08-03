@@ -13,11 +13,14 @@ export const fetchBottle = (id) => {
   })
 }
 
-export const createBottle = (bottle) => {
+export const createBottle = (formData) => {
+  debugger
   return $.ajax({
     method: 'POST',
     url: '/api/bottles',
-    data: { bottle }
+    data: formData,
+    contentType: false,
+    processData: false
   })
 }
 

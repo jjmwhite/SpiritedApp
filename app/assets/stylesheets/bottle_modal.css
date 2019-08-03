@@ -22,30 +22,43 @@
   font-size: 34px;
 }
 
-.bottle-form > label {
+
+.bottle-form > div {
+  display: flex;
+  align-items: baseline;
+}
+
+.bottle-form > div > label {
   font-size: 18px;
-  font-family: 'Open Sans', sans-serif;
   font-weight: bolder;
-  margin: 10px 0 5px 0;
+  margin: 12px 5px 5px 0;
+}
+
+.optional {
+  color: darkgray;
+}
+
+.required {
+  color: #dc540d;
 }
 
 .bottle-form > input {
   height: 40px;
   border-radius: 3px;
   border: 1px solid lightgray;
-  background: #fbfafa;
   box-sizing: border-box;
   font-size: 18px;
   font-weight: lighter;
-  padding: 15px;
-  font-family: 'Open Sans', sans-serif;
+  padding: 10px;
+  margin-top: 5px;
 }
 
 .bottle-form > select {
   background: transparent;
   font-size: 18px;
   font-family: 'Open Sans', sans-serif;
-  margin: 20px 0px;
+  border: 1px solid lightgray;
+  height: 40px;
 }
 
 .bottle-form > select > option {
@@ -68,7 +81,9 @@
 
 .bottle-form > textarea {
   font-size: 18px;
-  padding: 15px;
+  padding: 10px;
+  margin-top: 5px;
+  border: 1px solid lightgray;
 }
 
 .submit {

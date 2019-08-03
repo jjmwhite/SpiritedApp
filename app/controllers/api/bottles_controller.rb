@@ -16,7 +16,7 @@ class Api::BottlesController < ApplicationController
 
   def create
     @bottle = Bottle.new(bottle_params)
-
+    debugger 
     if @bottle.save
       render :show
     else
@@ -43,7 +43,7 @@ class Api::BottlesController < ApplicationController
   private
 
   def bottle_params
-    params.require(:bottle).permit(:name, :description, :distillery_id, :age, :release_year, :price, :photoUrl)
+    params.require(:bottle).permit(:name, :description, :distillery_id, :age, :release_year, :price, :photo)
   end
 
 end

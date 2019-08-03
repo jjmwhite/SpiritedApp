@@ -4,6 +4,7 @@ import { createBottle, clearBottleErrors } from '../../actions/bottle_actions';
 import { closeBottleModal } from '../../actions/bottle_modal_actions';
 
 const msp = state => {
+  debugger
   const distilleries = Object.values(state.entities.distilleries);
   return({
     formType: 'Add a New Bottle',
@@ -13,7 +14,7 @@ const msp = state => {
       distillery_id: 0,
       age: 0,
       release_year: 0,
-      price: 0
+      price: 0,
     },
     distilleries,
     errors: state.errors.bottles || [],
