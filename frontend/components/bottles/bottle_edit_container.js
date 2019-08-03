@@ -2,16 +2,39 @@ import { connect } from 'react-redux';
 import BottleForm from './bottle_form';
 import { updateBottle, clearBottleErrors } from '../../actions/bottle_actions';
 import { closeBottleModal } from '../../actions/bottle_modal_actions';
+import { withRouter } from 'react-router-dom';
 
 const msp = (state, ownProps) => {
-  const bottleId = ownProps.match.params.bottleId;
-  const bottle = this.state.bottles[bottleId];
+  const bottleId = ownProps.location.pathname.split("/").reverse()[0];
+  const bottle = state.entities.bottles[bottleId];
   const distilleries = Object.values(state.entities.distilleries);
   
+  let age;
+  if (bottle.age === null) {
+    age = undefined;
+  } else {
+    age = bottle.age;
+  }
+
+  let release_year;
+  if (bottle.release_year === null) {
+    release_year = undefined;
+  } else {
+    release_year = bottle.release_year;
+  }
+
   // debugger
   return ({
     formType: 'Edit This Bottle',
-    bottle,
+    bottle: {
+      id: bottle.id,
+      name: bottle.name,
+      description: bottle.description,
+      distillery_id: bottle.distillery_id,
+      age,
+      release_year,
+      price: bottle.price,
+    },
     distilleries,
     errors: state.errors.bottles || []
   })
@@ -19,10 +42,10 @@ const msp = (state, ownProps) => {
 
 const mdp = dispatch => {
   return ({
-    formAction: (bottle) => dispatch(updateBottle(bottle)),
+    formAction: (bottle, id) => dispatch(updateBottle(bottle, id)),
     clearBottleErrors: () => dispatch(clearBottleErrors()),
     closeBottleModal: () => dispatch(closeBottleModal())
   })
 }
 
-export default connect(msp, mdp)(BottleForm)
+export default withRouter(connect(msp, mdp)(BottleForm))

@@ -14,7 +14,6 @@ export const fetchBottle = (id) => {
 }
 
 export const createBottle = (formData) => {
-  debugger
   return $.ajax({
     method: 'POST',
     url: '/api/bottles',
@@ -24,11 +23,15 @@ export const createBottle = (formData) => {
   })
 }
 
-export const updateBottle = (bottle) => {
+//formData -- how to access ID?
+export const updateBottle = (formData, id) => {
+  debugger
   return({
     method: 'PATCH',
-    url: `/api/bottles/${bottle.id}/edit`,
-    data: { bottle }
+    url: `/api/bottles/${id}/edit`,
+    data: formData,
+    contentType: false,
+    processData: false
   })
 }
 

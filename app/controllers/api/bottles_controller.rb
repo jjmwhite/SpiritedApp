@@ -16,7 +16,6 @@ class Api::BottlesController < ApplicationController
 
   def create
     @bottle = Bottle.new(bottle_params)
-    debugger 
     if @bottle.save
       render :show
     else
@@ -26,7 +25,7 @@ class Api::BottlesController < ApplicationController
 
   def update
     @bottle = Bottle.find_by(id: params[:id])
-
+    # debugger
     if @bottle.save
       render :show
     else

@@ -4,6 +4,7 @@ import GreetingBarContainer from './greeting_bar/greeting_bar_container';
 import SessionModal from './session_modal/session_modal';
 import BottleModal from './bottles/bottle_modal';
 import BottleIndexContainer from './bottles/bottle_index_container';
+import BottleShowContainer from './bottles/bottle_show_container';
 
 const App = () => {
   return (
@@ -14,8 +15,8 @@ const App = () => {
         <BottleModal />
 
         <Switch>
-          {/* <Route path='/bottles/:id' component={BottleShowContainer} /> */
-          /* <Route path='/bottles/create' component={BottleModal} />
+          <Route path='/bottles/:bottleId' component={BottleShowContainer} />
+          {/* <Route path='/bottles/create' component={BottleModal} />
           <Route path='/bottles/:id/edit' component={BottleModal} /> */}
           <Route path='/' component={BottleIndexContainer} />
         </Switch>

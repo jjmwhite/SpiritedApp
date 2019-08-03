@@ -51,16 +51,16 @@ export const fetchBottle = (id) => dispatch => {
                       .fail((errors) => dispatch(receiveBottleErrors(errors)));;
 }
 
-export const createBottle = (bottle) => dispatch => {
-  return BottleApiUtil.createBottle(bottle)
+export const createBottle = (formData) => dispatch => {
+  return BottleApiUtil.createBottle(formData)
                       .then( (bottle) => dispatch(receiveBottle(bottle)))
                       .fail( (errors) => dispatch(receiveBottleErrors(errors)));
 }
 
-export const updateBottle = (bottle) => dispatch => {
-  return BottleApiUtil.updateBottle(bottle)
-                      .then( (bottle) => dispatch(receiveBottle(bottle)))
-                      .fail( (errors) => dispatch(receiveBottleErrors(errors)));
+export const updateBottle = (formData, id) => dispatch => {
+  return BottleApiUtil.updateBottle(formData, id)
+                      .then((bottle) => dispatch(receiveBottle(bottle)))
+                      .fail((errors) => dispatch(receiveBottleErrors(errors)));
 }
 
 export const removeBottle = (bottle) => dispatch => {

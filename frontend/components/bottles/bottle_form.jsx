@@ -3,6 +3,7 @@ import BottleErrors from './bottle_errors';
 
 class BottleForm extends React.Component {
   constructor(props) {
+    // debugger
     super(props)
     // this.state = this.props.bottle;
 
@@ -15,7 +16,7 @@ class BottleForm extends React.Component {
       price: this.props.bottle.price,
       photoFile: this.props.bottle.photoFile,
     }
-    debugger
+    // debugger
 
     this.handleFile = this.handleFile.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
@@ -33,7 +34,7 @@ class BottleForm extends React.Component {
   }
 
   handleFile(e) {
-    debugger
+    // debugger
     this.setState({ photoFile: e.currentTarget.files[0] })
   }
 
@@ -41,25 +42,23 @@ class BottleForm extends React.Component {
     e.preventDefault();
 
     const formData = new FormData();
-    debugger
     formData.append('bottle[name]', this.state.name);
-    debugger
     formData.append('bottle[description]', this.state.name);
-    formData.append('bottle[distillery_id]', this.state.distillery);
+    formData.append('bottle[distillery_id]', this.state.distillery_id);
     formData.append('bottle[age]', this.state.age);
     formData.append('bottle[release_year]', this.state.release_year);
     formData.append('bottle[price]', this.state.price);
     formData.append('bottle[photo]', this.state.photoFile);
 
-    debugger
-    this.props.formAction(formData)
+    // debugger
+    this.props.formAction(formData, this.props.bottle.id)
               .then(this.closeBottleModal)
   }
 
   render() {
     // debugger
     const distilleries = this.props.distilleries.map( (distillery, idx) => {
-      debugger
+      // debugger
       return <option key={`${distillery.name}-${idx}`} value={distillery.id}>{distillery.name}</option>
     })
 
@@ -87,6 +86,20 @@ class BottleForm extends React.Component {
       return <option key={`price-range-${price}`} value={price}>${price}</option>
     })
     
+    let imgMessage;
+    if (this.props.formType === 'Add a New Bottle') {
+      imgMessage = 
+        <div>
+          <label>Upload Image:</label>
+          <p className='required'>*</p>
+        </div>
+    } else {
+      imgMessage = <div>
+        <label>Upload a New Image:</label>
+        <p className='optional'>(optional)</p>
+      </div>
+    }
+
     return(
       <form className='bottle-form'>
         <h1>{this.props.formType}</h1>
@@ -101,7 +114,7 @@ class BottleForm extends React.Component {
           <label>Distillery:</label>
           <p className='required'>*</p>
         </div>
-          <select value={this.state.distillery} onChange={this.handleChange('distillery')}>
+        <select value={this.state.distillery_id} onChange={this.handleChange('distillery_id')}>
             {/* <option defaultValue='selected' disabled >Select Distillery</option> */}
             {distilleries}
           </select>
@@ -110,7 +123,7 @@ class BottleForm extends React.Component {
           <label>Age:</label>
           <p className='optional'>(if given)</p>
         </div>
-          <select value={this.state.age} onChange={this.handleChange('age')}>
+        <select value={this.state.age} onChange={this.handleChange('age')}>
             {/* <option defaultValue='selected' disabled>Age (if applicable)</option> */}
             {ages}
           </select>
@@ -131,7 +144,7 @@ class BottleForm extends React.Component {
           <textarea value={this.state.description} id="" cols="30" rows="3" onChange={this.handleChange('description')}></textarea>
 
         <div>
-          <label>Description:</label>
+          <label>Price:</label>
           <p className='required'>*</p>
         </div>
           <select value={this.state.price} onChange={this.handleChange('price')}>
@@ -139,10 +152,7 @@ class BottleForm extends React.Component {
             {prices}
           </select>
 
-        <div>
-          <label>Upload Image:</label>
-          <p className='required'>*</p>
-        </div>
+          {imgMessage}
           <input type="file" onChange={this.handleFile}/>
 
 
