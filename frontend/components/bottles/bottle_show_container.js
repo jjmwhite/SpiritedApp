@@ -4,10 +4,15 @@ import { fetchBottle, createBottle, updateBottle, removeBottle } from '../../act
 import { openBottleModal } from '../../actions/bottle_modal_actions';
 
 const msp = (state, ownProps) => {
+  debugger
   const bottleId = ownProps.match.params.bottleId;
   const bottle = state.entities.bottles[bottleId];
+  const distillery = state.entities.distilleries[bottle.distillery_id]
+  const region = state.entities.regions[bottle.disillery.region_id]
   return({
-    bottle
+    bottle,
+    region,
+    distillery
   })
 }
 

@@ -9,7 +9,7 @@ const bottlesReducer = (state = {}, action) => {
       newState = merge({}, ...action.payload.bottles);
       return newState;
     case RECEIVE_BOTTLE:
-      newState = merge({}, prevState, { [action.bottle.id]: action.bottle });
+      newState = merge({}, prevState, { [action.payload.bottle.id]: action.payload.bottle });
       return newState;
     case REMOVE_BOTTLE:
       newState = merge({}, prevState);

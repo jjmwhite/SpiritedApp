@@ -13,10 +13,10 @@ export const receiveAllBottles = (payload) => {
   })
 }
 
-export const receiveBottle = (bottle) => {
+export const receiveBottle = (payload) => {
   return({
     type: RECEIVE_BOTTLE,
-    bottle
+    payload
   })
 }
 

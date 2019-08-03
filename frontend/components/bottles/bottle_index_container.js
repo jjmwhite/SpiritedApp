@@ -4,9 +4,14 @@ import { fetchBottle, fetchBottles } from '../../actions/bottle_actions';
 import { openBottleModal } from '../../actions/bottle_modal_actions';
 
 const msp = state => {
+  debugger
   const bottles = Object.values(state.entities.bottles);
+  const distilleries = Object.values(state.entities.distilleries);
+  const regions = Object.values(state.entities.regions);
   return({
     bottles,
+    distilleries,
+    regions,
   })
 }
 
