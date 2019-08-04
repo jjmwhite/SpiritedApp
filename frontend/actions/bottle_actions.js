@@ -63,8 +63,8 @@ export const updateBottle = (formData, id) => dispatch => {
                       .fail((errors) => dispatch(receiveBottleErrors(errors)));
 }
 
-export const removeBottle = (bottle) => dispatch => {
-  return BottleApiUtil.removeBottle(bottle)
-                      .then( (bottle) => dispatch(destroy(bottle)))
+export const removeBottle = (id) => dispatch => {
+  return BottleApiUtil.removeBottle(id)
+                      .then( (bottle) => dispatch(destroyBottle(bottle)))
                       .fail( (errors) => dispatch(receiveBottleErrors(errors)));
 }

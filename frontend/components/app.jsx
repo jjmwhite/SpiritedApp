@@ -2,9 +2,12 @@ import React from 'react';
 import { Route, Switch } from 'react-router-dom';
 import GreetingBarContainer from './greeting_bar/greeting_bar_container';
 import SessionModal from './session_modal/session_modal';
-import BottleModal from './bottles/bottle_modal';
+// import BottleModal from './bottles/bottle_modal';
 import BottleIndexContainer from './bottles/bottle_index_container';
 import BottleShowContainer from './bottles/bottle_show_container';
+import NewBottleContainer from './bottles/new_bottle_container';
+import UpdateBottleContainer from './bottles/update_bottle_container';
+import { ProtectedRoute } from '../util/route_util';
 
 const App = () => {
   return (
@@ -12,10 +15,12 @@ const App = () => {
       <SessionModal />
       <div className='app-body'>
         <GreetingBarContainer />
-        <BottleModal />
+        {/* <BottleModal /> */}
 
         <Switch>
-          <Route path='/bottles/:bottleId' component={BottleShowContainer} />
+          <ProtectedRoute exact path='/bottles/create' component={NewBottleContainer} />
+          <ProtectedRoute exact path='/bottles/:bottleId/edit' component={UpdateBottleContainer} />
+          <Route exact path='/bottles/:bottleId' component={BottleShowContainer} />
           <Route path='/' component={BottleIndexContainer} />
         </Switch>
 

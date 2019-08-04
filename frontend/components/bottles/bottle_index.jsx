@@ -1,12 +1,12 @@
 import React from 'react';
 import BottleCardVert from './bottle_card_vert';
-
+import { Link } from 'react-router-dom';
 
 class BottleIndex extends React.Component {
 
   constructor(props) {
     super(props);
-    debugger
+    // debugger
     this.state = {loggedIn: this.props.loggedIn}
   }
 
@@ -15,17 +15,17 @@ class BottleIndex extends React.Component {
   }
 
   render() {    
-    const openBottleModal = this.props.openBottleModal;
-    const openSessionModal = this.props.openSessionModal;
+    // const openBottleModal = this.props.openBottleModal;
+    // const openSessionModal = this.props.openSessionModal;
 
-    let createBottleButton;
-    if (this.state.loggedIn) {
-      debugger
-      createBottleButton = <button className='index-bottle-create-button' onClick={() => openBottleModal('Add a New Bottle')}>Create Bottle</button>
-    } else {
-      debugger
-      createBottleButton = <button className='index-bottle-create-button' onClick={() => openSessionModal('login')}>Create Bottle</button>
-    }
+    // let createBottleButton;
+    // if (this.state.loggedIn) {
+    //   debugger
+    //   createBottleButton = <button className='index-bottle-create-button' onClick={() => openBottleModal('Add a New Bottle')}>Create Bottle</button>
+    // } else {
+    //   debugger
+    //   createBottleButton = <button className='index-bottle-create-button' onClick={() => openSessionModal('login')}>Create Bottle</button>
+    // }
 
 
     if ( this.props.bottles === {} ) {
@@ -45,7 +45,8 @@ class BottleIndex extends React.Component {
           <div className='bottle-index-container'>
             {allBottles}
           </div>
-          {createBottleButton}
+          <button className='index-bottle-create-button'><Link to='/bottles/create'>Create Bottle</Link></button>
+          {/* {createBottleButton} */}
         </>
       )
     }

@@ -4,7 +4,7 @@ import { connect } from 'react-redux';
 
 const msp = state => {
   return({
-    logged_in: Boolean(state.session.currentUser)
+    loggedIn: Boolean(state.session.currentUserId)
   })
 }
 
@@ -17,9 +17,10 @@ const Auth = ({ component: Component, path, loggedIn, exact }) => {
 }
 
 const Protected = ({ component: Component, path, loggedIn, exact }) => {
+  debugger
   return(
     <Route exact={exact} path={path} render={
-      props => loggedIn ? (<Component {...props} />) : (<Redirect to='/login' />)
+      props => loggedIn ? (<Component {...props} />) : (<Redirect to='/' />)
     } />
   )
 }

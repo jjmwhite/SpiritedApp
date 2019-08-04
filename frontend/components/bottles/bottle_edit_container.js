@@ -1,6 +1,6 @@
 import { connect } from 'react-redux';
 import BottleForm from './bottle_form';
-import { updateBottle, clearBottleErrors } from '../../actions/bottle_actions';
+import { updateBottle, removeBottle, clearBottleErrors } from '../../actions/bottle_actions';
 import { closeBottleModal } from '../../actions/bottle_modal_actions';
 import { withRouter } from 'react-router-dom';
 
@@ -43,6 +43,7 @@ const msp = (state, ownProps) => {
 const mdp = dispatch => {
   return ({
     formAction: (bottle, id) => dispatch(updateBottle(bottle, id)),
+    removeBottle: (id) => dispatch(removeBottle(id)),
     clearBottleErrors: () => dispatch(clearBottleErrors()),
     closeBottleModal: () => dispatch(closeBottleModal())
   })
