@@ -14,7 +14,6 @@ export const fetchBottle = (id) => {
 }
 
 export const createBottle = (formData) => {
-  debugger
   return $.ajax({
     method: 'POST',
     url: '/api/bottles',

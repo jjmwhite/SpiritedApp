@@ -14,7 +14,7 @@ export const receiveAllBottles = (payload) => {
 }
 
 export const receiveBottle = (payload) => {
-  debugger
+  // debugger
   return({
     type: RECEIVE_BOTTLE,
     payload
@@ -53,21 +53,21 @@ export const fetchBottle = (id) => dispatch => {
 }
 
 export const createBottle = (formData) => dispatch => {
-  debugger
+  // debugger
   return BottleApiUtil.createBottle(formData)
                       .then( (bottle) => dispatch(receiveBottle(bottle)))
                       .fail( (errors) => dispatch(receiveBottleErrors(errors)));
 }
 
 export const updateBottle = (formData, id) => dispatch => {
-  debugger
+  // debugger
   return BottleApiUtil.updateBottle(formData, id)
                       .then( (bottle) => dispatch(receiveBottle(bottle)))
                       .fail( (errors) => dispatch(receiveBottleErrors(errors)));
 }
 
 export const removeBottle = (id) => dispatch => {
-  debugger
+  // debugger
   return BottleApiUtil.removeBottle(id)
                       .then( (bottle) => dispatch(destroyBottle(bottle)))
                       .fail( (errors) => dispatch(receiveBottleErrors(errors)));

@@ -5,7 +5,6 @@ import { fetchBottle, fetchBottles } from '../../actions/bottle_actions';
 import { openSessionModal } from '../../actions/session_modal_actions';
 
 const msp = state => {
-  debugger
   const bottles = Object.values(state.entities.bottles);
   const distilleries = Object.values(state.entities.distilleries);
   const regions = Object.values(state.entities.regions);

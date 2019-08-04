@@ -17,7 +17,6 @@ class Api::BottlesController < ApplicationController
     # :Parameters {"bottle"=>{"name"=>"Macallan 15", "description"=>"Macallan 15", "distillery_id"=>"3", "age"=>"15", "release_year"=>"undefined", "price"=>"100" }, 
     # "photo"=>#<ActionDispatch::Http::UploadedFile:0x00007fc3d422afc0 @tempfile=#<Tempfile:/var/folders/lv/n4scx8rs7lxbnbtdf9v6c4380000gn/T/RackMultipart20190804-43836-1fxp7zt.jpg>, @original_filename="macallan_12_by-TWE.jpg", @content_type="image/jpeg", @headers="Content-Disposition: form-data; name=\"bottle[photo]\"; filename=\"macallan_12_by-TWE.jpg\"\r\nContent-Type: image/jpeg\r\n">}, "format"=>:json, "controller"=>"api/bottles", "action"=>"create"} permitted: false>
     
-    debugger
     if params[:bottle][:age] != ''
       params[:bottle][:age]  = params[:bottle][:age] .to_i
     else 
@@ -34,11 +33,8 @@ class Api::BottlesController < ApplicationController
       params[:bottle][:price] = params[:bottle][:price].to_f
     end
     
-    debugger
     @bottle = Bottle.new(bottle_params)
     
-
-    debugger
     if @bottle.save
       render :show
     else
@@ -51,10 +47,8 @@ class Api::BottlesController < ApplicationController
     
   
     if @bottle.update!(bottle_params)
-      debugger
       render :show
     else
-      debugger
       render json: @bottle.errors.full_messages, status: 422
     end
   end
@@ -70,7 +64,6 @@ class Api::BottlesController < ApplicationController
   private
 
   def bottle_params
-    debugger
     params.require(:bottle).permit(:name, :description, :distillery_id, :age, :release_year, :price, :photo)
   end
 

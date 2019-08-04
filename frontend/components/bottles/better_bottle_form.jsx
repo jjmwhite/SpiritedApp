@@ -16,13 +16,11 @@ class BetterBottleForm extends React.Component {
       distilleries: (this.props.distilleries),
     }
 
-    debugger
     this.handleFile = this.handleFile.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
   }
 
   componentDidMount() {
-    debugger
     if (this.props.formType === 'Edit This Bottle') {
       this.props.fetchBottle(this.props.match.params.bottleId)
         .then(() => this.setState( this.props ))
@@ -44,17 +42,13 @@ class BetterBottleForm extends React.Component {
   }
 
   handleFile(e) {
-    debugger
     this.setState({ photoFile: e.currentTarget.files[0] });
-
-    // this.setState({ e.currentTarget.files[0] } )
   }
 
   handleSubmit(e) {
     e.preventDefault();
 
     const formData = new FormData();
-    debugger
     formData.append('bottle[name]', this.state.name);
     formData.append('bottle[description]', this.state.description);
     formData.append('bottle[distillery_id]', this.state.distillery_id);
@@ -67,13 +61,12 @@ class BetterBottleForm extends React.Component {
     }
 
     this.props.formAction(formData, this.props.bottleId)
+      .then(() => this.props.history.push(`/bottles/${this.props.bottleId}`))
   }
 
   render() {
-    let distilleries;
     
-    debugger
-
+    let distilleries;
     if (this.state.distilleries.length === 0) {
       distilleries = <></>
     } else {

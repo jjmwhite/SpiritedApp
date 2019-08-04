@@ -13,7 +13,6 @@ class BottleShow extends React.Component {
   }
 
   componentDidUpdate(prevProps) {
-    debugger
     if (this.props.match.params.bottleId != prevProps.match.params.bottleId) {
       this.props.fetchBottle(this.props.match.params.bottleId);
     }
