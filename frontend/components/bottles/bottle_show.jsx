@@ -21,7 +21,7 @@ class BottleShow extends React.Component {
   
 
   render() {
-    const openBottleModal = this.props.openBottleModal;
+    // const openBottleModal = this.props.openBottleModal;
     const { bottle } = this.props;
     const { distillery } = this.props;
     const { region } = this.props
@@ -42,7 +42,9 @@ class BottleShow extends React.Component {
                 <Link to={`/distilleries/${distillery.id}`}>{distillery.name}</Link>
                 <p>{bottle.description}</p>
                 <span>${bottle.price}</span>
-                <button className='show-bottle-edit-button' onClick={() => openBottleModal('Edit This Bottle')}>Edit This Bottle</button>
+                {/* <button className='show-bottle-edit-button' onClick={() => openBottleModal('Edit This Bottle')}>Edit This Bottle</button> */}
+                <button className='show-bottle-edit-button'><Link to={`/bottles/${bottle.id}/edit`}>Edit This Bottle</Link></button>
+
               </div>
               <div className='rating-details-standin'>
                 Rating details component here

@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 class Greeting extends React.Component {
 
@@ -25,7 +26,7 @@ class Greeting extends React.Component {
     return(
       <span className='greeting-bar'>
         <div className='greeting-top-left'>
-          <h1 className='app-name'>SPIRITED</h1>
+          <h1 className='app-name'><Link to='/'>SPIRITED</Link></h1>
           <input className='search-input' type="text" placeholder='Search will go here...'/>
         </div>
         {userGreeting}

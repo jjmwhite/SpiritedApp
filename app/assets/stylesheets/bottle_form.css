@@ -1,0 +1,102 @@
+.bottle-form-background {
+  background-color: #F7F3F0;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  height: 900px;
+}
+
+.bottle-form-section {
+  background: white;
+  margin-top: 30px;
+  display: flex;
+  box-shadow: 0px 10px 7px lightgrey;
+  position: absolute;
+  max-width: 1220px;
+  min-width: 900px;
+  flex-direction: column;
+  padding: 50px;
+}
+
+.bottle-form-section > h1 {
+  font-family: 'Ubuntu', sans-serif;
+  color: #135470;
+  align-self: center;
+  font-size: 34px;
+}
+
+.bottle-form-section > div {
+  display: flex;
+  align-items: baseline;
+}
+
+.bottle-form-section > div > label {
+  font-size: 18px;
+  font-weight: bolder;
+  margin: 12px 5px 5px 0;
+}
+
+.optional {
+  color: darkgray;
+}
+
+.required {
+  color: #dc540d;
+}
+
+.bottle-form-section > input {
+  height: 40px;
+  border-radius: 3px;
+  border: 1px solid lightgray;
+  box-sizing: border-box;
+  font-size: 18px;
+  font-weight: lighter;
+  padding: 10px;
+  margin-top: 5px;
+}
+
+.bottle-form-section > select {
+  background: transparent;
+  font-size: 18px;
+  border: 1px solid lightgray;
+  height: 40px;
+}
+
+.bottle-form-section > select > option {
+  background: white;
+  box-shadow: 3px 3px 4px 0px lightgrey;
+  font-size: 18px;
+  font-weight: lighter;
+  padding: 15px;
+}
+
+.bottle-form-section > select > option:hover {
+  border-bottom: 1px solid lightgrey;
+  display: block;
+}
+
+.bottle-form-section > select > option:hover {
+  background: whitesmoke;
+}
+
+.bottle-form-section > textarea {
+  font-size: 18px;
+  padding: 10px;
+  margin-top: 5px;
+  border: 1px solid lightgray;
+}
+
+.submit {
+  margin-top: 50px;
+  width: 292px;
+  align-self: center;
+  border-radius: 25px;
+  background: #EDC358;
+  color: #135470;
+  height: 40px;
+  font-size: 16px
+}
+
+.submit:hover {
+  background: #D7A831;
+}

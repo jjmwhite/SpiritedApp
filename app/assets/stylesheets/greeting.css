@@ -14,12 +14,14 @@
   margin-left: 100px;
 }
 
-.app-name {
+.app-name > a {
   font-family: 'Ubuntu', sans-serif;
   padding: 10px;
   font-weight: bold;
   font-size: 30px;
   color: #135470;
+  text-decoration: none;
+  cursor: pointer;
 }
 
 .search-input {

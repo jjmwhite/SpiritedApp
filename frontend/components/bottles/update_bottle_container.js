@@ -6,6 +6,7 @@ const msp = (state, ownProps) => {
   const bottleId = ownProps.match.params.bottleId;
   const bottle = state.entities.bottles[bottleId];
   const distilleries = Object.values(state.entities.distilleries);
+  debugger
 
   // let age;
   // if (bottle.age === null) {
@@ -34,14 +35,16 @@ const msp = (state, ownProps) => {
     //   release_year,
     //   price: bottle.price,
     // },
+    bottleId,
     distilleries,
     errors: state.errors.bottles || []
   })
 }
 
 const mdp = dispatch => {
+  debugger
   return ({
-    formAction: (bottle) => dispatch(updateBottle(bottle)),
+    formAction: (bottle, id) => dispatch(updateBottle(bottle, id)),
     removeBottle: (id) => dispatch(removeBottle(id)),
     clearBottleErrors: () => dispatch(clearBottleErrors()),
   })

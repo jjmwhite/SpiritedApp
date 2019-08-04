@@ -74,7 +74,7 @@
 }
 
 .index-bottle-create-button {
-  margin: 0 auto;
+  margin: 50px auto;
   display: block;
   background: #EDC358;
   height: 40px;
@@ -82,8 +82,14 @@
   border-radius: 25px;
   color: #135470;
   font-size: 16px;
+  text-decoration: none;
 }
 
-.index-bottle-create-button:hover {
+.index-bottle-create-button > a {
+  text-decoration: none;
+  color: #135470;
+}
+
+.index-bottle-create-button > a:hover {
   background: #D7A831;
 }

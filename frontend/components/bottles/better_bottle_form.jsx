@@ -7,7 +7,6 @@ class BetterBottleForm extends React.Component {
     super(props)
 
     this.state = {
-      // id: this.props.bottle.id,
       name: this.props.bottle.name,
       description: this.props.bottle.description,
       distillery_id: this.props.bottle.distillery_id,
@@ -39,7 +38,6 @@ class BetterBottleForm extends React.Component {
     e.preventDefault();
 
     const formData = new FormData();
-    formData.append('bottle[id]', this.state.id);
     formData.append('bottle[name]', this.state.name);
     formData.append('bottle[description]', this.state.name);
     formData.append('bottle[distillery_id]', this.state.distillery_id);
@@ -48,8 +46,8 @@ class BetterBottleForm extends React.Component {
     formData.append('bottle[price]', this.state.price);
     formData.append('bottle[photo]', this.state.photoFile);
 
-    // debugger
-    this.props.formAction(formData)
+    debugger
+    this.props.formAction(formData, this.props.bottleId)
   }
 
   render() {
@@ -74,57 +72,60 @@ class BetterBottleForm extends React.Component {
     }
 
     return (
-      <form className='bottle-form'>
-        <h1>{this.props.formType}</h1>
+      <div className='bottle-form-background'>
+        <div className='clear-space'></div>
+        <form className='bottle-form-section'>
+          <h1>{this.props.formType}</h1>
 
-        <div>
-          <label>Name:</label>
-          <p className='required'>*</p>
-        </div>
-        <input type="text" value={this.state.name} placeholder='e.g. Caol Ila 10' onChange={this.handleChange('name')} />
+          <div>
+            <label>Name:</label>
+            <p className='required'>*</p>
+          </div>
+          <input type="text" value={this.state.name} placeholder='e.g. Caol Ila 10' onChange={this.handleChange('name')} />
 
-        <div>
-          <label>Distillery:</label>
-          <p className='required'>*</p>
-        </div>
+          <div>
+            <label>Distillery:</label>
+            <p className='required'>*</p>
+          </div>
 
-        <select value={this.state.distillery_id} onChange={this.handleChange('distillery_id')}>
-          <option value='' disabled>Select Distillery</option>
-          {distilleries}
-        </select>
+          <select value={this.state.distillery_id} onChange={this.handleChange('distillery_id')}>
+            <option value='' disabled>Select Distillery</option>
+            {distilleries}
+          </select>
 
-        <div>
-          <label>Age:</label>
-          <p className='optional'>(if applicable)</p>
-        </div>
-        <input type="text" value={this.state.age} placeholder='Age' onChange={this.handleChange('age')} />
+          <div>
+            <label>Age:</label>
+            <p className='optional'>(if specified)</p>
+          </div>
+          <input type="text" value={this.state.age} placeholder='e.g. 10' onChange={this.handleChange('age')} />
 
-        <div>
-          <label>Release Year:</label>
-          <p className='optional'>(if applicable)</p>
-        </div>
-        <input type="text" value={this.state.release_year} placeholder='Release Year' onChange={this.handleChange('release_year')} />
+          <div>
+            <label>Release Year:</label>
+            <p className='optional'>(if specified)</p>
+          </div>
+          <input type="text" value={this.state.release_year} placeholder='e.g. 2017' onChange={this.handleChange('release_year')} />
 
-        <div>
-          <label>Description:</label>
-          <p className='required'>*</p>
-        </div>
-        <textarea value={this.state.description} id="" cols="30" rows="3" onChange={this.handleChange('description')}></textarea>
+          <div>
+            <label>Description:</label>
+            <p className='required'>*</p>
+          </div>
+          <textarea value={this.state.description} id="" cols="30" rows="3" onChange={this.handleChange('description')}></textarea>
 
-        <div>
-          <label>Price:</label>
-          <p className='required'>*</p>
-        </div>
-        <input type="text" value={this.state.price} placeholder='Price' onChange={this.handleChange('price')} />
-
-
-        {imgMessage}
-        <input type="file" onChange={this.handleFile} />
+          <div>
+            <label>Price:</label>
+            <p className='required'>*</p>
+          </div>
+          <input type="text" value={this.state.price} placeholder='e.g. 75.00' onChange={this.handleChange('price')} />
 
 
-        <button className='submit' onClick={this.handleSubmit}>Submit</button>
-        <BottleErrors errors={this.props.errors} />
-      </form>
+          {imgMessage}
+          <input type="file" onChange={this.handleFile} />
+
+
+          <button className='submit' onClick={this.handleSubmit}>Submit</button>
+          <BottleErrors errors={this.props.errors} />
+        </form>
+      </div>
     )
   }
 }
