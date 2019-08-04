@@ -16,8 +16,6 @@ const App = () => {
 
         <Switch>
           <Route path='/bottles/:bottleId' component={BottleShowContainer} />
-          {/* <Route path='/bottles/create' component={BottleModal} />
-          <Route path='/bottles/:id/edit' component={BottleModal} /> */}
           <Route path='/' component={BottleIndexContainer} />
         </Switch>
 

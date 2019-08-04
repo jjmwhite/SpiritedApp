@@ -56,9 +56,8 @@ class BottleForm extends React.Component {
   }
 
   render() {
-    // debugger
+
     const distilleries = this.props.distilleries.map( (distillery, idx) => {
-      // debugger
       return <option key={`${distillery.name}-${idx}`} value={distillery.id}>{distillery.name}</option>
     })
 
@@ -79,7 +78,7 @@ class BottleForm extends React.Component {
     })
 
     const priceRange = []
-    for (let i = 25; i < 4000; i+=5) {
+    for (let i = 25; i < 4000; i+=25) {
       priceRange.push(i)
     }
     const prices = priceRange.map( price => {
@@ -114,8 +113,9 @@ class BottleForm extends React.Component {
           <label>Distillery:</label>
           <p className='required'>*</p>
         </div>
+
         <select value={this.state.distillery_id} onChange={this.handleChange('distillery_id')}>
-            {/* <option defaultValue='selected' disabled >Select Distillery</option> */}
+          <option value='' disabled>Select Distillery</option>
             {distilleries}
           </select>
 

@@ -1,14 +1,33 @@
 import React from 'react';
 import BottleCardVert from './bottle_card_vert';
 
+
 class BottleIndex extends React.Component {
 
+  constructor(props) {
+    super(props);
+    debugger
+    this.state = {loggedIn: this.props.loggedIn}
+  }
+
   componentDidMount() {
-    this.props.fetchBottles()
+    this.props.fetchBottles();
   }
 
   render() {    
     const openBottleModal = this.props.openBottleModal;
+    const openSessionModal = this.props.openSessionModal;
+
+    let createBottleButton;
+    if (this.state.loggedIn) {
+      debugger
+      createBottleButton = <button className='index-bottle-create-button' onClick={() => openBottleModal('Add a New Bottle')}>Create Bottle</button>
+    } else {
+      debugger
+      createBottleButton = <button className='index-bottle-create-button' onClick={() => openSessionModal('login')}>Create Bottle</button>
+    }
+
+
     if ( this.props.bottles === {} ) {
       return(
        <div className='loading'>Loading...</div> 
@@ -26,7 +45,7 @@ class BottleIndex extends React.Component {
           <div className='bottle-index-container'>
             {allBottles}
           </div>
-          <button className='index-bottle-create-button' onClick={() => openBottleModal('Add a New Bottle')}>Create Bottle</button>
+          {createBottleButton}
         </>
       )
     }

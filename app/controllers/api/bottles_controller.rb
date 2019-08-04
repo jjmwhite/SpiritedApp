@@ -6,7 +6,6 @@ class Api::BottlesController < ApplicationController
 
   def show
     @bottle = Bottle.includes(:distillery, :region).find_by(id: params[:id])
-    debugger
     if @bottle
       render :show
     else
