@@ -9,7 +9,6 @@ const regionsReducer = (state = {}, action) => {
       newState = merge({}, ...action.payload.regions)
       return newState;
     case RECEIVE_BOTTLE:
-      debugger
       newState = merge({}, prevState, { [action.payload.region.id]: action.payload.region })
       return newState;
     default:

@@ -14,7 +14,6 @@ export const receiveAllBottles = (payload) => {
 }
 
 export const receiveBottle = (payload) => {
-  debugger
   return({
     type: RECEIVE_BOTTLE,
     payload
@@ -53,6 +52,7 @@ export const fetchBottle = (id) => dispatch => {
 }
 
 export const createBottle = (formData) => dispatch => {
+  debugger
   return BottleApiUtil.createBottle(formData)
                       .then( (bottle) => dispatch(receiveBottle(bottle)))
                       .fail( (errors) => dispatch(receiveBottleErrors(errors)));

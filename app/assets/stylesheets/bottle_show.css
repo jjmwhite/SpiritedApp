@@ -57,7 +57,7 @@
   font-weight: bolder;
 }
 
-.show-bottle-edit-button:hover {
+.show-bottle-edit-button {
   align-self: flex-end;
   margin-right: 50px;
   border: none;

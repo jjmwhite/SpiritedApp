@@ -4,12 +4,10 @@ import { Link } from 'react-router-dom';
 class BottleShow extends React.Component {
 
   constructor(props) {
-    debugger
     super(props);
   }
 
   componentDidMount() {
-    debugger
     const bottleId = this.props.match.params.bottleId;
     this.props.fetchBottle(bottleId)
   }
@@ -24,7 +22,6 @@ class BottleShow extends React.Component {
 
   render() {
     const openBottleModal = this.props.openBottleModal;
-    debugger
     const { bottle } = this.props;
     const { distillery } = this.props;
     const { region } = this.props

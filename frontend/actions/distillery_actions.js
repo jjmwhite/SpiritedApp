@@ -19,7 +19,6 @@ export const receiveDistillery = (distillery) => {
 
 
 export const fetchDistillery = (id) => dispatch => {
-  debugger
   return DistilleryApiUtil.fetchDistillery(id)
                           .then((distillery) => dispatch(receiveDistillery(distillery)));
 }
