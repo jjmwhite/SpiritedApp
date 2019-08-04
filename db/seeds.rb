@@ -14,7 +14,7 @@ user3 = User.create!(email: 'scotsman123@gmail.co.uk', first_name: 'Scottie', la
 user4 = User.create!(email: 'iloveislays@yahoo.com', first_name: 'Elizabeth', last_name: 'Bennet', password:'password123', session_token: 'sdf98768dftsidfgis')
 user5 = User.create!(email: 'maester5@hotmail.com', first_name: 'Sam', last_name: 'Tarley', password:'password123', session_token: 'ad9gydfaiughad8dfgh')
 user6 = User.create!(email: 'spimpernel@gmail.com', first_name: 'Percy', last_name: 'Blakeney', password:'password123', session_token: 'asdf8yadfguhaidufhg')
-user1 = User.create!(email: 'seanthecon@gmail.com', first_name: 'Sean', last_name: 'Connery', password:'password123', session_token: 'dfhsfghhjdghjjkhjfk')
+user7 = User.create!(email: 'seanthecon@gmail.com', first_name: 'Sean', last_name: 'Connery', password:'password123', session_token: 'dfhsfghhjdghjjkhjfk')
 
 
 ### REGION ###
@@ -40,6 +40,17 @@ dist2 = Distillery.create!(name: 'Lagavulin', region_id: 1, description: 'Founde
 dist3 = Distillery.create!(name: 'Macallan', region_id: 4, description: 'One of the most popular Scotch distilleries in the world, famed for maturing their signature line of whiskies in sherry casks.')
   photo3 = open('https://spirited-app-seeds.s3.amazonaws.com/macallan_by-dima-fedorov.jpg')
   dist3.photo.attach(io: photo3, filename: 'macallan_by-dima-fedorov.jpg')
+
+dist4 = Distillery.create!(name: 'Dalwhinnie', region_id: 4, description: 'Situated on the border ofthe Highland and Speyside regions, Dalwhinnie produces superior Highland spirits with great complexity.')
+
+dist5 = Distillery.create!(name: 'Glenkinchie', region_id: 5, description: 'One of only six distilleries in the Lowland region, Glenkinchie is known for its unique floral notes.')
+
+dist6 = Distillery.create!(name: 'Springbank', region_id: 6, description: 'Proud to be family-owned whisky distillery on the Kintyre Peninsula, and one of the last surviving distilleries in the Cambeltown region.')
+
+dist7 = Distillery.create!(name: 'Caol Ila', region_id: 1, description: 'Overlooking the straight between Islay and Jura, every whiskey from the Caol Ila distillery carries with it a taste of the pure sea air.')
+
+dist8 = Distillery.create!(name: 'Talisker', region_id: 2, description: 'The only distillery on the Isle of Skye, Talisker is known not for only its signature aged expression but also for its fearless and award-winning blends.')
+  
 
 
 ### BOTTLES ###
@@ -81,3 +92,57 @@ bottle4 = Bottle.create!(name: 'Laphroaig 27',
                         )
   photo4 = open('https://spirited-app-seeds.s3.amazonaws.com/laphroaig_27-TW.png')
   bottle4.photo.attach(io: photo4, filename: 'laphroaig_27-TW.png')
+
+bottle5 = Bottle.create!(name: 'Glenkinchie 12', 
+                        description: 'Citrus zest and spices with a light mouthfeel. A perfect sipping scotch for the warmer seasons.',
+                        distillery_id: 5,
+                        age: 12,
+                        price: 59.99
+                        )
+  photo5 = open('https://spirited-app-seeds.s3.amazonaws.com/glenkinchie_12_TW.png')
+  bottle5.photo.attach(io: photo5, filename: 'glenkinchie_12_TW.png')
+
+bottle6 = Bottle.create!(name: 'Springbank 10', 
+                        description: 'Sweet citrus and hints of peat. Bourbon casks are used for maturation and sherry casks for finishing, leading to a complex layering of flavor.',
+                        distillery_id: 6,
+                        age: 10,
+                        price: 64.99
+                        )
+  photo6 = open('https://spirited-app-seeds.s3.amazonaws.com/springbank_10_TW.png')
+  bottle6.photo.attach(io: photo6, filename: 'springbank_10_TW.png')
+
+bottle7 = Bottle.create!(name: 'Dalwhinnie 15', 
+                        description: 'Honey, vanilla and peat. A smoother and more gentle malt for those who like a little smokiness.',
+                        distillery_id: 4,
+                        age: 15,
+                        price: 69.99
+                        )
+  photo7 = open('https://spirited-app-seeds.s3.amazonaws.com/dalwhinnie_15_TW.png')
+  bottle7.photo.attach(io: photo7, filename: 'dalwhinnie_15_TW.png')
+
+bottle8 = Bottle.create!(name: 'Dalwhinnie 25', 
+                        description: 'Tart apple, honey, and a hint of black pepper. A warming palate with a feather-light finish, this is a malt to treasure or special occasions.',
+                        distillery_id: 4,
+                        age: 25,
+                        price: 650
+                        )
+  photo8 = open('https://spirited-app-seeds.s3.amazonaws.com/dalwhinnie_25_TW.png')
+  bottle8.photo.attach(io: photo8, filename: 'dalwhinnie_25_TW.png')
+
+bottle9 = Bottle.create!(name: 'Caol Ila 12', 
+                        description: 'Bright brine, fresh pears and subtle smokiness. Winner of five medals at the San Francisco World Spirits Competition, and appealing to both the peat-lover and those who prefer a lighter malt.',
+                        distillery_id: 7,
+                        age: 12,
+                        price: 59.99
+                        )
+  photo9 = open('https://spirited-app-seeds.s3.amazonaws.com/caol_ila_12_TW.png')
+  bottle9.photo.attach(io: photo9, filename: 'caol_ila_12_TW.png')
+
+bottle10 = Bottle.create!(name: 'Talisker 10', 
+                        description: 'Smoke, pepper, and dried dark fruits. A bold malt bottled at a higher proof with a big mouthfeel and a lingering sweetness.',
+                        distillery_id: 8,
+                        age: 10,
+                        price: 64.99
+                        )
+  photo10 = open('https://spirited-app-seeds.s3.amazonaws.com/talisker_10_TW.png')
+  bottle10.photo.attach(io: photo10, filename: 'talisker_10_TW.png')

@@ -50,7 +50,7 @@ class BottleShow extends React.Component {
                 Rating details component here
               </div>
             </div>
-            <div className='review-feed-standin'>Reviews TK here...</div>
+            {/* <div className='review-feed-standin'>Reviews TK here...</div> */}
           </div>
         </>
       )

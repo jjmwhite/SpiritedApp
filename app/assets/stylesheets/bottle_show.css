@@ -3,7 +3,7 @@
   display: flex;
   align-items: center;
   flex-direction: column;
-  height: 460px;
+  height: 540px;
 }
 
 .bottle-show-section {
@@ -61,12 +61,17 @@
   align-self: flex-end;
   margin-right: 50px;
   border: none;
-  color: #135470;
   font-size: 12px;
   cursor: pointer;
 }
 
-.show-bottle-edit-button:hover {
+.show-bottle-edit-button > a {
+  color: #135470;
+  text-decoration: none;
+}
+
+
+.show-bottle-edit-button > a:hover {
   text-decoration: underline;
 }
 

@@ -81,7 +81,7 @@ class BetterBottleForm extends React.Component {
             <label>Name:</label>
             <p className='required'>*</p>
           </div>
-          <input type="text" value={this.state.name} placeholder='e.g. Caol Ila 10' onChange={this.handleChange('name')} />
+          <input type="text" value={this.state.name} placeholder='e.g. Caol Ila 12' onChange={this.handleChange('name')} />
 
           <div>
             <label>Distillery:</label>
@@ -97,7 +97,7 @@ class BetterBottleForm extends React.Component {
             <label>Age:</label>
             <p className='optional'>(if specified)</p>
           </div>
-          <input type="text" value={this.state.age} placeholder='e.g. 10' onChange={this.handleChange('age')} />
+          <input type="text" value={this.state.age} placeholder='e.g. 12' onChange={this.handleChange('age')} />
 
           <div>
             <label>Release Year:</label>
