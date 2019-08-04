@@ -23,12 +23,11 @@ export const createBottle = (formData) => {
   })
 }
 
-//formData -- how to access ID?
 export const updateBottle = (formData, id) => {
   debugger
   return({
     method: 'PATCH',
-    url: `/api/bottles/${id}/edit`,
+    url: `/api/bottles/${id}`,
     data: formData,
     contentType: false,
     processData: false
@@ -36,6 +35,7 @@ export const updateBottle = (formData, id) => {
 }
 
 export const removeBottle = (id) => {
+  debugger
   return({
     method: 'DELETE',
     url: `/api/bottles/${id}`

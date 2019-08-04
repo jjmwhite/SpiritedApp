@@ -84,7 +84,7 @@ bottle3 = Bottle.create!(name: 'Lagavulin 16',
   bottle3.photo.attach(io: photo3, filename: 'lagavulin_16-TW.png')
 
 bottle4 = Bottle.create!(name: 'Laphroaig 27', 
-                        description: 'Peat and rich stone fruit, with a long, light finish. The 2016 edition of Laphaoig\'s annual limited release, praised as their best yet in the series.',
+                        description: 'Peat and rich stone fruit, with a long, light finish. The 2016 edition of Laphroaig\'s annual limited release, praised as their best yet in the series.',
                         distillery_id: 1,
                         age: 27,
                         release_year: 2016,

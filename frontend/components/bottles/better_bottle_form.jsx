@@ -3,21 +3,20 @@ import BottleErrors from './bottle_errors';
 
 class BetterBottleForm extends React.Component {
   constructor(props) {
+    super(props);
+    
     debugger
-    super(props)
+    this.state = this.props.bottle;
 
-    this.state = {
-      name: this.props.bottle.name,
-      description: this.props.bottle.description,
-      distillery_id: this.props.bottle.distillery_id,
-      age: this.props.bottle.age,
-      release_year: this.props.bottle.release_year,
-      price: this.props.bottle.price,
-      photoFile: this.props.bottle.photoFile,
-    }
 
     this.handleFile = this.handleFile.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
+  }
+
+  componentDidMount() {
+    debugger
+    this.props.fetchBottle(this.props.match.params.bottleId)
+      .then(() => this.setState(this.props.bottle))
   }
 
   componentWillUnmount() {
@@ -51,25 +50,36 @@ class BetterBottleForm extends React.Component {
   }
 
   render() {
-
+    debugger
     const distilleries = this.props.distilleries.map((distillery, idx) => {
       return <option key={`${distillery.name}-${idx}`} value={distillery.id}>{distillery.name}</option>
     })
 
-    
     let imgMessage;
+    // let deleteButton;
     if (this.props.formType === 'Add a New Bottle') {
       imgMessage =
         <div>
           <label>Upload Image:</label>
           <p className='required'>*</p>
         </div>
+      // deleteButton = 
+      //   <div></div>
     } else {
       imgMessage = <div>
         <label>Upload a New Image:</label>
         <p className='optional'>(optional)</p>
       </div>
+      // deleteButton = <button className='submit' onClick={this.props.removeBottle(this.props.bottleId)}>Delete Bottle</button>
     }
+
+    
+    if (!this.state) {
+      return (
+        <div>Loading...</div>
+      )
+    }
+    
 
     return (
       <div className='bottle-form-background'>
@@ -117,10 +127,10 @@ class BetterBottleForm extends React.Component {
           </div>
           <input type="text" value={this.state.price} placeholder='e.g. 75.00' onChange={this.handleChange('price')} />
 
-
           {imgMessage}
           <input type="file" onChange={this.handleFile} />
 
+          {/* {deleteButton} */}
 
           <button className='submit' onClick={this.handleSubmit}>Submit</button>
           <BottleErrors errors={this.props.errors} />
