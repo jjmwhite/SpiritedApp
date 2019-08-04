@@ -5,7 +5,7 @@ class Api::BottlesController < ApplicationController
   end
 
   def show
-    @bottle = Bottle.find_by(id: params[:id])
+    @bottle = Bottle.includes(:distillery, :region).find_by(id: params[:id])
 
     if @bottle
       render :show
@@ -24,7 +24,7 @@ class Api::BottlesController < ApplicationController
   end
 
   def update
-    @bottle = Bottle.find_by(id: params[:id])
+    @bottle = Bottle.includes(:distillery, :region).find_by(id: params[:id])
     # debugger
     if @bottle.save
       render :show

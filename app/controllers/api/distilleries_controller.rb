@@ -5,7 +5,7 @@ class Api::DistilleriesController < ApplicationController
   end
 
   def show
-    @distillery = Distillery.includes(:bottles).find_by(id: params[:id])
+    @distillery = Distillery.includes(:region, :bottles).find_by(id: params[:id])
   end
 
 

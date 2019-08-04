@@ -6,13 +6,24 @@ import { openBottleModal } from '../../actions/bottle_modal_actions';
 const msp = (state = {}, ownProps) => {
   debugger
   const bottleId = ownProps.match.params.bottleId;
-  const bottle = state.entities.bottles[bottleId];
-  const distillery = state.entities.distilleries[bottle.distillery_id]
-  const region = state.entities.regions[distillery.region_id]
+  let bottle = state.entities.bottles[bottleId];
+  let distillery;
+  let region;
+  if (!bottle) {
+    debugger
+    distillery = {};
+    region = {};
+  } else {
+    debugger
+    distillery = state.entities.distilleries[bottle.distillery_id];
+    region = state.entities.regions[distillery.region_id];
+  }
+
+  
   return({
     bottle,
-    region,
-    distillery
+    distillery,
+    region
   })
 }
 
@@ -22,7 +33,7 @@ const mdp = dispatch => {
     createBottle: (bottle) => dispatch(createBottle(bottle)),
     updateBottle: (bottle, id) => dispatch(updateBottle(bottle, id)),
     removeBottle: (id) => dispatch(removeBottle(id)),
-    openBottleModal: (type) => dispatch(openBottleModal(type))
+    openBottleModal: (type) => dispatch(openBottleModal(type)),
   })
 }
 
