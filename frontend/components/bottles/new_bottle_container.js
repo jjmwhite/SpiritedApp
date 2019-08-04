@@ -1,19 +1,19 @@
 import { connect } from 'react-redux';
 import BetterBottleForm from './better_bottle_form';
 import { createBottle, clearBottleErrors } from '../../actions/bottle_actions';
+import { fetchDistilleries } from '../../actions/distillery_actions';
 
 const msp = state => {
+  debugger
   const distilleries = Object.values(state.entities.distilleries);
   return ({
     formType: 'Add a New Bottle',
-    bottle: {
-      name: '',
-      description: '',
-      distillery_id: undefined,
-      age: undefined,
-      release_year: undefined,
-      price: undefined,
-    },
+    name: '',
+    description: '',
+    distillery_id: '',
+    age: '',
+    release_year: '',
+    price: '',
     distilleries,
     errors: state.errors.bottles || [],
   })
@@ -21,6 +21,7 @@ const msp = state => {
 
 const mdp = dispatch => {
   return ({
+    fetchDistilleries: () => dispatch(fetchDistilleries()),
     formAction: (bottle) => dispatch(createBottle(bottle)),
     clearBottleErrors: () => dispatch(clearBottleErrors()),
   })

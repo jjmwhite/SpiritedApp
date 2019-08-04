@@ -4,19 +4,33 @@ import BottleErrors from './bottle_errors';
 class BetterBottleForm extends React.Component {
   constructor(props) {
     super(props);
-    
+
+    this.state = {
+      name: this.props.name,
+      description: this.props.description,
+      distillery_id: this.props.distillery_id,
+      age: this.props.age,
+      release_year: this.props.release_year,
+      price: this.props.price,
+      photoFile: null,
+      distilleries: (this.props.distilleries),
+    }
+
     debugger
-    this.state = this.props.bottle;
-
-
     this.handleFile = this.handleFile.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
   }
 
   componentDidMount() {
     debugger
-    this.props.fetchBottle(this.props.match.params.bottleId)
-      .then(() => this.setState(this.props.bottle))
+    if (this.props.formType === 'Edit This Bottle') {
+      this.props.fetchBottle(this.props.match.params.bottleId)
+        .then(() => this.setState( this.props ))
+    } 
+    else {
+      this.props.fetchDistilleries()
+        .then(() => this.setState( this.props ))
+    }
   }
 
   componentWillUnmount() {
@@ -25,53 +39,68 @@ class BetterBottleForm extends React.Component {
 
   handleChange(input) {
     return (
-      e => this.setState({ [input]: e.target.value })
+      e => this.setState({ [input]: e.target.value } )
     )
   }
 
   handleFile(e) {
-    this.setState({ photoFile: e.currentTarget.files[0] })
+    debugger
+    this.setState({ photoFile: e.currentTarget.files[0] });
+
+    // this.setState({ e.currentTarget.files[0] } )
   }
 
   handleSubmit(e) {
     e.preventDefault();
 
     const formData = new FormData();
+    debugger
     formData.append('bottle[name]', this.state.name);
-    formData.append('bottle[description]', this.state.name);
+    formData.append('bottle[description]', this.state.description);
     formData.append('bottle[distillery_id]', this.state.distillery_id);
     formData.append('bottle[age]', this.state.age);
     formData.append('bottle[release_year]', this.state.release_year);
     formData.append('bottle[price]', this.state.price);
-    formData.append('bottle[photo]', this.state.photoFile);
 
-    debugger
+    if (this.state.photoFile) {
+      formData.append('bottle[photo]', this.state.photoFile);
+    }
+
     this.props.formAction(formData, this.props.bottleId)
   }
 
   render() {
+    let distilleries;
+    
     debugger
-    const distilleries = this.props.distilleries.map((distillery, idx) => {
+
+    if (this.state.distilleries.length === 0) {
+      distilleries = <></>
+    } else {
+      distilleries = this.state.distilleries.map( (distillery, idx) => {
       return <option key={`${distillery.name}-${idx}`} value={distillery.id}>{distillery.name}</option>
-    })
+    })}
 
     let imgMessage;
-    // let deleteButton;
     if (this.props.formType === 'Add a New Bottle') {
       imgMessage =
         <div>
           <label>Upload Image:</label>
           <p className='required'>*</p>
         </div>
-      // deleteButton = 
-      //   <div></div>
     } else {
       imgMessage = <div>
         <label>Upload a New Image:</label>
         <p className='optional'>(optional)</p>
       </div>
-      // deleteButton = <button className='submit' onClick={this.props.removeBottle(this.props.bottleId)}>Delete Bottle</button>
     }
+
+    // let deleteButton;
+    // if (this.props.formType === 'UpdateBottle') {
+    //   deleteButton = <button onClick={() => this.props.removeBottle(this.props.bottleId)}>Delete Bottle</button>
+    // } else {
+    //   deleteButton = <div></div>
+    // }
 
     
     if (!this.state) {

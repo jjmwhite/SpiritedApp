@@ -14,6 +14,7 @@ export const fetchBottle = (id) => {
 }
 
 export const createBottle = (formData) => {
+  debugger
   return $.ajax({
     method: 'POST',
     url: '/api/bottles',
@@ -24,8 +25,7 @@ export const createBottle = (formData) => {
 }
 
 export const updateBottle = (formData, id) => {
-  debugger
-  return({
+  return $.ajax({
     method: 'PATCH',
     url: `/api/bottles/${id}`,
     data: formData,
@@ -35,8 +35,7 @@ export const updateBottle = (formData, id) => {
 }
 
 export const removeBottle = (id) => {
-  debugger
-  return({
+  return $.ajax({
     method: 'DELETE',
     url: `/api/bottles/${id}`
   })

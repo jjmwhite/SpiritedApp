@@ -11,7 +11,12 @@ const msp = (state, ownProps) => {
 
   return ({
     formType: 'Edit This Bottle',
-    bottle,
+    name: bottle.name,
+    description: bottle.description,
+    distillery_id: bottle.distillery_id,
+    age: bottle.age,
+    release_year: bottle.release_year,
+    price: bottle.price,
     bottleId,
     distilleries,
     errors: state.errors.bottles || []

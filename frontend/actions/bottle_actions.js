@@ -53,6 +53,7 @@ export const fetchBottle = (id) => dispatch => {
 }
 
 export const createBottle = (formData) => dispatch => {
+  debugger
   return BottleApiUtil.createBottle(formData)
                       .then( (bottle) => dispatch(receiveBottle(bottle)))
                       .fail( (errors) => dispatch(receiveBottleErrors(errors)));
@@ -61,11 +62,8 @@ export const createBottle = (formData) => dispatch => {
 export const updateBottle = (formData, id) => dispatch => {
   debugger
   return BottleApiUtil.updateBottle(formData, id)
-                      .then( (bottle) => {
-                        debugger
-                        dispatch(receiveBottle(bottle)) 
-                      })
-                      // .fail( (errors) => dispatch(receiveBottleErrors(errors)));
+                      .then( (bottle) => dispatch(receiveBottle(bottle)))
+                      .fail( (errors) => dispatch(receiveBottleErrors(errors)));
 }
 
 export const removeBottle = (id) => dispatch => {
