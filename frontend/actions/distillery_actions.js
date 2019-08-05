@@ -4,7 +4,6 @@ export const RECEIVE_ALL_DISTILLERIES = 'RECEIVE_ALL_DISTILLERIES';
 export const RECEIVE_DISTILLERY = 'RECEIVE_DISTILLERY';
 
 export const receiveAllDistilleries = (payload) => {
-  debugger
   return({
     type: RECEIVE_ALL_DISTILLERIES,
     payload

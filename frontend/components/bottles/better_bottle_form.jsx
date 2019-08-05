@@ -61,7 +61,10 @@ class BetterBottleForm extends React.Component {
     }
 
     this.props.formAction(formData, this.props.bottleId)
-      .then(() => this.props.history.push(`/bottles/${this.props.bottleId}`))
+      .then(() => {
+        debugger
+        this.props.history.push(`/bottles/${this.props.bottleId}`)
+      })
   }
 
   render() {

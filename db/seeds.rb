@@ -60,7 +60,8 @@ bottle1 = Bottle.create!(name: 'Laphroaig 10',
                         description: 'Strongly smokey with cardamon and sea salt. Laphroaig\'s iconic 10 year expression is Islay\'s most widely-known malt, bringing to mind all the warmth of a seaside campfire.',
                         distillery_id: 1,
                         age: 10,
-                        price: 38.99
+                        price: 38.99,
+                        user_id: 1,
                         )
   photo1 = open('https://spirited-app-seeds.s3.amazonaws.com/laphroaig_10-TW.png')
   bottle1.photo.attach(io: photo1, filename: 'laphroaig_10-TW.png')
@@ -69,7 +70,8 @@ bottle2 = Bottle.create!(name: 'Macallan 12',
                         description: 'Bright caramel, fig and vanilla. The Macallan\'s flagship whisky is justly famous and a perfect introductory dram for new scotch drinkers.',
                         distillery_id: 3,
                         age: 12,
-                        price: 38.99
+                        price: 38.99,
+                        user_id: 1,
                         )
   photo2 = open('https://spirited-app-seeds.s3.amazonaws.com/macallan_12-TW.png')
   bottle2.photo.attach(io: photo2, filename: 'macallan_12-TW.png')
@@ -78,7 +80,8 @@ bottle3 = Bottle.create!(name: 'Lagavulin 16',
                         description: 'Smokey, dried fruit, and barley, with a slightly oily texture. The celebrated signature expression from Lagavulin Distillery perfectly marries sweet and peat.',
                         distillery_id: 2,
                         age: 16,
-                        price: 69.99
+                        price: 69.99,
+                        user_id: 1,
                         )
   photo3 = open('https://spirited-app-seeds.s3.amazonaws.com/lagavulin_16-TW.png')
   bottle3.photo.attach(io: photo3, filename: 'lagavulin_16-TW.png')
@@ -88,7 +91,8 @@ bottle4 = Bottle.create!(name: 'Laphroaig 27',
                         distillery_id: 1,
                         age: 27,
                         release_year: 2016,
-                        price: 650.00
+                        price: 650.00,
+                        user_id: 1,
                         )
   photo4 = open('https://spirited-app-seeds.s3.amazonaws.com/laphroaig_27-TW.png')
   bottle4.photo.attach(io: photo4, filename: 'laphroaig_27-TW.png')
@@ -97,7 +101,8 @@ bottle5 = Bottle.create!(name: 'Glenkinchie 12',
                         description: 'Citrus zest and spices with a light mouthfeel. A perfect sipping scotch for the warmer seasons.',
                         distillery_id: 5,
                         age: 12,
-                        price: 59.99
+                        price: 59.99,
+                        user_id: 1,
                         )
   photo5 = open('https://spirited-app-seeds.s3.amazonaws.com/glenkinchie_12_TW.png')
   bottle5.photo.attach(io: photo5, filename: 'glenkinchie_12_TW.png')
@@ -106,7 +111,8 @@ bottle6 = Bottle.create!(name: 'Springbank 10',
                         description: 'Sweet citrus and hints of peat. Bourbon casks are used for maturation and sherry casks for finishing, leading to a complex layering of flavor.',
                         distillery_id: 6,
                         age: 10,
-                        price: 64.99
+                        price: 64.99,
+                        user_id: 1,
                         )
   photo6 = open('https://spirited-app-seeds.s3.amazonaws.com/springbank_10_TW.png')
   bottle6.photo.attach(io: photo6, filename: 'springbank_10_TW.png')
@@ -115,7 +121,8 @@ bottle7 = Bottle.create!(name: 'Dalwhinnie 15',
                         description: 'Honey, vanilla and peat. A smoother and more gentle malt for those who like a little smokiness.',
                         distillery_id: 4,
                         age: 15,
-                        price: 69.99
+                        price: 69.99,
+                        user_id: 1,
                         )
   photo7 = open('https://spirited-app-seeds.s3.amazonaws.com/dalwhinnie_15_TW.png')
   bottle7.photo.attach(io: photo7, filename: 'dalwhinnie_15_TW.png')
@@ -124,7 +131,8 @@ bottle8 = Bottle.create!(name: 'Dalwhinnie 25',
                         description: 'Tart apple, honey, and a hint of black pepper. A warming palate with a feather-light finish, this is a malt to treasure or special occasions.',
                         distillery_id: 4,
                         age: 25,
-                        price: 650
+                        price: 650,
+                        user_id: 1,
                         )
   photo8 = open('https://spirited-app-seeds.s3.amazonaws.com/dalwhinnie_25_TW.png')
   bottle8.photo.attach(io: photo8, filename: 'dalwhinnie_25_TW.png')
@@ -133,7 +141,8 @@ bottle9 = Bottle.create!(name: 'Caol Ila 12',
                         description: 'Bright brine, fresh pears and subtle smokiness. Winner of five medals at the San Francisco World Spirits Competition, and appealing to both the peat-lover and those who prefer a lighter malt.',
                         distillery_id: 7,
                         age: 12,
-                        price: 59.99
+                        price: 59.99,
+                        user_id: 1,
                         )
   photo9 = open('https://spirited-app-seeds.s3.amazonaws.com/caol_ila_12_TW.png')
   bottle9.photo.attach(io: photo9, filename: 'caol_ila_12_TW.png')
@@ -142,7 +151,8 @@ bottle10 = Bottle.create!(name: 'Talisker 10',
                         description: 'Smoke, pepper, and dried dark fruits. A bold malt bottled at a higher proof with a big mouthfeel and a lingering sweetness.',
                         distillery_id: 8,
                         age: 10,
-                        price: 64.99
+                        price: 64.99,
+                        user_id: 1,
                         )
   photo10 = open('https://spirited-app-seeds.s3.amazonaws.com/talisker_10_TW.png')
   bottle10.photo.attach(io: photo10, filename: 'talisker_10_TW.png')

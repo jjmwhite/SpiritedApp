@@ -27,14 +27,11 @@ class BottleIndex extends React.Component {
     })
 
     if ( this.props.bottles === {} ) {
-      debugger
       return(
        <div className='loading'>Loading...</div> 
       )
     } else {
-      debugger
       const allBottles = this.props.bottles.map( bottle => {
-        debugger
         return <BottleCardVert 
           key={bottle.name} 
           bottle={bottle} 

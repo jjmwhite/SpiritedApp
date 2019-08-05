@@ -14,7 +14,7 @@ export const receiveAllBottles = (payload) => {
 }
 
 export const receiveBottle = (payload) => {
-  // debugger
+  debugger
   return({
     type: RECEIVE_BOTTLE,
     payload
