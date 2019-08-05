@@ -19,7 +19,7 @@ const BottleCardVert = ({ bottle, distillery, region, fetchBottle }) => {
 
     return(
       <section key={bottle.name} className='bottle-card-vert'>
-        <img src={bottle.photoUrl} alt={bottle.name}/>
+        <Link to={`/bottles/${bottle.id}`}><img src={bottle.photoUrl} alt={bottle.name}/></Link>
         <div className='bottle-vert-detail'>
           <Link to={`/regions/${region.id}`} className='bottle-subtitle'>{region.name}</Link>
           <Link to={`/bottles/${bottle.id}`}><h4>{bottle.name}</h4></Link>

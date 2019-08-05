@@ -34,11 +34,9 @@ class Api::BottlesController < ApplicationController
     end
 
     @bottle = Bottle.new(bottle_params)
-    debugger
     @bottle.user_id = current_user.id
     
     if @bottle.save
-      debugger 
       render :show
     else
       render json: @bottle.errors.full_messages, status: 422
@@ -46,14 +44,16 @@ class Api::BottlesController < ApplicationController
   end
 
   def update
-    # @bottle = Bottle.find_by(id: params[:id])
-    debugger
-    @bottle = current_user.bottles.find(params[:id])
-  
-    if @bottle.update!(bottle_params)
-      render :show
-    else
-      render json: @bottle.errors.full_messages, status: 422
+    # @bottle = current_user.bottles.find(params[:id])
+    @bottle = Bottle.find(params[:id])
+    if @bottle.user_id != current_user.id
+      render json: ['You can only edit your own bottles'], status: 403
+    else 
+      if @bottle.update!(bottle_params)
+        render :show
+      else
+        render json: @bottle.errors.full_messages, status: 422
+      end
     end
   end
 
@@ -64,7 +64,7 @@ class Api::BottlesController < ApplicationController
       bottle.destroy 
       render json: ['Bottle successfully removed']
     else
-      render json: ['You can only delete your own bottles']
+      render json: ['You can only delete your own bottles'], status: 403
     end
   end
 

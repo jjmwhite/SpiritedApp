@@ -61,10 +61,7 @@ class BetterBottleForm extends React.Component {
     }
 
     this.props.formAction(formData, this.props.bottleId)
-      .then(() => {
-        debugger
-        this.props.history.push(`/bottles/${this.props.bottleId}`)
-      })
+      .then(() => this.props.history.push(`/bottles/${this.props.bottleId}`));
   }
 
   render() {
@@ -156,9 +153,9 @@ class BetterBottleForm extends React.Component {
           <input type="file" onChange={this.handleFile} />
 
           {/* {deleteButton} */}
+          <BottleErrors errors={this.props.errors} />
 
           <button className='submit' onClick={this.handleSubmit}>Submit</button>
-          <BottleErrors errors={this.props.errors} />
         </form>
       </div>
     )
