@@ -25,6 +25,7 @@ class SessionForm extends React.Component {
     e.preventDefault();
     this.props.formAction(this.state)
               .then(this.props.closeSessionModal)
+              .then(this.props.history.push('/'))
   }
 
   handleDemo(e) {
