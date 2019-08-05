@@ -20,7 +20,8 @@ const msp = (state = {}, ownProps) => {
   return({
     bottle,
     distillery,
-    region
+    region,
+    loggedIn: Boolean(state.session.currentUserId)
   })
 }
 

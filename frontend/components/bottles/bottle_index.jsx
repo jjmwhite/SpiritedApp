@@ -28,7 +28,7 @@ class BottleIndex extends React.Component {
 
     if ( this.props.bottles === {} ) {
       return(
-       <div className='loading'>Loading...</div> 
+       <h1 className='loading'>Loading...</h1> 
       )
     } else {
       const allBottles = this.props.bottles.map( bottle => {

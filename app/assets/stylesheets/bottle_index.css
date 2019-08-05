@@ -34,11 +34,13 @@
 .bottle-vert-detail > input {
   margin: 5px;
 }
+
 .bottle-vert-detail > span {
   font-size: 14px;
   margin: 5px;
   font-weight: lighter;
 }
+
 .bottle-vert-detail > a > h4 {
   font-weight: bolder;
   font-family: 'Ubuntu', sans-serif;

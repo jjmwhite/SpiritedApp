@@ -7,14 +7,15 @@ const regionsReducer = (state = {}, action) => {
   let newState;
   switch (action.type) {
     case RECEIVE_ALL_BOTTLES:
-      newState = merge({}, ...action.payload.regions)
+      newState = merge({}, ...action.payload.regions);
       return newState;
     case RECEIVE_BOTTLE:
-      newState = merge({}, prevState, { [action.payload.region.id]: action.payload.region })
+      newState = merge({}, prevState, { [action.payload.region.id]: action.payload.region });
       return newState;
     case RECEIVE_USER_PROFILE:
-      debugger
-      newState = merge([], action.payload.regions)
+      const regions = [];
+      action.payload.regions.forEach(region => { regions.push(...Object.values(region)) })
+      return regions
     default:
       return state;
   }

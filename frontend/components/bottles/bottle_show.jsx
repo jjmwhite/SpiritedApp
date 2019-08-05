@@ -3,6 +3,12 @@ import { Link } from 'react-router-dom';
 
 class BottleShow extends React.Component {
 
+  constructor(props) {
+    super(props);
+
+    // this.state = this.props.loggedIn
+  }
+
   componentDidMount() {
     const bottleId = this.props.match.params.bottleId;
     this.props.fetchBottle(bottleId)

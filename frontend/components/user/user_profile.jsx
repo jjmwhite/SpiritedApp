@@ -1,38 +1,45 @@
 import React from 'react';
+import BottleCardHorz from '../bottles/bottle_card_horz';
 
 class UserProfile extends React.Component {
 
   componentDidMount() {
-    debugger
     this.props.fetchUserProfile(this.props.user.id)
-              // .then( (bottles) => this.setUserBottles(bottles));
   }
 
-  // setUserBottles(bottles) {
-  //   debugger
-  //   this.bottles = Object.values(bottles)
-  // }
-
   render() {
-    debugger
-    // const { bottles } = this.props
+    const { user } = this.props;
+    const { bottles } = this.props;
+    const { distilleries } = this.props;
 
-    if (this.props.bottles === undefined) {
-      debugger
+    if (_.isEmpty(bottles)) {
       return (
-        <h1>Loading...</h1>
+        <h1 className='loading'>Loading...</h1>
       )
     }
 
-    const allBottles = bottles.map( bottle => {
-      return <li>{bottle.name}</li>
+    const allBottles = bottles.map(bottle => {
+      debugger
+      return <BottleCardHorz
+        key={bottle.name}
+        bottle={bottle}
+        distillery={distilleries[bottle.distillery_id]}
+        />
     })
 
     debugger
     return (
-      <ul>
-        {allBottles}
-      </ul>
+      <div className='user-profile'>
+        <div className='user-profile-detail'>
+          <img src={"https://upload.wikimedia.org/wikipedia/commons/d/d3/SCOport-fr-economy.png"} />
+          <h2>{user.first_name}</h2>
+          <h5>Bottles Added:</h5>
+          <h3>{allBottles.length}</h3>
+        </div>
+        <div className='profile-bottles'>
+          {allBottles}
+        </div>
+      </div>
     )
   }
 }

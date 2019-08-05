@@ -8,18 +8,20 @@ const distilleriesReducer = (state = {}, action) => {
   let newState;
   switch (action.type) {
     case RECEIVE_ALL_DISTILLERIES:
-    case RECEIVE_USER_PROFILE:
-      debugger
-      newState = merge([], action.payload.distilleries)
+      newState = action.payload.distilleries;
       return newState;
     case RECEIVE_DISTILLERY:
-      newState = merge({}, prevState, { [action.distillery.id]: action.distillery })
+      newState = merge({}, prevState, { [action.distillery.id]: action.distillery });
     case RECEIVE_ALL_BOTTLES:
-      newState = merge({}, ...action.payload.distilleries)
+      newState = merge({}, ...action.payload.distilleries);
       return newState;
     case RECEIVE_BOTTLE:
-      newState = merge({}, prevState, {[action.payload.distillery.id]: action.payload.distillery} )
+      newState = merge({}, prevState, {[action.payload.distillery.id]: action.payload.distillery });
       return newState;
+    case RECEIVE_USER_PROFILE:
+      const distilleries = [];
+      action.payload.distilleries.forEach(dist => { distilleries.push(...Object.values(dist)) });
+      return distilleries;
     default:
       return state;
   }

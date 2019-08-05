@@ -7,7 +7,6 @@ const bottlesReducer = (state = {}, action) => {
   let newState;
   switch (action.type) {
     case RECEIVE_ALL_BOTTLES:
-      debugger
       newState = merge({}, ...action.payload.bottles);
       return newState;
     case RECEIVE_BOTTLE:
@@ -18,8 +17,9 @@ const bottlesReducer = (state = {}, action) => {
       delete newState[action.bottleId];
       return newState;
     case RECEIVE_USER_PROFILE:
-      debugger
-      newState = merge([], action.payload.bottles);
+      const bottles = [];
+      action.payload.bottles.forEach( bottle => { bottles.push(...Object.values(bottle)) })
+      return bottles
     default:
       return state;
   }

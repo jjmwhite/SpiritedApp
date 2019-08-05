@@ -1,0 +1,112 @@
+.user-profile {
+  display: flex;
+  align-items: baseline;
+  justify-content: center;
+  background: #F8F8F8;
+}
+
+/* .profile-background {
+  background-color: #F7F3F0;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  height: 540px;
+} */
+
+.user-profile-detail {
+  background: white;
+  height: 300px;
+  width: 15%;
+  box-shadow: 0px 5px 7px lightgrey;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.user-profile-detail > img {
+  height: 120px;
+  width: 120px;
+  border-radius: 50%;
+  position: relative;
+  bottom: 50px;
+  border: 5px solid #186e94;
+}
+
+.user-profile-detail > h2 {
+  font-family: 'Ubuntu', sans-serif;
+  font-size: 22px;
+  font-weight: bolder;
+}
+
+.user-profile-detail > h5 {
+  margin: 15px 0;
+  font-size: 14px;
+}
+
+.user-profile-detail > h3 {
+  font-size: 38px;
+  color: #135470;
+}
+
+.profile-bottles {
+  background: #F0EDE9;
+  padding: 25px;
+  min-width: 500px;
+  width: 40%;
+  display: flex;
+  flex-direction: column;
+  margin-top: 100px;
+  box-shadow: 0px 5px 7px lightgrey;
+  margin-bottom: 100px;
+}
+
+.bottle-card-horz {
+  min-width: 400px;
+  background: white;
+  display: flex;
+  margin: 30px 0;
+  box-shadow: 0px 5px 7px lightgrey;
+}
+
+.bottle-card-horz > a {
+  width: 30%;
+}
+
+.bottle-card-horz > a > img {
+  height: 200px;
+  padding: 20px;
+}
+
+.bottle-horz-detail {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.bottle-horz-detail > a {
+  text-decoration: none;
+  color: black;
+}
+
+.bottle-subtitle {
+  font-size: 16px;
+  margin: 12px 0;
+  font-weight: lighter;
+}
+
+.bottle-horz-detail > a > h4 {
+  font-weight: bolder;
+  font-family: 'Ubuntu', sans-serif;
+  font-size: 22px;
+  text-decoration: none;
+}
+
+.bottle-horz-detail > span {
+  font-size: 14px;
+  margin: 5px 0;
+}
+/* .group:after {
+  content: '';
+  display: table;
+  clear: both;
+} */

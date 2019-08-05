@@ -17,7 +17,7 @@ const App = () => {
       <div className='app-body'>
         <GreetingBarContainer />
         {/* <BottleModal /> */}
-
+      
         <Switch>
           <ProtectedRoute exact path='/bottles/create' component={NewBottleContainer} />
           <ProtectedRoute exact path='/bottles/:bottleId/edit' component={UpdateBottleContainer} />
@@ -55,6 +55,7 @@ const App = () => {
           </div>
         </footer>
       </div>
+      
     </>
   )
 }

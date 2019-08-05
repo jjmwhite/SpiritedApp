@@ -1,5 +1,6 @@
 import { RECEIVE_CURRENT_USER } from '../actions/session_actions';
 import { merge } from 'lodash';
+import { RECEIVE_USER_PROFILE } from '../actions/user_actions';
 
 const usersReducer = (state = {}, action) => {
   const prevState = Object.freeze(state);
