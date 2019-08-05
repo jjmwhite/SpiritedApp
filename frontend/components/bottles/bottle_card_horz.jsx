@@ -3,8 +3,8 @@ import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
 
 const msp = (state, ownProps) => {
-  debugger
-  const distillery = ownProps.distillery
+  // debugger
+  const distillery = ownProps.distillery 
   const region = state.entities.regions[distillery.region_id]
   return ({
     distillery: {
@@ -17,9 +17,10 @@ const msp = (state, ownProps) => {
 }
 
 const BottleCardHorz = ({ bottle, distillery, region }) => {
-
+  // debugger
+  // key = {`${bottle.name}-card-horz-inner`}
   return (
-    <section key={bottle.name} className='bottle-card-horz'>
+    <section className='bottle-card-horz'>
       <Link to={`/bottles/${bottle.id}`}><img src={bottle.photoUrl} alt={bottle.name} /></Link>
       <div className='bottle-horz-detail'>
         <Link to={`/regions/${region.id}`} className='bottle-subtitle'>{region.name}</Link>

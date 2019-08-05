@@ -14,26 +14,26 @@ class BottleIndex extends React.Component {
 
     let createBottleButton;
     if (this.props.loggedIn) {
-      // debugger
       createBottleButton = <button className='index-bottle-create-button'><Link to='/bottles/create'>Create Bottle</Link></button>
     } else {
-      // debugger
       createBottleButton = <button className='index-bottle-create-button' onClick={() => openSessionModal('login')}>Create Bottle</button>
     }
+    
+    
 
-    const distilleries = {};
-    this.props.distilleries.map( dist => {
-      return merge(distilleries, { [dist.id]: dist })
-    })
-
-    if ( this.props.bottles === {} ) {
-      return(
-       <h1 className='loading'>Loading...</h1> 
+    if (this.props.bottles === {}) {
+      return (
+        <div className='loading'>Loading...</div>
       )
     } else {
+      const distilleries = {};
+      this.props.distilleries.map( dist => {
+        return merge(distilleries, { [dist.id]: dist })
+      })
+     
       const allBottles = this.props.bottles.map( bottle => {
         return <BottleCardVert 
-          key={bottle.name} 
+          key={`${bottle.name}-card-vert`}
           bottle={bottle} 
           distillery={distilleries[bottle.distillery_id]}
           fetchBottle={this.props.fetchBottle} />
@@ -44,7 +44,6 @@ class BottleIndex extends React.Component {
           <div className='bottle-index-container'>
             {allBottles}
           </div>
-          {/* <button className='index-bottle-create-button'><Link to='/bottles/create'>Create Bottle</Link></button> */}
           {createBottleButton}
         </>
       )

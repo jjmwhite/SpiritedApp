@@ -13,9 +13,8 @@ const regionsReducer = (state = {}, action) => {
       newState = merge({}, prevState, { [action.payload.region.id]: action.payload.region });
       return newState;
     case RECEIVE_USER_PROFILE:
-      const regions = [];
-      action.payload.regions.forEach(region => { regions.push(...Object.values(region)) })
-      return regions
+      newState = merge({}, ...action.payload.regions);
+      return newState;
     default:
       return state;
   }

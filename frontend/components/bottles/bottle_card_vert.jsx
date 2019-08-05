@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom';
 
 const msp = (state, ownProps) => {
   const distillery = ownProps.distillery
+  // debugger
   const region = state.entities.regions[distillery.region_id]
   return({
     distillery: {
@@ -16,9 +17,10 @@ const msp = (state, ownProps) => {
 }
 
 const BottleCardVert = ({ bottle, distillery, region, fetchBottle }) => {
-
+  // debugger 
+  // key = {`${bottle.name}-card-vert`} 
     return(
-      <section key={bottle.name} className='bottle-card-vert'>
+      <section className='bottle-card-vert'>
         <Link to={`/bottles/${bottle.id}`}><img src={bottle.photoUrl} alt={bottle.name}/></Link>
         <div className='bottle-vert-detail'>
           <Link to={`/regions/${region.id}`} className='bottle-subtitle'>{region.name}</Link>

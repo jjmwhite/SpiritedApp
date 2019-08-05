@@ -17,9 +17,8 @@ const bottlesReducer = (state = {}, action) => {
       delete newState[action.bottleId];
       return newState;
     case RECEIVE_USER_PROFILE:
-      const bottles = [];
-      action.payload.bottles.forEach( bottle => { bottles.push(...Object.values(bottle)) })
-      return bottles
+      newState = merge({}, prevState, ...action.payload.bottles);
+      return newState;
     default:
       return state;
   }

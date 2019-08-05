@@ -44,7 +44,6 @@ class BetterBottleForm extends React.Component {
   }
 
   handleSubmit(e) {
-    debugger
     e.preventDefault();
 
     const formData = new FormData();
@@ -97,11 +96,10 @@ class BetterBottleForm extends React.Component {
     
     if (!this.state) {
       return (
-        <div>Loading...</div>
+        <div className='loading'>Loading...</div>
       )
     }
     
-    debugger
     return (
       <div className='bottle-form-background'>
         <div className='clear-space'></div>

@@ -3,13 +3,11 @@ import UserProfile from './user_profile';
 import { fetchUserProfile } from '../../actions/user_actions';
 
 const msp = (state, ownProps) => {
-  // debugger
   const userId = ownProps.match.params.userId;
   const user = state.entities.users[userId];
-  const bottles = state.entities.bottles;
-  const distilleries = state.entities.distilleries;
-  const regions = state.entities.regions;
-  debugger
+  const bottles = Object.values(state.entities.bottles);
+  const distilleries = Object.values(state.entities.distilleries);
+  const regions = Object.values(state.entities.regions);
   return({
     user,
     bottles,
