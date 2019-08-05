@@ -3,10 +3,6 @@ import { Link } from 'react-router-dom';
 
 class BottleShow extends React.Component {
 
-  constructor(props) {
-    super(props);
-  }
-
   componentDidMount() {
     const bottleId = this.props.match.params.bottleId;
     this.props.fetchBottle(bottleId)
@@ -17,7 +13,6 @@ class BottleShow extends React.Component {
       this.props.fetchBottle(this.props.match.params.bottleId);
     }
   }
-  
 
   render() {
     // const openBottleModal = this.props.openBottleModal;

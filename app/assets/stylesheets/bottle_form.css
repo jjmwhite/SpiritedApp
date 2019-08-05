@@ -86,10 +86,24 @@
   border: 1px solid lightgray;
 }
 
+.delete-bottle {
+  align-self: flex-end;
+  margin-top: 20px;
+  border: none;
+  font-size: 14px;
+  color: #135470;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.delete-bottle:hover {
+  text-decoration: underline;
+}
+
 .submit {
-  margin-top: 50px;
-  width: 292px;
   align-self: center;
+  margin-top: 30px;
+  width: 292px;
   border-radius: 25px;
   background: #EDC358;
   color: #135470;

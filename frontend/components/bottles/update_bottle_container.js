@@ -1,6 +1,7 @@
 import { connect } from 'react-redux';
 import BetterBottleForm from './better_bottle_form';
 import { fetchBottle, updateBottle, removeBottle, clearBottleErrors } from '../../actions/bottle_actions';
+import { fetchDistilleries } from '../../actions/distillery_actions'
 
 const msp = (state, ownProps) => {
   const bottleId = ownProps.match.params.bottleId;
@@ -12,8 +13,8 @@ const msp = (state, ownProps) => {
     name: bottle.name,
     description: bottle.description,
     distillery_id: bottle.distillery_id,
-    age: bottle.age,
-    release_year: bottle.release_year,
+    age: bottle.age || '',
+    release_year: bottle.release_year || '',
     price: bottle.price,
     bottleId,
     distilleries,
@@ -27,6 +28,7 @@ const mdp = dispatch => {
     formAction: (bottle, id) => dispatch(updateBottle(bottle, id)),
     removeBottle: (id) => dispatch(removeBottle(id)),
     clearBottleErrors: () => dispatch(clearBottleErrors()),
+    fetchDistilleries: () => dispatch(fetchDistilleries()),
   })
 }
 

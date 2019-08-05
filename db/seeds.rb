@@ -71,7 +71,7 @@ bottle2 = Bottle.create!(name: 'Macallan 12',
                         distillery_id: 3,
                         age: 12,
                         price: 38.99,
-                        user_id: 1,
+                        user_id: 3,
                         )
   photo2 = open('https://spirited-app-seeds.s3.amazonaws.com/macallan_12-TW.png')
   bottle2.photo.attach(io: photo2, filename: 'macallan_12-TW.png')
@@ -92,7 +92,7 @@ bottle4 = Bottle.create!(name: 'Laphroaig 27',
                         age: 27,
                         release_year: 2016,
                         price: 650.00,
-                        user_id: 1,
+                        user_id: 4,
                         )
   photo4 = open('https://spirited-app-seeds.s3.amazonaws.com/laphroaig_27-TW.png')
   bottle4.photo.attach(io: photo4, filename: 'laphroaig_27-TW.png')
@@ -102,7 +102,7 @@ bottle5 = Bottle.create!(name: 'Glenkinchie 12',
                         distillery_id: 5,
                         age: 12,
                         price: 59.99,
-                        user_id: 1,
+                        user_id: 3,
                         )
   photo5 = open('https://spirited-app-seeds.s3.amazonaws.com/glenkinchie_12_TW.png')
   bottle5.photo.attach(io: photo5, filename: 'glenkinchie_12_TW.png')
@@ -122,7 +122,7 @@ bottle7 = Bottle.create!(name: 'Dalwhinnie 15',
                         distillery_id: 4,
                         age: 15,
                         price: 69.99,
-                        user_id: 1,
+                        user_id: 3,
                         )
   photo7 = open('https://spirited-app-seeds.s3.amazonaws.com/dalwhinnie_15_TW.png')
   bottle7.photo.attach(io: photo7, filename: 'dalwhinnie_15_TW.png')
@@ -132,7 +132,7 @@ bottle8 = Bottle.create!(name: 'Dalwhinnie 25',
                         distillery_id: 4,
                         age: 25,
                         price: 650,
-                        user_id: 1,
+                        user_id: 3,
                         )
   photo8 = open('https://spirited-app-seeds.s3.amazonaws.com/dalwhinnie_25_TW.png')
   bottle8.photo.attach(io: photo8, filename: 'dalwhinnie_25_TW.png')
@@ -152,7 +152,7 @@ bottle10 = Bottle.create!(name: 'Talisker 10',
                         distillery_id: 8,
                         age: 10,
                         price: 64.99,
-                        user_id: 1,
+                        user_id: 4,
                         )
   photo10 = open('https://spirited-app-seeds.s3.amazonaws.com/talisker_10_TW.png')
   bottle10.photo.attach(io: photo10, filename: 'talisker_10_TW.png')

@@ -21,14 +21,12 @@ class BetterBottleForm extends React.Component {
   }
 
   componentDidMount() {
+    this.props.fetchDistilleries()
+        .then(() => this.setState( this.props ))
     if (this.props.formType === 'Edit This Bottle') {
       this.props.fetchBottle(this.props.match.params.bottleId)
         .then(() => this.setState( this.props ))
     } 
-    else {
-      this.props.fetchDistilleries()
-        .then(() => this.setState( this.props ))
-    }
   }
 
   componentWillUnmount() {
@@ -46,6 +44,7 @@ class BetterBottleForm extends React.Component {
   }
 
   handleSubmit(e) {
+    debugger
     e.preventDefault();
 
     const formData = new FormData();
@@ -88,12 +87,12 @@ class BetterBottleForm extends React.Component {
       </div>
     }
 
-    // let deleteButton;
-    // if (this.props.formType === 'UpdateBottle') {
-    //   deleteButton = <button onClick={() => this.props.removeBottle(this.props.bottleId)}>Delete Bottle</button>
-    // } else {
-    //   deleteButton = <div></div>
-    // }
+    let deleteButton;
+    if (this.props.formType === 'Edit This Bottle') {
+      deleteButton = <button className='delete-bottle' onClick={() => this.props.removeBottle(this.props.bottleId)}>Delete Bottle</button>
+    } else {
+      deleteButton = <div></div>
+    }
 
     
     if (!this.state) {
@@ -102,7 +101,7 @@ class BetterBottleForm extends React.Component {
       )
     }
     
-
+    debugger
     return (
       <div className='bottle-form-background'>
         <div className='clear-space'></div>
@@ -152,7 +151,7 @@ class BetterBottleForm extends React.Component {
           {imgMessage}
           <input type="file" onChange={this.handleFile} />
 
-          {/* {deleteButton} */}
+          {deleteButton}
           <BottleErrors errors={this.props.errors} />
 
           <button className='submit' onClick={this.handleSubmit}>Submit</button>
