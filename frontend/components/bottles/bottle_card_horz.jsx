@@ -3,8 +3,9 @@ import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
 
 const msp = (state, ownProps) => {
-  const distillery = ownProps.distillery 
-  const region = ownProps.regions[distillery.region_id]
+  const bottle = ownProps.bottle
+  const distillery = ownProps.distillery ;
+  const region = ownProps.regions[distillery.region_id];
   return ({
     distillery: {
       id: distillery.id,
@@ -16,7 +17,6 @@ const msp = (state, ownProps) => {
 }
 
 const BottleCardHorz = ({ bottle, distillery, region }) => {
-  
   return (
     <section className='bottle-card-horz'>
       <Link to={`/bottles/${bottle.id}`}><img src={bottle.photoUrl} alt={bottle.name} /></Link>
@@ -28,6 +28,5 @@ const BottleCardHorz = ({ bottle, distillery, region }) => {
       </div>
     </section>
   )
-
 }
 export default connect(msp)(BottleCardHorz);

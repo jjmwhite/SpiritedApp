@@ -18,8 +18,8 @@ class BottleIndex extends React.Component {
     } else {
       createBottleButton = <button className='index-bottle-create-button' onClick={() => openSessionModal('login')}>Create Bottle</button>
     }
-
-    if (this.props.bottles === {}) {
+    
+    if (this.props.bottles === {} || this.props.distilleries.length === 0 ) {
       return (
         <div className='loading'>Loading...</div>
       )
@@ -28,12 +28,12 @@ class BottleIndex extends React.Component {
       this.props.distilleries.map( dist => {
         return merge(distilleries, { [dist.id]: dist })
       })
-     
       const allBottles = this.props.bottles.map( bottle => {
         return <BottleCardVert 
           key={`${bottle.name}-card-vert`}
           bottle={bottle} 
           distillery={distilleries[bottle.distillery_id]}
+          regions={this.props.regions}
           fetchBottle={this.props.fetchBottle} />
       })
 

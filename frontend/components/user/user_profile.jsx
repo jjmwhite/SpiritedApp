@@ -10,9 +10,8 @@ class UserProfile extends React.Component {
 
   render() {
     const { user } = this.props;
-    const { bottles } = this.props;
 
-    if (this.props.bottles.length === 0) {
+    if (this.props.distilleries.length === 0) {
       return (
         <div className='loading'>Loading...</div>
       )
@@ -21,7 +20,8 @@ class UserProfile extends React.Component {
       this.props.distilleries.map(dist => {
         return merge(distilleries, { [dist.id]: dist })
       })
- 
+  
+      const { bottles } = this.props;
       const allBottles = bottles.map(bottle => {
         return <BottleCardHorz
           key={`${bottle.name}-card-horz`}

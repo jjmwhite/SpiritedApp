@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 
 const msp = (state, ownProps) => {
   const distillery = ownProps.distillery
-  const region = state.entities.regions[distillery.region_id]
+  const region = ownProps.regions[distillery.region_id]
   return({
     distillery: {
       id: distillery.id,
