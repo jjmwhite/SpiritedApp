@@ -1,12 +1,11 @@
 class RatingsController < ApplicationController
 
   def index
-    # debugger
     user_id = params[:user_id] || current_user.index
     if (params[:user_id])
-      @ratings = Rating.where(user_id: params[:user_id])
+      @ratings = Rating.includes(:user, :bottle).where(user_id: params[:user_id])
     else
-      @ratings = Rating.where(bottle_id: params[:bottle_id])
+      @ratings = Rating.includes(:user, :bottle).where(bottle_id: params[:bottle_id])
     end
   end
 
@@ -37,7 +36,7 @@ class RatingsController < ApplicationController
   end
 
   def destroy
-    # debugger
+    debugger
     rating = current_user.rating.find_by(id: params[:id])
 
     if rating

@@ -1,6 +1,6 @@
 import { RECEIVE_ALL_BOTTLES, RECEIVE_BOTTLE, REMOVE_BOTTLE } from '../actions/bottle_actions';
-import { merge } from 'lodash';
 import { RECEIVE_USER_PROFILE } from '../actions/user_actions';
+import { merge } from 'lodash';
 
 const bottlesReducer = (state = {}, action) => {
   const prevState = Object.freeze(state);

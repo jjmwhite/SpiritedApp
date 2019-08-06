@@ -1,3 +1,5 @@
+ratings = []
+
 json.bottles @bottles.each do |bottle|
   json.set! bottle.id do
     json.id bottle.id
@@ -11,6 +13,7 @@ json.bottles @bottles.each do |bottle|
     if bottle.photo.attached?
       json.photoUrl url_for(bottle.photo)
     end
+    ratings.concat(bottle.ratings)
   end
 end
 
@@ -27,5 +30,13 @@ json.regions @bottles.each do |bottle|
   json.set! bottle.region.id do
     json.id bottle.region.id 
     json.name bottle.region.name
+  end
+end
+
+json.ratings do
+  ratings.each do |rating|
+    json.set! rating.id do
+      json.partial! '/api/ratings/rating', rating: rating
+    end
   end
 end

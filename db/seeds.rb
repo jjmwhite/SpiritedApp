@@ -4,6 +4,7 @@ User.destroy_all
 Bottle.destroy_all
 Distillery.destroy_all
 Region.destroy_all
+Rating.destroy_all
 
 
 ### USERS ###

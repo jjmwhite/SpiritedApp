@@ -10,4 +10,10 @@ json.region do
   json.partial! 'api/regions/region', region: @bottle.region
 end
 
-# need to pull in ratings
+json.ratings do
+  @bottle.ratings.each do |rating|
+    json.set! rating.id do
+      json.partial! 'api/ratings/rating', rating: rating
+    end
+  end
+end
