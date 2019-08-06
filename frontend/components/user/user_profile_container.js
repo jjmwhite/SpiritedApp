@@ -4,20 +4,22 @@ import { fetchUserProfile } from '../../actions/user_actions';
 
 const msp = (state, ownProps) => {
   const userId = ownProps.match.params.userId;
-  const user = state.entities.users[userId];
+  const currentUser = state.entities.users[userId];
 
   const bottles = [];
   Object.values(state.entities.bottles).map( bottle => {
-    if (bottle.user_id === user.id) bottles.push(bottle);
+    if (bottle.user_id === currentUser.id) bottles.push(bottle);
   })
   
   const distilleries = Object.values(state.entities.distilleries);
   const regions = state.entities.regions;
+  const ratings = Object.values(state.entities.ratings);
   return({
-    user,
+    currentUser,
     bottles,
     distilleries,
-    regions
+    regions,
+    ratings
   })
 }
 

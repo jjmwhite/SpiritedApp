@@ -8,9 +8,10 @@ const usersReducer = (state = {}, action) => {
   let newState;
   switch (action.type) {
     case RECEIVE_CURRENT_USER:
-    case RECEIVE_USER_PROFILE:
       newState = merge({}, prevState, { [action.user.id]: action.user });
       return newState;
+    case RECEIVE_USER_PROFILE:
+      newState = merge({}, prevState, action.payload.users)
     case RECEIVE_BOTTLE:
       newState = merge({}, prevState, action.payload.users)
       return newState;
