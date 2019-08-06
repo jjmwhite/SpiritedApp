@@ -1,9 +1,12 @@
 .show-background {
   background-color: #F7F3F0;
+}
+
+.show-body {
   display: flex;
   align-items: center;
   flex-direction: column;
-  height: 540px;
+  padding-bottom: 50px;
 }
 
 .bottle-show-section {
@@ -70,17 +73,69 @@
   text-decoration: none;
 }
 
-
 .show-bottle-edit-button > a:hover {
   text-decoration: underline;
 }
 
-.rating-details-standin {
-  background: antiquewhite;
-  height: 300px;
-  align-self: center;
-  margin: 0 50px 0 30px;
-  min-width: 270px;
-  max-width: 400px;
-  display: none;
+.rating-show-background {
+  padding: 30px;
+  width: 80%;
+}
+
+.rating-show-section {
+  display: flex;
+  background: white;
+  width: 80%;
+  box-shadow: 0px 10px 7px lightgrey;
+  position: relative;
+  max-width: 1220px;
+  min-width: 900px;
+}
+
+.rating-show-section > h1 {
+  font-size: 22px;
+  width: 25%;
+  font-weight: bolder;
+  font-family: 'Ubuntu', sans-serif;
+  padding: 40px 0 0 40px;
+}
+
+.bottle-show-rating {
+  display: flex;
+  padding: 30px;
+}
+
+.bottle-show-rating-user {
+  display: flex;
+  max-width: 20%;
+}
+
+.bottle-show-rating-user > img {
+  height: 40px;
+  width: 40px;
+  margin-right: 5px;
+}
+
+.bottle-show-rating-user > figcaption {
+  display: flex;
+  flex-direction: column;
+  margin: 0 10px;
+}
+
+.bottle-show-rating-user > figcaption > h5 {
+  color: darkgray;
+  font-size: 11px;
+  margin: 3px 0;
+}
+
+.bottle-show-rating-user > figcaption > h2 {
+  font-weight: 700;
+}
+
+.bottle-show-rating-detail {
+  display: flex;
+  flex-direction: column;
+  align-items: baseline;
+  width: 80%;
+  margin-left: 60px;
 }

@@ -38,15 +38,13 @@ json.ratings do
   ratings.each do |rating|
     json.set! rating.id do
       json.partial! '/api/ratings/rating', rating: rating
-      debugger
       users.push(rating.user)
     end
   end
 end
-debugger
+
 json.users do 
   users.each do |user|
-  debugger
     json.set! user.id do
       json.partial! '/api/users/user', user: user
     end
