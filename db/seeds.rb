@@ -156,3 +156,9 @@ bottle10 = Bottle.create!(name: 'Talisker 10',
                         )
   photo10 = open('https://spirited-app-seeds.s3.amazonaws.com/talisker_10_TW.png')
   bottle10.photo.attach(io: photo10, filename: 'talisker_10_TW.png')
+
+
+
+
+  ### OTHER IMAGE CREDITS:
+  # 'X' icon by https://www.flaticon.com/authors/hadrien

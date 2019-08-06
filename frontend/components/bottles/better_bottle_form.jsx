@@ -1,5 +1,6 @@
 import React from 'react';
 import BottleErrors from './bottle_errors';
+import { Redirect } from 'react-router-dom';
 
 class BetterBottleForm extends React.Component {
   constructor(props) {
@@ -18,6 +19,11 @@ class BetterBottleForm extends React.Component {
 
     this.handleFile = this.handleFile.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
+    this.goBack = this.goBack.bind(this);
+  }
+
+  goBack() {
+    this.props.history.goBack()
   }
 
   componentDidMount() {
@@ -104,6 +110,7 @@ class BetterBottleForm extends React.Component {
       <div className='bottle-form-background'>
         <div className='clear-space'></div>
         <form className='bottle-form-section'>
+          <img onClick={this.goBack} src={cancel} alt="Cancel" />
           <h1>{this.props.formType}</h1>
 
           <div>

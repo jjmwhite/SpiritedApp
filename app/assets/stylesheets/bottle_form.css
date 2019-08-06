@@ -18,6 +18,13 @@
   padding: 50px;
 }
 
+.bottle-form-section > img {
+  height: 25px;
+  width: 25px;
+  padding: 5px;
+  cursor: pointer;
+}
+
 .bottle-form-section > h1 {
   font-family: 'Ubuntu', sans-serif;
   color: #135470;
