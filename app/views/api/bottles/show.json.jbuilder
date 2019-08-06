@@ -9,3 +9,5 @@ end
 json.region do 
   json.partial! 'api/regions/region', region: @bottle.region
 end
+
+# need to pull in ratings

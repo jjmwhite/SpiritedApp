@@ -6,6 +6,7 @@ import { merge } from 'lodash';
 class BottleIndex extends React.Component {
 
   componentDidMount() {
+    // debugger
     this.props.fetchBottles();
   }
 

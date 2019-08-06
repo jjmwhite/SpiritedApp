@@ -159,6 +159,79 @@ bottle10 = Bottle.create!(name: 'Talisker 10',
 
 
 
+### RATINGS ###
+
+r1 = Rating.create!(user_id: 1, 
+                    bottle_id: 1, 
+                    rating: 5,
+                    review: 'Tastes like every good memory I have of sitting outside next to a campfire under the stars.'
+                    )
+
+r2 = Rating.create!(user_id: 2, 
+                    bottle_id: 1, 
+                    rating: 4,
+                    review: 'Read a review on Reddit and had to give it a try. It will be in my bar from now on. Wonderful heavy peat aroma. The heat is pleasant and lingers on the tongue for a bit.'
+                    )
+
+r3 = Rating.create!(user_id: 3, 
+                    bottle_id: 1, 
+                    rating: 3,
+                    review: 'I honestly find this kind of boring after having had other Islay single malts. Not very smoky despite the 5 smoke rating. The lemony finish is nice, but nothing about this dram blows me away.'
+                    )
+
+r5 = Rating.create!(user_id: 4, 
+                    bottle_id: 1, 
+                    rating: 5,
+                    review: 'Without doubt the gold standard for an Islay single malt. It does not hold back, and if you persist beyond the first explosion of peat smoke, the complexities of its flavor come through.'
+                    )
+
+r6 = Rating.create!(user_id: 4, 
+                    bottle_id: 2, 
+                    rating: 3,
+                    review: 'For all its vaunted popularity, Macallan falls short of its fame. A perfectly decent scotch, but nothing to write home about.'
+                    )
+
+r7 = Rating.create!(user_id: 3, 
+                    bottle_id: 2, 
+                    rating: 4,
+                    review: 'Vanilla with hints of ginger, dried fruits, sherry sweetness and wood smoke.'
+                    )
+
+r8 = Rating.create!(user_id: 2, 
+                    bottle_id: 3, 
+                    rating: 4,
+                    review: 'There\'s peat, first of all, a big, pungent whack of it, laced with smoked fish and driftwood and salty rocks. But underneath that, there\'s a great big ocean of sweet, caramelized malt, all baked apples and cobbler crust.'
+                    )
+
+r9 = Rating.create!(user_id: 1, 
+                    bottle_id: 3, 
+                    rating: 5,
+                    review: 'Smokey, sweet, and a little salty--pretty much a perfect combination, as any chef knows well.'
+                    )
+
+r10 = Rating.create!(user_id: 5, 
+                    bottle_id: 4, 
+                    rating: 5,
+                    review: 'The layers of flavor go marching across your tongue single file, giving you ample time to consider and admire each one.'
+                    )
+
+r11 = Rating.create!(user_id: 6, 
+                    bottle_id: 5, 
+                    rating: 1,
+                    review: 'Not a fan of this one. It was harsh and tasted of the worst features of the Johnny Walker blend. I don’t know why everyone says it’s smooth, it is not.'
+                    )
+
+r12 = Rating.create!(user_id: 7, 
+                    bottle_id: 5, 
+                    rating: 4,
+                    review: 'My Daughter bought me this as a present. She has great taste. Initially smooth there is a nutty honey flavour on the front of the tongue this develops into a harder peppery flavour toward the back of the mouth.'
+                    )
+
+r13 = Rating.create!(user_id: 5, 
+                    bottle_id: 2,
+                    rating: 4, 
+                    review: 'I went to a Macallan tasing where they had us eat dried figs while sipping this scotch and that pairing sold me on it forever!'
+                    )
 
   ### OTHER IMAGE CREDITS:
   # 'X' icon by https://www.flaticon.com/authors/hadrien

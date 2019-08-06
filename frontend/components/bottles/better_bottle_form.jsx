@@ -1,6 +1,5 @@
 import React from 'react';
 import BottleErrors from './bottle_errors';
-import { Redirect } from 'react-router-dom';
 
 class BetterBottleForm extends React.Component {
   constructor(props) {
