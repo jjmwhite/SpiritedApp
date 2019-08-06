@@ -2,6 +2,7 @@ import { connect } from 'react-redux';
 import BottleShow from './bottle_show';
 import { fetchBottle, createBottle, updateBottle, removeBottle } from '../../actions/bottle_actions';
 import { openBottleModal } from '../../actions/bottle_modal_actions';
+import { merge } from 'lodash';
 
 const msp = (state = {}, ownProps) => {
   const bottleId = ownProps.match.params.bottleId;
@@ -30,6 +31,7 @@ const msp = (state = {}, ownProps) => {
     distillery,
     region,
     ratings,
+    users: state.entities.users,
     loggedIn: Boolean(state.session.currentUserId)
   })
 }

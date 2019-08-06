@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import BottleShowRating from "../ratings/bottle_show_rating";
+import BottleShowRating from '../ratings/bottle_show_rating';
 
 class BottleShow extends React.Component {
 
@@ -19,7 +19,8 @@ class BottleShow extends React.Component {
     // const openBottleModal = this.props.openBottleModal;
     const { bottle } = this.props;
     const { distillery } = this.props;
-    const { region } = this.props
+    const { region } = this.props;
+    const { users } = this.props;
 
     debugger
     if (!bottle) {
@@ -29,7 +30,10 @@ class BottleShow extends React.Component {
     } 
 
     const allRatings = this.props.ratings.map( rating => {
-      // return <BottleShowRating rating={rating} />
+      return <BottleShowRating 
+        key={`rating-id-${rating.id}`} 
+        rating={rating} 
+        users={users} />
     })
 
 
@@ -48,11 +52,10 @@ class BottleShow extends React.Component {
               <button className='show-bottle-edit-button'><Link to={`/bottles/${bottle.id}/edit`}>Edit This Bottle</Link></button>
 
             </div>
-            <div className='rating-details-standin'>
-              {allRatings}
-            </div>
           </div>
-          {/* <div className='review-feed-standin'>Reviews TK here...</div> */}
+          <div className='rating-show-section'>
+            {allRatings}
+          </div>
         </div>
       </>
     )

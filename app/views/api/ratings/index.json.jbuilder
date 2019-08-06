@@ -5,5 +5,6 @@ json.ratings @ratings.each do |rating|
     json.bottle_id rating.bottle_id
     json.rating rating.rating
     json.review rating.review
+    json.updated_at rating.updated_at
   end
 end
