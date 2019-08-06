@@ -19,6 +19,16 @@
   border-radius: 10px;
 }
 
+.modal-window > img {
+  height: 25px;
+  width: 25px;
+  padding: 5px;
+  cursor: pointer;
+  position: relative;
+  top: 25px;
+  left: 25px;
+}
+
 .session-window {
   display: flex;
   flex-direction: column;

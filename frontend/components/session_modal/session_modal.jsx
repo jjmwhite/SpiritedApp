@@ -34,6 +34,7 @@ const SessionModal = ({ sessionModal, closeSessionModal }) => {
   return (
       <div className='modal-background' onClick={() => closeSessionModal()}>
         <div className='modal-window' onClick={(e) => e.stopPropagation()}>
+        <img onClick={() => closeSessionModal()} src={cancel} alt="Cancel" />
           {component}
         </div>
       </div>
