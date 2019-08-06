@@ -6,7 +6,6 @@ import { merge } from 'lodash';
 class BottleIndex extends React.Component {
 
   componentDidMount() {
-    // debugger
     this.props.fetchBottles();
   }
 
@@ -19,8 +18,6 @@ class BottleIndex extends React.Component {
     } else {
       createBottleButton = <button className='index-bottle-create-button' onClick={() => openSessionModal('login')}>Create Bottle</button>
     }
-    
-    
 
     if (this.props.bottles === {}) {
       return (

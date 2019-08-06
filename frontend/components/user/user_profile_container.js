@@ -7,7 +7,7 @@ const msp = (state, ownProps) => {
   const user = state.entities.users[userId];
   const bottles = Object.values(state.entities.bottles);
   const distilleries = Object.values(state.entities.distilleries);
-  const regions = Object.values(state.entities.regions);
+  const regions = state.entities.regions;
   return({
     user,
     bottles,

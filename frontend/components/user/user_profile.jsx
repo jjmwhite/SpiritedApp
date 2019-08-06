@@ -24,9 +24,10 @@ class UserProfile extends React.Component {
  
       const allBottles = bottles.map(bottle => {
         return <BottleCardHorz
-          key={`${bottle.name}-card-horz-outer`}
+          key={`${bottle.name}-card-horz`}
           bottle={bottle}
           distillery={distilleries[bottle.distillery_id]}
+          regions={this.props.regions}
           />
       })
 

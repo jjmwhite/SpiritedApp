@@ -1,7 +1,7 @@
 class RatingsController < ApplicationController
 
   def index
-    debugger
+    # debugger
     user_id = params[:user_id] || current_user.index
     if (params[:user_id])
       @ratings = Rating.where(user_id: params[:user_id])
@@ -11,7 +11,7 @@ class RatingsController < ApplicationController
   end
 
   def create
-    debugger
+    # debugger
     @rating = Bottle.find(params[:bottle_id]).ratings.new(rating_params)
     @rating.user_id = current_user.id 
 
@@ -23,7 +23,7 @@ class RatingsController < ApplicationController
   end
 
   def update
-    debugger
+    # debugger
     @rating = Rating.find(params[:id])
     if @rating.user_id != current_user.id
       render json: ['You can only edit your own ratings'], status: 403
@@ -37,7 +37,7 @@ class RatingsController < ApplicationController
   end
 
   def destroy
-    debugger
+    # debugger
     rating = current_user.rating.find_by(id: params[:id])
 
     if rating

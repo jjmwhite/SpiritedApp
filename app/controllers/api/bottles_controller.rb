@@ -2,7 +2,7 @@ class Api::BottlesController < ApplicationController
 
   def index
     if params.has_key?(:id)
-      @bottles = Bottle.with_attached_photo.includes(:distillery, :region).where(user_id: params[:user_id])
+      @bottles = Bottle.with_attached_photo.includes(:distillery, :region).where(user_id: params[:id])
     else
       @bottles = Bottle.with_attached_photo.all.includes(:distillery, :region)
     end
