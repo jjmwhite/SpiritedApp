@@ -12,8 +12,14 @@ class Greeting extends React.Component {
       userGreeting = 
       (<div className='user-greeting'>
         <h2>Welcome, {currentUser.first_name}</h2>
-        <img src={"https://upload.wikimedia.org/wikipedia/commons/d/d3/SCOport-fr-economy.png"}/>
-        <button className='logout-button' onClick={this.props.logout}>Log Out</button>
+        <div className='user-dropdown'>
+          <button className='user-dropdown-button'><img src={"https://upload.wikimedia.org/wikipedia/commons/d/d3/SCOport-fr-economy.png"}/></button>
+          <div className='user-dropdown-content'>
+            <button><Link to={`/${currentUser.id}/profile`}>Profile</Link></button>
+            <button className='logout-button' onClick={this.props.logout}><a href="#">Log Out</a></button>
+          </div>
+        </div>
+        {/* <button className='logout-button' onClick={this.props.logout}>Log Out</button> */}
       </div>)
     } else {
       userGreeting = 
