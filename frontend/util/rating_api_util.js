@@ -23,7 +23,6 @@ export const fetchUserRatings = (userId) => {
 }
 
 export const createRating = (bottleId, rating) => {
-  debugger
   return $.ajax({
     method: 'POST',
     url: `/api/bottles/${bottleId}/ratings`,

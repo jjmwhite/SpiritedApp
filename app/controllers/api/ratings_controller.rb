@@ -30,7 +30,7 @@ class Api::RatingsController < ApplicationController
     if @rating.user_id != current_user.id
       render json: ['You can only edit your own ratings'], status: 403
     else
-      if @rating.update!(bottle_params)
+      if @rating.update!(rating_params)
         render :show
       else
         render json: @rating.errors.full_messages, status: 422

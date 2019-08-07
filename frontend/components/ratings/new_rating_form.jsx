@@ -1,6 +1,7 @@
 import React from 'react'
+import RatingErrors from './rating_errors';
 
-class RatingForm extends React.Component {
+class NewRatingForm extends React.Component {
 
   constructor(props) {
     super(props);
@@ -11,12 +12,12 @@ class RatingForm extends React.Component {
     this.handleSubmit = this.handleSubmit.bind(this);
   }
 
-  componentDidMount() {
-    if (this.props.formType === 'Edit Rating') {
-      this.props.fetchRating(this.props.bottleId, this.state.id)
-        .then(() => this.setState(this.props.rating))
-    }
-  }
+  // componentDidMount() {
+  //   if (this.props.formType === 'Edit Rating') {
+  //     this.props.fetchRating(this.props.bottleId, this.state.id)
+  //       .then(() => this.setState(this.props.rating))
+  //   }
+  // }
 
   componentWillUnmount() {
     this.props.clearRatingErrors();
@@ -24,7 +25,6 @@ class RatingForm extends React.Component {
 
   showForm() {
     const form = document.getElementById('rating-review-section');
-    debugger
     if (form.style.display === 'none' || form.style.display === '') {
       form.style.display = 'block';
     } 
@@ -43,7 +43,6 @@ class RatingForm extends React.Component {
   }
 
   handleRating(e) {
-    debugger
     this.showForm();
     this.setState({ rating: e._targetInst.pendingProps.value })
   }
@@ -56,13 +55,13 @@ class RatingForm extends React.Component {
 
   handleSubmit(e) {
     e.preventDefault();
-    this.props.formAction(this.props.bottleId, this.state);
+    this.props.createRating(this.props.bottleId, this.state);
   }
 
   render() {
 
     return(
-      <form className='rating-form'>
+      <form className='new-rating-form'>
         <span onClick={this.handleRating}>
           <i 
             className={'fas fa-star ' + (1 > this.state.rating ? 'gray-star' : 'gold-star')} 
@@ -104,6 +103,7 @@ class RatingForm extends React.Component {
             cols="30" rows="3"
             onChange={this.handleChange('review')}
             ></textarea>
+          <RatingErrors errors={this.props.errors} />
           <button className='rating-submit' onClick={this.handleSubmit}>Submit</button>
           <button className='rating-cancel' onClick={this.hideForm}>Cancel</button>
         </div>
@@ -113,4 +113,4 @@ class RatingForm extends React.Component {
 
 }
 
-export default RatingForm;
+export default NewRatingForm;

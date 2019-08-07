@@ -1,23 +1,21 @@
 import { connect } from 'react-redux';
-import RatingForm from './rating_form';
-import { fetchBottleRating, updateRating, removeRating, clearRatingErrors} from '../../actions/rating_actions';
+import UpdateRatingForm from './update_rating_form';
+import { updateRating, removeRating, clearRatingErrors} from '../../actions/rating_actions';
 
 const msp = (state, ownProps) => {
   debugger
   return ({
-    bottleId: ownProps.bottleId,
-    formType: 'Edit Rating',
-    rating: ownProps.rating
+    rating: ownProps.rating,
+    errors: state.errors.ratings || []
   })
 }
 
 const mdp = dispatch => {
   return ({
-    fetchBottleRating: (bottleId, ratingId) => dispatch(fetchBottleRating(bottleId, ratingId)),
-    formAction: (bottleId, rating) => dispatch(updateRating(bottleId, rating)),
+    updateRating: (bottleId, rating) => dispatch(updateRating(bottleId, rating)),
     removeRating: (bottleId, ratingId) => dispatch(removeRating(bottleId, ratingId)),
     clearRatingErrors: () => dispatch(clearRatingErrors())
   })
 }
 
-export default connect(msp, mdp)(RatingForm);
+export default connect(msp, mdp)(UpdateRatingForm);
