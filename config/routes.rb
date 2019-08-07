@@ -9,7 +9,7 @@ Rails.application.routes.draw do
     resource :session, only: [:create, :destroy]
     resources :bottles, only: [:index, :create, :update, :destroy]
     resources :bottles, only: [:show] do
-      resources :ratings, only: [:index, :create, :update, :destroy]
+      resources :ratings, only: [:index, :show, :create, :update, :destroy]
     end
     resources :distilleries, only: [:index, :show]
     resources :regions, only: [:show]

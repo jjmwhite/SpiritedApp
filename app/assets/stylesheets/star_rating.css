@@ -1,0 +1,12 @@
+.stars {
+  --percent: calc(var(--rating) / 5 * 100%);
+  display: inline-block;
+  font-family: 'Times New Roman', Times, serif;
+  
+}
+
+.stars::before {
+  content: '★★★★★';
+  background: linear-gradient(90deg, lightgray, var(--percent), #D7a831, var(--percent));
+  -webkit-text-fill-color: transparent;
+}

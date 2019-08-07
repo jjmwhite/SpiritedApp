@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import BottleShowRating from '../ratings/bottle_show_rating';
+import NewRatingContainer from '../ratings/new_rating_container';
 
 class BottleShow extends React.Component {
 
@@ -22,20 +23,22 @@ class BottleShow extends React.Component {
     const { region } = this.props;
     const { users } = this.props;
 
-    debugger
     if (!bottle) {
       return (
         <div>Loading...</div>
       )
     } 
-
-    const allRatings = this.props.ratings.map( rating => {
+    let allRatings;
+    if (this.props.ratings.length === 0) {
+      allRatings = <section className='bottle-show-rating'>Be the first to rate this scotch.</section>
+    } else {
+      allRatings = this.props.ratings.map( rating => {
       return <BottleShowRating 
         key={`rating-id-${rating.id}`} 
         rating={rating} 
         users={users} />
-    })
-
+      })
+    }
 
     return (
       <>
@@ -51,7 +54,6 @@ class BottleShow extends React.Component {
                 <span>${bottle.price}</span>
                 {/* <button className='show-bottle-edit-button' onClick={() => openBottleModal('Edit This Bottle')}>Edit This Bottle</button> */}
                 <button className='show-bottle-edit-button'><Link to={`/bottles/${bottle.id}/edit`}>Edit This Bottle</Link></button>
-
               </div>
             </div>
             <div className='rating-show-section'>
@@ -59,6 +61,12 @@ class BottleShow extends React.Component {
               <div className='rating-show-background'>
                 {allRatings}
               </div>
+            </div>
+            <div className='rating-form-section'>
+              <h1>Rate This Scotch</h1>
+              <div className='rating-show-background'>
+                <NewRatingContainer bottleId={bottle.id}/>
+              </div>  
             </div>
           </main>
         </div>

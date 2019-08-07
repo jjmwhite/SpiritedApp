@@ -6,6 +6,14 @@ export const fetchBottleRatings = (bottleId) => {
   })
 }
 
+export const fetchBottleRating = (bottleId, ratingId) => {
+  return $.ajax({
+    method: 'GET',
+    url: `/api/bottles/${bottleId}/ratings/${ratingId}`,
+    data: { ratingId }
+  })
+}
+
 export const fetchUserRatings = (userId) => {
   return $.ajax({
     method: 'GET',
@@ -14,23 +22,23 @@ export const fetchUserRatings = (userId) => {
   })
 }
 
-export const createRating = (rating) => {
+export const createRating = (bottleId, rating) => {
   return $.ajax({
     method: 'POST',
-    url: `/api/bottles/${rating.bottleId}/ratings`,
+    url: `/api/bottles/${bottleId}/ratings`,
     data: { rating }
   })
 }
 
-export const updateRating = (rating) => {
+export const updateRating = (bottleId, rating) => {
   return $.ajax({
     method: 'PATCH',
-    url: `/api/bottles/${rating.bottleId}/ratings/${rating.id}`,
+    url: `/api/bottles/${bottleId}/ratings/${rating.id}`,
     data: { rating }
   })
 }
 
-export const removeRating = (ratingId, bottleId) => {
+export const removeRating = (bottleId, ratingId) => {
   return $.ajax({
     method: 'DELETE',
     url: `/api/bottles/${bottleId}/ratings/${ratingId}`,

@@ -1,4 +1,4 @@
-class RatingsController < ApplicationController
+class Api::RatingsController < ApplicationController
 
   def index
     user_id = params[:user_id] || current_user.index
@@ -13,6 +13,7 @@ class RatingsController < ApplicationController
     # debugger
     @rating = Bottle.find(params[:bottle_id]).ratings.new(rating_params)
     @rating.user_id = current_user.id 
+    @rating.date = Date.today.strftime("%b %d,%Y")
 
     if @rating.save
       render :show
@@ -24,6 +25,8 @@ class RatingsController < ApplicationController
   def update
     # debugger
     @rating = Rating.find(params[:id])
+    @rating.date = Date.today.strftime("%b %d,%Y")
+
     if @rating.user_id != current_user.id
       render json: ['You can only edit your own ratings'], status: 403
     else
@@ -36,7 +39,7 @@ class RatingsController < ApplicationController
   end
 
   def destroy
-    debugger
+    # debugger
     rating = current_user.rating.find_by(id: params[:id])
 
     if rating
@@ -50,7 +53,7 @@ class RatingsController < ApplicationController
   private
 
   def rating_params
-    params.require(:rating).permit(:user_id, :bottle_id, :rating, :review)
+    params.require(:rating).permit(:user_id, :bottle_id, :rating, :review, :date)
   end
 
 

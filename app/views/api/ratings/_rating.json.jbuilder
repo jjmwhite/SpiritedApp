@@ -1,1 +1,1 @@
-json.extract! rating, :id, :user_id, :bottle_id, :rating, :review, :updated_at
+json.extract! rating, :id, :user_id, :bottle_id, :rating, :review, :date

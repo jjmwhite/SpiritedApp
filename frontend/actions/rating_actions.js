@@ -50,20 +50,25 @@ export const fetchBottleRatings = (bottleId) => dispatch => {
                       .then((ratings) => dispatch(receiveRatings(ratings)));
 }
 
-export const createRating = (rating) => dispatch => {
-  return RatingApiUtil.createRating(rating)
+export const fetchBottleRating = (bottleId, ratingId) => dispatch => {
+  return RatingApiUtil.fetchBottleRating(bottleId, ratingId)
+                      .then((rating) => dispatch(receiveRating(rating)));
+}
+
+export const createRating = (bottleId, rating) => dispatch => {
+  return RatingApiUtil.createRating(bottleId, rating)
                       .then( (rating) => dispatch(receiveRating(rating)))
                       .fail( (errors) => dispatch(receiveRatingErrors(errors)));
 }
 
-export const updateRating = (rating) => dispatch => {
-  return RatingApiUtil.updateRating(rating)
+export const updateRating = (bottleId, rating) => dispatch => {
+  return RatingApiUtil.updateRating(bottleId, rating)
                       .then( (rating) => dispatch(receiveRating(rating)))
                       .fail( (errors) => dispatch(receiveRatingErrors(errors)));
 }
 
-export const removeRating = (ratingId, bottleId) => dispatch => {
-  return RatingApiUtil.removeRating(ratingId, bottleId)
+export const removeRating = (bottleId, ratingId) => dispatch => {
+  return RatingApiUtil.removeRating(bottleId, ratingId)
                       .then( (rating) => dispatch(destroyRating(rating)))
                       .fail( (errors) => dispatch(receiveRatingErrors(errors)));
 }

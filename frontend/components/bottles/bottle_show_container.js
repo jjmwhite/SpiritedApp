@@ -2,7 +2,6 @@ import { connect } from 'react-redux';
 import BottleShow from './bottle_show';
 import { fetchBottle, createBottle, updateBottle, removeBottle } from '../../actions/bottle_actions';
 import { openBottleModal } from '../../actions/bottle_modal_actions';
-import { merge } from 'lodash';
 
 const msp = (state = {}, ownProps) => {
   const bottleId = ownProps.match.params.bottleId;
@@ -11,21 +10,18 @@ const msp = (state = {}, ownProps) => {
   let region;
   let ratings = [];
   if (!bottle) {
-    debugger
     distillery = {};
     region = {};
   } else {
-    debugger
     distillery = state.entities.distilleries[bottle.distillery_id];
     region = state.entities.regions[distillery.region_id];
     Object.values(state.entities.ratings).map( rating => {
-      debugger
       if (rating.bottle_id === bottle.id) {
         ratings.push(rating)
       }
     })
   }
-  
+
   return({
     bottle,
     distillery,

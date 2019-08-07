@@ -139,3 +139,66 @@
   width: 80%;
   margin-left: 60px;
 }
+
+button.rating-edit {
+  align-self: flex-end;
+  border: none;
+  color: #c69312;
+  font-size: 11px;
+  padding: 10px;
+  cursor: pointer;
+}
+
+button.rating-edit:hover {
+  text-decoration: underline;
+}
+
+.rating-form-section {
+  display: flex;
+  background: white;
+  width: 80%;
+  box-shadow: 0px 10px 7px lightgrey;
+  position: relative;
+  max-width: 1220px;
+  min-width: 900px;
+}
+
+.rating-form-section > h1 {
+  font-size: 22px;
+  width: 25%;
+  font-weight: bolder;
+  font-family: 'Ubuntu', sans-serif;
+  padding: 40px 0 0 40px;
+}
+
+.rating-form > span {
+  margin: 0 3px;
+}
+
+.rating-form > div> textarea {
+  width: 100%;
+  margin-top: 15px;
+  border: 1px solid lightgray;
+}
+
+button.rating-submit {
+  float: right;
+  background: #135470;
+  color: white;
+  padding: 12px;
+  border: none;
+  width: 90px;
+  border-radius: 5px;
+  font-size: 14px;
+  margin-top: 10px;
+}
+
+button.rating-cancel {
+  float: right;
+  border: none;
+  color: #135470;
+  padding: 12px;
+  cursor: pointer;
+  margin-top: 11px;
+  font-size: 12px;
+}
