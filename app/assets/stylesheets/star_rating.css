@@ -1,4 +1,6 @@
-.stars {
+
+
+/* .stars {
   --percent: calc(var(--rating) / 5 * 100%);
   display: inline-block;
   font-family: 'Times New Roman', Times, serif;
@@ -9,4 +11,43 @@
   content: '★★★★★';
   background: linear-gradient(90deg, lightgray, var(--percent), #D7a831, var(--percent));
   -webkit-text-fill-color: transparent;
-}
+} */
+
+
+    /* $('#star-one').mouseover(function () {
+      $('.one').css('color', "gold")
+      $('.two').css('color', "lightgray")
+    })
+    $('#star-two').mouseover(function () {
+      $('.one').css('color', "gold")
+      $('.three').css('color', "lightgray")
+    })
+    $('#star-three').mouseover(function () {
+      $('.two').css('color', "gold")
+      $('.four').css('color', "lightgray")
+    })
+    $('#star-four').mouseover(function () {
+      $('.three').css('color', "gold")
+      $('.four').css('color', "lightgray")
+    })
+    $('#star-five').mouseover(function () {
+      $('.four').css('color', "gold")
+      $('.five').css('color', "lightgray")
+    })
+
+    $("#star-one").mouseout(function () {
+      $(".one").css("color", "lightgray");
+    });
+    $("#star-two").mouseout(function () {
+      $(".two").css("color", "lightgray");
+    });
+    $("#star-three").mouseout(function () {
+      $(".three").css("color", "lightgray");
+    });
+    $("#star-four").mouseout(function () {
+      $(".four").css("color", "lightgray");
+    });
+    $("#star-five").mouseout(function () {
+      $(".five").css("color", "lightgray");
+    });
+  */

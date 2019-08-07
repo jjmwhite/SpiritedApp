@@ -1,6 +1,6 @@
 import { connect } from 'react-redux';
 import RatingForm from './rating_form';
-import { createRating } from '../../actions/rating_actions';
+import { createRating, clearRatingErrors } from '../../actions/rating_actions';
 
 const msp = (state, ownProps) => {
   debugger
@@ -16,7 +16,8 @@ const msp = (state, ownProps) => {
 
 const mdp = dispatch => {
   return({
-    formAction: (rating, bottleId) => dispatch(createRating(rating, bottleId))
+    formAction: (rating, bottleId) => dispatch(createRating(rating, bottleId)),
+    clearRatingErrors: () => dispatch(clearRatingErrors())
   })
 }
 
