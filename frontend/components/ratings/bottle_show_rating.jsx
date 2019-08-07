@@ -40,18 +40,16 @@ class BottleShowRating extends React.Component {
     }
 
     return(
-      <section className='bottle-show-rating'>
-        <div className='bottle-visible'>
-          <div className='bottle-show-rating-user'>
-            <img src={"https://upload.wikimedia.org/wikipedia/commons/d/d3/SCOport-fr-economy.png"} />
-            <figcaption>
-              <h2>{users[rating.user_id].first_name}</h2>
-              <h5>Rated on {rating.date}</h5>
-            </figcaption>
-          </div>
-          <div className='bottle-hidden'>
-            <UpdateRatingContainer rating={rating} currentUser={currentUser} />
-          </div>
+      <section className='bottle-rating'>
+        <div className='bottle-rating-user'>
+          <img src={"https://upload.wikimedia.org/wikipedia/commons/d/d3/SCOport-fr-economy.png"} />
+          <figcaption>
+            <h2>{users[rating.user_id].first_name}</h2>
+            <h5>Rated on {rating.date}</h5>
+          </figcaption>
+        </div>
+        <div className='bottle-rating-toggle'>
+          <UpdateRatingContainer rating={rating} currentUser={currentUser} />
           <div id={`bottle-show-rating-detail-${rating.id}`}>
             {/* <h2>{rating.rating}</h2> */}
             <p>{rating.review}</p>
