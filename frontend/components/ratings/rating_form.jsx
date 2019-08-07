@@ -25,7 +25,7 @@ class RatingForm extends React.Component {
 
   handleSubmit(e) {
     e.preventDefault();
-    this.props.formAction(this.state);
+    this.props.formAction(this.props.bottleId, this.state);
   }
 
   render() {

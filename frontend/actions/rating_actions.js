@@ -56,6 +56,7 @@ export const fetchBottleRating = (bottleId, ratingId) => dispatch => {
 }
 
 export const createRating = (bottleId, rating) => dispatch => {
+  debugger
   return RatingApiUtil.createRating(bottleId, rating)
                       .then( (rating) => dispatch(receiveRating(rating)))
                       .fail( (errors) => dispatch(receiveRatingErrors(errors)));

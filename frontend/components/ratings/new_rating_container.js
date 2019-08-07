@@ -16,7 +16,7 @@ const msp = (state, ownProps) => {
 
 const mdp = dispatch => {
   return({
-    formAction: (rating) => dispatch(createRating(rating))
+    formAction: (rating, bottleId) => dispatch(createRating(rating, bottleId))
   })
 }
 

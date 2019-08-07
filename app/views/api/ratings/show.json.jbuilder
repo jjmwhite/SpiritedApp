@@ -1,1 +1,1 @@
-json.partial! 'api/ratings/rating', rating: rating
+json.partial! 'api/ratings/rating', rating: @rating
