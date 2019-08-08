@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 
 const msp = (state, ownProps) => {
   const distillery = ownProps.distillery;
-  const region = ownProps.regions[distillery.region_id];
+  const region = ownProps.regions[distillery.region_id] || {};
   return ({
     distillery: {
       id: distillery.id,
@@ -18,12 +18,13 @@ const msp = (state, ownProps) => {
 const BottleCardHorz = ({ bottle, distillery, region, ratings }) => {
 
   let userReview;
+  debugger
   
-  ratings.forEach( rating => {
+  Object.values(ratings).forEach( rating => {
     if (rating.bottle_id === bottle.id) {
       userReview = 
         <>
-          <h5>Your Rating:</h5>
+          <h5>My Rating:</h5>
           <h2>{rating.rating}</h2>
           <p>"{rating.review}"</p>
         </>

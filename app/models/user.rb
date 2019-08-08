@@ -21,9 +21,11 @@ class User < ApplicationRecord
 
   attr_reader :password 
 
-  has_one_attached :photo
-  has_many :bottles
+  # has_one_attached :photo
   has_many :ratings
+  has_many :bottles
+  has_many :distilleries, through: :bottles, source: :distillery
+  has_many :regions, through: :distilleries, source: :region
 
   def self.find_by_credentials(email, password)
     user = User.find_by(email: email)

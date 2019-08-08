@@ -1,7 +1,7 @@
 class Api::UsersController < ApplicationController
 
   def show
-    @user = User.find(current_user.id)
+    @user = User.includes(:bottles, :ratings, :distilleries, :regions).find(current_user.id)
   end
 
   def create

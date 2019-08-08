@@ -11,5 +11,7 @@ export const receiveUserProfile = payload => {
 
 export const fetchUserProfile = id => dispatch => {
   return UserApiUtil.fetchUserProfile(id)
-                    .then( (profile) => dispatch(receiveUserProfile(profile)));
+                    .then( (payload) => {
+                      debugger
+                      dispatch(receiveUserProfile(payload))});
 }

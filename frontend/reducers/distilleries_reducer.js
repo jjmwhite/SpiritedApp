@@ -19,7 +19,7 @@ const distilleriesReducer = (state = {}, action) => {
       newState = merge({}, prevState, {[action.payload.distillery.id]: action.payload.distillery });
       return newState;
     case RECEIVE_USER_PROFILE:
-      newState = merge({}, prevState, ...action.payload.distilleries)
+      newState = merge({}, prevState, action.payload.distilleries)
       return newState;
     default:
       return state;

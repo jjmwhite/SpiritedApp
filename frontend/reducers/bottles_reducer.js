@@ -17,7 +17,7 @@ const bottlesReducer = (state = {}, action) => {
       delete newState[action.bottleId];
       return newState;
     case RECEIVE_USER_PROFILE:
-      newState = merge({}, prevState, ...action.payload.bottles);
+      newState = merge({}, prevState, action.payload.bottles);
       return newState;
     default:
       return state;

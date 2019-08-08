@@ -24,18 +24,19 @@ class BottleShow extends React.Component {
 
     if (!bottle) {
       return (
-        <div>Loading...</div>
+        <div className='loading'>Loading...</div>
       )
-    } 
+    }
+
     let allRatings;
     if (this.props.ratings.length === 0) {
       allRatings = <section className='be-the-first'>Be the first to rate this scotch.</section>
     } else {
       allRatings = this.props.ratings.map( rating => {
-      return <BottleShowRatingContainer 
-        key={`rating-id-${rating.id}`} 
-        rating={rating} 
-        users={users} />
+        return <BottleShowRatingContainer 
+          key={`rating-id-${rating.id}`} 
+          rating={rating} 
+          users={users} />
       })
     }
 

@@ -4,52 +4,78 @@ import { merge } from 'lodash';
 
 class UserProfile extends React.Component {
 
+  constructor(props) {
+    super(props)
+    debugger
+  }
+
   componentDidMount() {
+    debugger
     this.props.fetchUserProfile(this.props.currentUser.id)
   }
 
   render() {
     const { currentUser } = this.props;
-
-    if (this.props.distilleries.length === 0) {
+    
+    debugger
+    // if (this.props.distilleries.length === 0 || this.props.distilleries === undefined) {
+    if (_.isEmpty(this.props.distilleries) || this.props.distilleries === undefined) {
       return (
         <div className='loading'>Loading...</div>
       )
     } 
 
-    const distilleries = {};
-    this.props.distilleries.map(dist => {
-      return merge(distilleries, { [dist.id]: dist })
-    })
-
-    const userRatings = [];
-    this.props.ratings.forEach( rating => {
-      debugger
-      if (rating.user_id === currentUser.id) userRatings.push(rating)
-    })
-
-    const { bottles } = this.props;
-    const allBottles = bottles.map(bottle => {
+    debugger
+    const { bottles } = this.props;  // BOTTLES is an object
+    const userBottles = Object.values(this.props.bottles).map(bottle => {
       return <BottleCardHorz
-        key={`${bottle.name}-card-horz`}
+        key={`${bottle.name}-card-horz-owned`}
         bottle={bottle}
-        distillery={distilleries[bottle.distillery_id]}
+        distillery={this.props.distilleries[bottle.distillery_id]}
         regions={this.props.regions}
-        ratings={userRatings}
+        ratings={this.props.ratings}
         />
     })
 
+    const ratedBottles = []
+    Object.values(this.props.ratings).map(rating => { // RATINGS is an object
+      if (bottles[rating.bottle_id]) {
+        ratedBottles.push(bottles[rating.bottle_id])
+      }
+    })
+    
+    debugger
+    const allRatings = ratedBottles.map( bottle => {
+      return <BottleCardHorz
+        key={`${bottle.name}-card-horz-rated`}
+        bottle={bottle}
+        distillery={this.props.distilleries[bottle.distillery_id]}
+        regions={this.props.regions}
+        ratings={this.props.ratings}
+      />
+    })
+
+    debugger
     return (
       <div className='user-profile'>
-        <div className='user-profile-detail'>
+        <aside className='user-profile-detail'>
           <img src={"https://upload.wikimedia.org/wikipedia/commons/d/d3/SCOport-fr-economy.png"} />
           <h2>{currentUser.first_name}</h2>
+          <h5>Bottles Rated:</h5>
+          <h3>{allRatings.length}</h3>
           <h5>Bottles Added:</h5>
-          <h3>{allBottles.length}</h3>
-        </div>
-        <div className='profile-bottles'>
-          {allBottles}
-        </div>
+          <h3>{ratedBottles.length}</h3>
+        </aside>
+        <main className='user-content'>
+          <div className='profile-ratings'>
+            <h2>My Ratings:</h2>
+            {allRatings}
+          </div>
+          <div className='profile-bottles'>
+            <h2>My Added Bottles:</h2>
+            {userBottles}
+          </div>
+        </main>
       </div>
     )
   }
