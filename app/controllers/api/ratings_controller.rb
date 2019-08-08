@@ -23,9 +23,7 @@ class Api::RatingsController < ApplicationController
   end
 
   def update
-    # debugger
     @rating = Rating.find(params[:id])
-    @rating.date = Date.today.strftime("%b %d,%Y")
 
     if @rating.user_id != current_user.id
       render json: ['You can only edit your own ratings'], status: 403

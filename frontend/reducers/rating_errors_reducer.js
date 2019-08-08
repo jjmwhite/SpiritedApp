@@ -5,6 +5,7 @@ const ratingErrorsReducer = (state = [], action) => {
   let newState;
   switch (action.type) {
     case RECEIVE_RATING_ERRORS:
+      debugger
       newState = action.errors;
       return newState;
     case RECEIVE_RATING:

@@ -13,7 +13,6 @@ const ratingsReducer = (state = {}, action) => {
       newState = merge({}, prevState, action.payload.ratings);
       return newState;
     case RECEIVE_RATING:
-      debugger
       newState = merge({}, prevState, { [action.rating.id]: action.rating });
       return newState;
     case REMOVE_RATING:

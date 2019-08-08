@@ -1,12 +1,19 @@
 import React from 'react';
 import UpdateRatingContainer from './update_rating_container';
 import { connect } from 'react-redux';
+import { fetchBottleRating } from '../../actions/rating_actions';
 
 const msp = (state, ownProps) => {
-  return ({
+  return({
     rating: ownProps.rating,
     users: ownProps.users,
     currentUser: state.session.currentUserId,
+  })
+}
+
+const mdp = dispatch => {
+  return({
+    fetchBottleRating: (bottleId, ratingId) => dispatch(fetchBottleRating(bottleId, ratingId))
   })
 }
 
@@ -18,9 +25,9 @@ class BottleShowRating extends React.Component {
   }
 
   showForm() {
-    const form = document.getElementById('update-rating-review-section');
-    const prevReview = document.getElementById(`bottle-show-rating-detail-${this.props.rating.id}`)
     debugger
+    const form = document.getElementById(`update-rating-review-section-${this.props.rating.id}`);
+    const prevReview = document.getElementById(`bottle-show-rating-detail-${this.props.rating.id}`)
     if (form.style.display === 'none' || form.style.display === '') {
       form.style.display = 'block';
       prevReview.style.display = 'none';
@@ -51,7 +58,23 @@ class BottleShowRating extends React.Component {
         <div className='bottle-rating-toggle'>
           <UpdateRatingContainer rating={rating} currentUser={currentUser} />
           <div id={`bottle-show-rating-detail-${rating.id}`}>
-            {/* <h2>{rating.rating}</h2> */}
+            <div className='rating-stars'>
+              <span>
+                <i className={'fas fa-star ' + (1 > rating.rating ? 'gray-star' : 'gold-star')}></i>
+              </span>
+              <span>
+                <i className={'fas fa-star ' + (2 > rating.rating ? 'gray-star' : 'gold-star')}></i>
+              </span>
+              <span>
+                <i className={'fas fa-star ' + (3 > rating.rating ? 'gray-star' : 'gold-star')}></i>
+              </span>
+              <span>
+                <i className={'fas fa-star ' + (4 > rating.rating ? 'gray-star' : 'gold-star')}></i>
+              </span>
+              <span>
+                <i className={'fas fa-star ' + (5 > rating.rating ? 'gray-star' : 'gold-star')} ></i>
+              </span>
+            </div>
             <p>{rating.review}</p>
             {editButton}
           </div>
@@ -63,4 +86,4 @@ class BottleShowRating extends React.Component {
   }
 }
 
-export default connect(msp)(BottleShowRating);
+export default connect(msp, mdp)(BottleShowRating);

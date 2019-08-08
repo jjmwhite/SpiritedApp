@@ -14,20 +14,18 @@ class UpdateRatingForm extends React.Component {
     this.props.clearRatingErrors();
   }
 
-  toggleForm() {
-    const form = document.getElementById('update-rating-review-section');
+  toggleForm(e) {
+    debugger
+    const form = document.getElementById(`update-rating-review-section-${this.props.rating.id}`);
     const prevReview = document.getElementById(`bottle-show-rating-detail-${this.props.rating.id}`)
 
-    // const stars = [...document.getElementsByClassName('gold-star')];
-
-    // stars.forEach(star => {
-    //   star.classList.value = 'fas fa-star gray-star'
-    // })
-
-    if (form.style.display === 'block') {
+    if (e.target.innerText === 'Cancel' && form.style.display === 'block') {
+      this.setState({ rating: this.props.rating.rating })
       form.style.display = 'none';
       prevReview.style.display = 'block';
-      this.setState({ rating: this.props.rating.rating })
+    } else if (form.style.display === 'block') {
+      form.style.display = 'none';
+      prevReview.style.display = 'block';
     } else {
       form.style.display = 'block';
       prevReview.style.display = 'none'
@@ -35,7 +33,6 @@ class UpdateRatingForm extends React.Component {
   }
 
   handleRating(e) {
-    debugger
     this.setState({ rating: e._targetInst.pendingProps.value })
   }
 
@@ -47,17 +44,16 @@ class UpdateRatingForm extends React.Component {
 
   handleSubmit(e) {
     e.preventDefault();
-    debugger
-    this.props.updateRating(this.state.bottleId, this.state);
-    this.toggleForm();
+    this.props.updateRating(this.state.bottle_id, this.state);
+    this.toggleForm(e);
   }
 
   render() {
 
     let editForm;
-    if (currentUser.id !== this.props.rating.user_id) {
+    debugger
+    if (this.props.currentUser !== this.props.rating.user_id) {
       editForm = <></>
-      debugger
     } else {
       editForm = 
       <>
@@ -70,11 +66,10 @@ class UpdateRatingForm extends React.Component {
         <button className='rating-submit' onClick={this.handleSubmit}>Submit</button>
         <button className='rating-cancel' onClick={this.toggleForm}>Cancel</button>
       </>
-      debugger
     }
 
     return (
-      <form className='update-rating-form'>
+      <form id={`update-rating-review-section-${this.props.rating.id}`}>
         <div className='rating-stars'>
           <span onClick={this.handleRating}>
             <i
@@ -111,9 +106,7 @@ class UpdateRatingForm extends React.Component {
             </i>
           </span>
         </div>
-        <div id='update-rating-review-section'>
-          {editForm}
-        </div>
+        {editForm}
       </form>
     )
   }
