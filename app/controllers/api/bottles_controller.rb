@@ -45,7 +45,6 @@ class Api::BottlesController < ApplicationController
   end
 
   def update
-    # @bottle = current_user.bottles.find(params[:id])
     @bottle = Bottle.find(params[:id])
     if @bottle.user_id != current_user.id
       render json: ['You can only edit your own bottles'], status: 403

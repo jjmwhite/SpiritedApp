@@ -53,7 +53,6 @@ class NewRatingForm extends React.Component {
   }
 
   render() {
-    debugger
     const openSessionModal = this.props.openSessionModal
 
     let submit;
