@@ -29,7 +29,7 @@ class BottleShow extends React.Component {
     } 
     let allRatings;
     if (this.props.ratings.length === 0) {
-      allRatings = <section className='bottle-show-rating'>Be the first to rate this scotch.</section>
+      allRatings = <section className='be-the-first'>Be the first to rate this scotch.</section>
     } else {
       allRatings = this.props.ratings.map( rating => {
       return <BottleShowRatingContainer 

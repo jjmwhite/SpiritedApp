@@ -14,7 +14,7 @@ class BottleIndex extends React.Component {
 
     let createBottleButton;
     if (this.props.loggedIn) {
-      createBottleButton = <button className='index-bottle-create-button'><Link to='/bottles/create'>Create Bottle</Link></button>
+      createBottleButton = <Link to='/bottles/create'><button className='index-bottle-create-button'>Create Bottle</button></Link>
     } else {
       createBottleButton = <button className='index-bottle-create-button' onClick={() => openSessionModal('login')}>Create Bottle</button>
     }

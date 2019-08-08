@@ -19,6 +19,7 @@ class BetterBottleForm extends React.Component {
     this.handleFile = this.handleFile.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
     this.goBack = this.goBack.bind(this);
+    this.handleDelete = this.handleDelete.bind(this);
   }
 
   goBack() {
@@ -64,8 +65,14 @@ class BetterBottleForm extends React.Component {
     }
 
     this.props.formAction(formData, this.props.bottleId)
-      .then(() => this.props.history.push(`/bottles/${this.props.bottleId}`));
-      // ajax payload -- extract id from here
+      .then((action) => {
+        debugger
+        this.props.history.push(`/bottles/${action.payload.bottle.id}`)});
+  }
+
+  handleDelete() {
+    this.props.removeBottle(this.props.bottleId)
+      .then(() => this.props.history.push('/'))
   }
 
   render() {
@@ -94,7 +101,7 @@ class BetterBottleForm extends React.Component {
 
     let deleteButton;
     if (this.props.formType === 'Edit This Bottle') {
-      deleteButton = <button className='delete-bottle' onClick={() => this.props.removeBottle(this.props.bottleId)}>Delete Bottle</button>
+      deleteButton = <button className='delete-bottle' onClick={this.handleDelete}>Delete Bottle</button>
     } else {
       deleteButton = <div></div>
     }

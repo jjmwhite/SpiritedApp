@@ -89,6 +89,10 @@
   text-decoration: none;
 }
 
+.app-body > a {
+  text-decoration: none;
+}
+
 .index-bottle-create-button > a {
   text-decoration: none;
   color: #135470;

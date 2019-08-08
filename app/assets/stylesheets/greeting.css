@@ -46,7 +46,6 @@
   padding-right: 8px;
 }
 
-/* .user-greeting > img { */
 .user-dropdown-button > img {
   height: 45px;
   width: 45px;
@@ -75,17 +74,6 @@
   font-size: 15px;
   cursor: pointer;
 }
-
-/* .logout-button {
-  border: none;
-  border-radius: 25px;
-  padding-top: 8px;
-  padding-bottom: 10px;
-  color: #135470;
-  font-size: 10px;
-  text-decoration: underline;
-  cursor: pointer;
-} */
 
 .user-dropdown {
   position: relative;
@@ -117,7 +105,7 @@
   right: 12px;
   min-width: 185px;
   background: white;
-  box-shadow: 0px 10px 7px lightgrey;
+  box-shadow: 0px 5px 7px #bebdbd;
   z-index: 1;
 }
 

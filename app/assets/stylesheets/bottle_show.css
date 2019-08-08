@@ -76,3 +76,9 @@
 .show-bottle-edit-button > a:hover {
   text-decoration: underline;
 }
+
+.be-the-first {
+  font-size: 18px;
+  position: relative;
+  top: 15px;
+}
