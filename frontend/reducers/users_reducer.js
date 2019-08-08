@@ -8,7 +8,6 @@ const usersReducer = (state = {}, action) => {
   let newState;
   switch (action.type) {
     case RECEIVE_CURRENT_USER:
-      debugger
       newState = merge({}, prevState, { [action.payload.user.id]: action.payload.user });
       return newState;
     case RECEIVE_USER_PROFILE:

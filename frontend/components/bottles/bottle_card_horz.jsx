@@ -18,7 +18,6 @@ const msp = (state, ownProps) => {
 const BottleCardHorz = ({ bottle, distillery, region, ratings }) => {
 
   let userReview;
-  debugger
   
   Object.values(ratings).forEach( rating => {
     if (rating.bottle_id === bottle.id) {

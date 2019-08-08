@@ -4,7 +4,6 @@ import { logout } from '../../actions/session_actions';
 import { openSessionModal } from '../../actions/session_modal_actions';
 
 const msp = state => {
-  debugger
   if (state.session.currentUserId === null) {
     return { currentUser: null }
   } else {

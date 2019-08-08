@@ -10,7 +10,6 @@ class Api::RatingsController < ApplicationController
   end
 
   def create
-    # debugger
     @rating = Bottle.find(params[:bottle_id]).ratings.new(rating_params)
     @rating.user_id = current_user.id 
     @rating.date = Date.today.strftime("%b %d,%Y")
@@ -37,8 +36,7 @@ class Api::RatingsController < ApplicationController
   end
 
   def destroy
-    # debugger
-    rating = current_user.rating.find_by(id: params[:id])
+    rating = Rating.find_by(id: params[:id])
 
     if rating
       rating.destroy

@@ -1,5 +1,6 @@
 import React from 'react';
 import RatingErrors from './rating_errors';
+import { removeRating } from '../../util/rating_api_util';
 
 class UpdateRatingForm extends React.Component {
   constructor(props) {
@@ -48,6 +49,8 @@ class UpdateRatingForm extends React.Component {
   }
 
   render() {
+    const removeRating = this.props.removeRating;
+
     let editForm;
     if (this.props.currentUser !== this.props.rating.user_id) {
       editForm = <></>
@@ -62,6 +65,7 @@ class UpdateRatingForm extends React.Component {
         <RatingErrors errors={this.props.errors} />
         <button className='rating-submit' onClick={this.handleSubmit}>Submit</button>
         <button className='rating-cancel' onClick={this.toggleForm}>Cancel</button>
+        <button className='rating-delete' onClick={() => removeRating(this.state.bottle_id, this.state.id)}>Delete</button>
       </>
     }
 

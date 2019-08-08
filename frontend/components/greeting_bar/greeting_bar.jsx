@@ -3,11 +3,6 @@ import { Link } from 'react-router-dom';
 
 class Greeting extends React.Component {
 
-  constructor(props) {
-    super(props)
-    debugger
-  }
-
   render() {
     const openSessionModal = this.props.openSessionModal;
     const currentUser = this.props.currentUser;

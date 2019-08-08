@@ -4,28 +4,19 @@ import { merge } from 'lodash';
 
 class UserProfile extends React.Component {
 
-  constructor(props) {
-    super(props)
-    debugger
-  }
-
   componentDidMount() {
-    debugger
     this.props.fetchUserProfile(this.props.currentUser.id)
   }
 
   render() {
     const { currentUser } = this.props;
-    
-    debugger
-    // if (this.props.distilleries.length === 0 || this.props.distilleries === undefined) {
+
     if (_.isEmpty(this.props.distilleries) || this.props.distilleries === undefined) {
       return (
         <div className='loading'>Loading...</div>
       )
     } 
 
-    debugger
     const { bottles } = this.props;  // BOTTLES is an object
     const userBottles = Object.values(this.props.bottles).map(bottle => {
       return <BottleCardHorz
@@ -44,7 +35,6 @@ class UserProfile extends React.Component {
       }
     })
     
-    debugger
     const allRatings = ratedBottles.map( bottle => {
       return <BottleCardHorz
         key={`${bottle.name}-card-horz-rated`}
@@ -55,7 +45,6 @@ class UserProfile extends React.Component {
       />
     })
 
-    debugger
     return (
       <div className='user-profile'>
         <aside className='user-profile-detail'>

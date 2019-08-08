@@ -135,6 +135,16 @@ button.rating-cancel {
   font-size: 12px;
 }
 
+button.rating-delete {
+  float: left;
+  border: none;
+  color: #d7a831;
+  padding: 12px;
+  cursor: pointer;
+  margin-top: 11px;
+  font-size: 12px;
+}
+
 .rating-error {
   font-size: 16px;
   color: #dc540d;
