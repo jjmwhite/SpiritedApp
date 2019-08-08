@@ -37,10 +37,9 @@ class Api::RatingsController < ApplicationController
 
   def destroy
     rating = Rating.find_by(id: params[:id])
-
     if rating
+      render json: { ratingId: params[:id] }
       rating.destroy
-      render json: ['Rating successfully removed']
     else
       render json: ['You can only delete your own reviews'], status: 403
     end

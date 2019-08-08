@@ -1,5 +1,5 @@
-ratings = []
-users = []
+# ratings = []
+# Calc avg ratings
 
 json.bottles @bottles.each do |bottle|
   json.set! bottle.id do
@@ -11,10 +11,9 @@ json.bottles @bottles.each do |bottle|
     json.release_year bottle.release_year
     json.price bottle.price
     json.user_id bottle.user_id
-    if bottle.photo.attached?
-      json.photoUrl url_for(bottle.photo)
-    end
-    ratings.concat(bottle.ratings)
+    json.photoUrl url_for(bottle.photo)
+
+    # ratings.concat(bottle.ratings)
   end
 end
 
@@ -34,19 +33,18 @@ json.regions @bottles.each do |bottle|
   end
 end
 
-json.ratings do
-  ratings.each do |rating|
-    json.set! rating.id do
-      json.partial! '/api/ratings/rating', rating: rating
-      users.push(rating.user)
-    end
-  end
-end
+# json.ratings do
+#   ratings.each do |rating|
+#     json.set! rating.id do
+#       json.partial! '/api/ratings/rating', rating: rating
+#     end
+#   end
+# end
 
-json.users do 
-  users.each do |user|
-    json.set! user.id do
-      json.partial! '/api/users/user', user: user
-    end
-  end
-end
+# json.users do 
+#   users.each do |user|
+#     json.set! user.id do
+#       json.partial! '/api/users/user', user: user
+#     end
+#   end
+# end

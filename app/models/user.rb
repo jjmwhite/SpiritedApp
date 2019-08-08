@@ -21,9 +21,9 @@ class User < ApplicationRecord
 
   attr_reader :password 
 
-  # has_one_attached :photo
   has_many :ratings
-  has_many :bottles
+  has_many :bottles, class_name: :Bottle, foreign_key: :user_id
+  has_many :rated_bottles, through: :ratings, source: :bottle
   has_many :distilleries, through: :bottles, source: :distillery
   has_many :regions, through: :distilleries, source: :region
 

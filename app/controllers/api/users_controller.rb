@@ -1,7 +1,8 @@
 class Api::UsersController < ApplicationController
 
   def show
-    @user = User.includes(:bottles, :ratings, :distilleries, :regions).find(current_user.id)
+    @user = User.includes(:ratings, :regions, :rated_bottles).find(current_user.id)
+    @bottles = Bottle.with_attached_photo.includes(:distillery).where(:rating_users == @user.id || :user_id == @user.id)
   end
 
   def create

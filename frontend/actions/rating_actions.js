@@ -23,7 +23,7 @@ export const receiveRating = rating => {
 export const destroyRating = rating => {
   return({
     type: REMOVE_RATING,
-    ratingId: rating.id
+    ratingId: rating.ratingId
   })
 }
 
@@ -69,6 +69,7 @@ export const updateRating = (bottleId, rating) => dispatch => {
 
 export const removeRating = (bottleId, ratingId) => dispatch => {
   return RatingApiUtil.removeRating(bottleId, ratingId)
-                      .then( (rating) => dispatch(destroyRating(rating)))
+                      .then( (rating) => {
+                        dispatch(destroyRating(rating))})
                       .fail( (errors) => dispatch(receiveRatingErrors(errors)));
 }

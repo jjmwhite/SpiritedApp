@@ -22,6 +22,7 @@ class Bottle < ApplicationRecord
   belongs_to :distillery, class_name: :Distillery, foreign_key: :distillery_id
   has_one :region, through: :distillery, source: :region
   has_many :ratings
+  has_many :rating_users, through: :ratings, source: :user
 
   has_one_attached :photo
 end

@@ -48,10 +48,12 @@ class NewRatingForm extends React.Component {
 
   handleSubmit(e) {
     e.preventDefault();
-    this.props.createRating(this.props.bottleId, this.state);
+    this.props.createRating(this.props.bottleId, this.state)
+      .then( () => this.hideForm());
   }
 
   render() {
+    debugger
     const openSessionModal = this.props.openSessionModal
 
     let submit;

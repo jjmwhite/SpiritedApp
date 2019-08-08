@@ -17,7 +17,7 @@ const ratingsReducer = (state = {}, action) => {
       return newState;
     case REMOVE_RATING:
       newState = merge({}, prevState);
-      delete newState[Object.keys(prevState)[0]];
+      delete newState[action.ratingId];
       return newState;
     default:
       return state;
