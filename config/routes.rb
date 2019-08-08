@@ -13,6 +13,7 @@ Rails.application.routes.draw do
     end
     resources :distilleries, only: [:index, :show]
     resources :regions, only: [:show]
+    resources :search, only: [:index]
   end
 
 end

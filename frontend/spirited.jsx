@@ -1,14 +1,13 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import * as bottleActions from './actions/bottle_actions';
+import * as searchUtil from './util/search_api_util';
 import configureStore from './store/store';
 import Root from './components/root';
 
 document.addEventListener('DOMContentLoaded', () => {
   const root = document.getElementById('root')
 
-  let store;
-  
+  let store;  
   if (window.currentUser) {
     const preloadedState = {
       entities: { 
@@ -26,8 +25,7 @@ document.addEventListener('DOMContentLoaded', () => {
   window.getState = store.getState;
   window.dispatch = store.dispatch;
 
-  window.fetchBottle = bottleActions.fetchBottle;
-  window.createBottle = bottleActions.createBottle;
+  window.executeSearch = searchUtil.executeSearch;
 
   /////////////
 
