@@ -3,7 +3,6 @@ import UpdateRatingForm from './update_rating_form';
 import { fetchBottleRating, updateRating, removeRating, clearRatingErrors} from '../../actions/rating_actions';
 
 const msp = (state, ownProps) => {
-  debugger
   return ({
     rating: ownProps.rating,
     errors: state.errors.ratings || [],

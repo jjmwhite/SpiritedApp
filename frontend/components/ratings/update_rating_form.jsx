@@ -15,7 +15,6 @@ class UpdateRatingForm extends React.Component {
   }
 
   toggleForm(e) {
-    debugger
     const form = document.getElementById(`update-rating-review-section`);
     const prevReview = document.getElementById(`bottle-show-rating-detail-${this.props.rating.id}`)
 
@@ -49,9 +48,7 @@ class UpdateRatingForm extends React.Component {
   }
 
   render() {
-
     let editForm;
-    debugger
     if (this.props.currentUser !== this.props.rating.user_id) {
       editForm = <></>
     } else {

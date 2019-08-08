@@ -39,6 +39,13 @@ class BottleShow extends React.Component {
       })
     }
 
+    let editButton;
+    if (this.props.loggedIn) {
+      editButton = <button className='show-bottle-edit-button'><Link to={`/bottles/${bottle.id}/edit`}>Edit This Bottle</Link></button>
+    } else {
+      editButton = <></>
+    }
+
     return (
       <>
         <div className='show-background'>
@@ -51,7 +58,7 @@ class BottleShow extends React.Component {
                 <Link to={`/distilleries/${distillery.id}`}>{distillery.name}</Link>
                 <p>{bottle.description}</p>
                 <span>${bottle.price}</span>
-                <button className='show-bottle-edit-button'><Link to={`/bottles/${bottle.id}/edit`}>Edit This Bottle</Link></button>
+                {editButton}
               </div>
             </div>
             <div className='rating-show-section'>

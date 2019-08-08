@@ -98,7 +98,6 @@ class BetterBottleForm extends React.Component {
     } else {
       deleteButton = <div></div>
     }
-
     
     if (!this.state) {
       return (
