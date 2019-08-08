@@ -16,7 +16,7 @@ class UpdateRatingForm extends React.Component {
 
   toggleForm(e) {
     debugger
-    const form = document.getElementById(`update-rating-review-section-${this.props.rating.id}`);
+    const form = document.getElementById(`update-rating-review-section`);
     const prevReview = document.getElementById(`bottle-show-rating-detail-${this.props.rating.id}`)
 
     if (e.target.innerText === 'Cancel' && form.style.display === 'block') {
@@ -69,7 +69,7 @@ class UpdateRatingForm extends React.Component {
     }
 
     return (
-      <form id={`update-rating-review-section-${this.props.rating.id}`}>
+      <form id={`update-rating-review-section`}>
         <div className='rating-stars'>
           <span onClick={this.handleRating}>
             <i

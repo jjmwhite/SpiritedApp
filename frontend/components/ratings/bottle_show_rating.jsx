@@ -1,21 +1,5 @@
 import React from 'react';
 import UpdateRatingContainer from './update_rating_container';
-import { connect } from 'react-redux';
-import { fetchBottleRating } from '../../actions/rating_actions';
-
-const msp = (state, ownProps) => {
-  return({
-    rating: ownProps.rating,
-    users: ownProps.users,
-    currentUser: state.session.currentUserId,
-  })
-}
-
-const mdp = dispatch => {
-  return({
-    fetchBottleRating: (bottleId, ratingId) => dispatch(fetchBottleRating(bottleId, ratingId))
-  })
-}
 
 class BottleShowRating extends React.Component {
 
@@ -25,8 +9,7 @@ class BottleShowRating extends React.Component {
   }
 
   showForm() {
-    debugger
-    const form = document.getElementById(`update-rating-review-section-${this.props.rating.id}`);
+    const form = document.getElementById(`update-rating-review-section`);
     const prevReview = document.getElementById(`bottle-show-rating-detail-${this.props.rating.id}`)
     if (form.style.display === 'none' || form.style.display === '') {
       form.style.display = 'block';
@@ -40,10 +23,13 @@ class BottleShowRating extends React.Component {
     const currentUser = this.props.currentUser;
 
     let editButton;
+    let editForm;
     if (currentUser === rating.user_id) {
       editButton = <button className='rating-edit' onClick={this.showForm}>Edit Rating</button>
+      editForm = <UpdateRatingContainer rating={rating} currentUser={currentUser} />
     } else {
       editButton = <></>
+      editForm = <></>
     }
 
     return(
@@ -56,7 +42,7 @@ class BottleShowRating extends React.Component {
           </figcaption>
         </div>
         <div className='bottle-rating-toggle'>
-          <UpdateRatingContainer rating={rating} currentUser={currentUser} />
+          {editForm}
           <div id={`bottle-show-rating-detail-${rating.id}`}>
             <div className='rating-stars'>
               <span>
@@ -86,4 +72,4 @@ class BottleShowRating extends React.Component {
   }
 }
 
-export default connect(msp, mdp)(BottleShowRating);
+export default BottleShowRating;
