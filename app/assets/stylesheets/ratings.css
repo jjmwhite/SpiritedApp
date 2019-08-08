@@ -174,9 +174,9 @@ button.rating-delete {
   display: none;
 }
 
-.rating-review-section > div> textarea {
-  border: 1px solid lightgray;
+.new-rating-form > div > textarea {
   width: 100%;
+  border: 1px solid lightgray;
   margin-top: 10px;
   padding: 5px;
   font-size: 16px;
