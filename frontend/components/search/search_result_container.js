@@ -2,15 +2,12 @@ import { connect } from 'react-redux';
 import SearchResult from './search_result';
 
 const msp = (state) => {
+  debugger
+  const results = Object.values(state.ui.search)
   return({
-
+    results,
+    errors: state.errors.search 
   })
 }
 
-const mdp = dispatch => {
-  return({
-
-  })
-}
-
-export default connect(msp,mdp)(SearchResult);
+export default connect(msp)(SearchResult);

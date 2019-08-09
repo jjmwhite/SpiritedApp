@@ -24,14 +24,6 @@
   cursor: pointer;
 }
 
-.search-input {
-  padding: 10px;
-  border: 1px solid lightgray;
-  border-radius: 25px;
-  height: 20px;
-  margin-left: 15px;
-}
-
 .user-greeting {
   color: #135470;
   display: inline-flex;

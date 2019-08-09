@@ -4,7 +4,7 @@ import { fetchSearchResults } from '../../actions/search_actions';
 
 const msp = state => {
   return({
-    results: state.entities.search || ''
+    results: state.ui.search || ''
   })
 }
 
