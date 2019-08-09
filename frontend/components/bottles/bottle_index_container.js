@@ -6,7 +6,6 @@ import { openSessionModal } from '../../actions/session_modal_actions';
 const msp = state => {
   const bottles = Object.values(state.entities.bottles);
   const distilleries = Object.values(state.entities.distilleries);
-  debugger
   const regions = state.entities.regions;
   return({
     bottles,
