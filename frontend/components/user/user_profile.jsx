@@ -18,15 +18,20 @@ class UserProfile extends React.Component {
     } 
 
     const { bottles } = this.props;  // BOTTLES is an object
-    const userBottles = Object.values(this.props.bottles).map(bottle => {
-      return <BottleCardHorz
-        key={`${bottle.name}-card-horz-owned`}
-        bottle={bottle}
-        distillery={this.props.distilleries[bottle.distillery_id]}
-        regions={this.props.regions}
-        ratings={this.props.ratings}
-        />
+    const userBottles = [] 
+    Object.values(this.props.bottles).forEach(bottle => {
+      if (bottle.user_id === currentUser.id) {
+        userBottles.push(
+          <BottleCardHorz
+            key={`${bottle.name}-card-horz-owned`}
+            bottle={bottle}
+            distillery={this.props.distilleries[bottle.distillery_id]}
+            regions={this.props.regions}
+            ratings={this.props.ratings}
+          />)
+      }
     })
+    debugger
 
     const ratedBottles = []
     Object.values(this.props.ratings).map(rating => { // RATINGS is an object
