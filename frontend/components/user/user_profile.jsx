@@ -31,7 +31,6 @@ class UserProfile extends React.Component {
           />)
       }
     })
-    debugger
 
     const ratedBottles = []
     Object.values(this.props.ratings).map(rating => { // RATINGS is an object

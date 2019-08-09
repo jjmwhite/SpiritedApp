@@ -5,7 +5,6 @@ import { Link } from 'react-router-dom';
 const msp = (state, ownProps) => {
   const distillery = ownProps.distillery
   const region = ownProps.regions[distillery.region_id]
-
   return({
     distillery: {
       id: distillery.id,
@@ -17,8 +16,9 @@ const msp = (state, ownProps) => {
 }
 
 class BottleCardVert extends React.Component {
-
+  
   render() {
+
     const { bottle } = this.props;
     const { distillery } = this.props;
     const { region } = this.props;
