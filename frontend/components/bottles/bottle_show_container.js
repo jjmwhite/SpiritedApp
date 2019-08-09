@@ -16,19 +16,18 @@ const msp = (state = {}, ownProps) => {
     distillery = state.entities.distilleries[bottle.distillery_id];
     region = state.entities.regions[distillery.region_id];
     Object.values(state.entities.ratings).map( rating => {
-      if (rating.bottle_id === bottle.id) {
-        ratings.push(rating)
-      }
+      if (rating.bottle_id === bottle.id) { ratings.push(rating) }
     })
   }
 
+  const currentUserId = state.session.currentUserId || 0
   return({
     bottle,
     distillery,
     region,
     ratings,
     users: state.entities.users,
-    loggedIn: Boolean(state.session.currentUserId)
+    currentUserId
   })
 }
 

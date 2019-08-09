@@ -41,7 +41,7 @@ class BottleShow extends React.Component {
     }
 
     let editButton;
-    if (this.props.loggedIn) {
+    if (this.props.currentUserId === bottle.user_id) {
       editButton = <button className='show-bottle-edit-button'><Link to={`/bottles/${bottle.id}/edit`}>Edit This Bottle</Link></button>
     } else {
       editButton = <></>
