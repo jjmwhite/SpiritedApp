@@ -15,14 +15,10 @@ class Search extends React.Component {
   }
 
   resetSearchState() {
-    debugger
-    const input = document.getElementById('search-input');
-    input.value = '';
-    this.hideResults();
+    this.setState( {query: ''}, () => this.hideResults())
   }
 
   showResults() {
-    debugger
     const lis = document.getElementsByClassName('search-result');
     Object.values(lis).forEach(li => {
       li.style.display = 'block';
@@ -30,7 +26,8 @@ class Search extends React.Component {
   }
 
   hideResults() {
-    debugger
+    const ul = document.getElementById('search-results');
+    ul.style.display = 'none';
     const lis = document.getElementsByClassName('search-result');
     Object.values(lis).forEach( li => {
       li.style.display = 'none';
@@ -38,15 +35,12 @@ class Search extends React.Component {
   }
 
   handleChange(e) {
-    debugger
+    this.showResults();
     this.setState({ query: e.target.value }, 
     () => {
       if (this.state.query.length > 0) {
-        debugger
         this.debouncedSearch(this.state);
-        this.showResults();
       } else {
-        debugger
         this.resetSearchState()
       }
     })
@@ -68,7 +62,6 @@ class Search extends React.Component {
   }
 
   render() {
-
     return(
       <nav className='search-component'>
         <i className="fas fa-search"></i>
