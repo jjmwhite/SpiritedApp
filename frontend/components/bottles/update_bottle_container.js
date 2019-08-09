@@ -7,7 +7,6 @@ const msp = (state, ownProps) => {
   const bottleId = ownProps.match.params.bottleId;
   const bottle = state.entities.bottles[bottleId] || {} ;
   const distilleries = Object.values(state.entities.distilleries) || [];
-
   return ({
     formType: 'Edit This Bottle',
     name: bottle.name,
@@ -18,6 +17,7 @@ const msp = (state, ownProps) => {
     price: bottle.price,
     bottleId,
     distilleries,
+    
     errors: state.errors.bottles || []
   })
 }

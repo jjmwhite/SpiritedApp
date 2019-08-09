@@ -34,7 +34,7 @@ class Api::BottlesController < ApplicationController
       params[:bottle][:price] = params[:bottle][:price].to_f
     end
 
-    params[:bottle][:name] = params[:bottle][:name].titleize!
+    params[:bottle][:name] = params[:bottle][:name].titleize
 
     @bottle = Bottle.new(bottle_params)
     @bottle.user_id = current_user.id
@@ -51,7 +51,7 @@ class Api::BottlesController < ApplicationController
     if @bottle.user_id != current_user.id
       render json: ['You can only edit your own bottles'], status: 403
     else 
-      @bottle.name = @bottle.name.titleize!
+      @bottle.name = @bottle.name.titleize
       if @bottle.update!(bottle_params)
         render :show
       else
