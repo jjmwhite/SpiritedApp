@@ -51,7 +51,10 @@ dist6 = Distillery.create!(name: 'Springbank', region_id: 6, description: 'Proud
 dist7 = Distillery.create!(name: 'Caol Ila', region_id: 1, description: 'Overlooking the straight between Islay and Jura, every whiskey from the Caol Ila distillery carries with it a taste of the pure sea air.')
 
 dist8 = Distillery.create!(name: 'Talisker', region_id: 2, description: 'The only distillery on the Isle of Skye, Talisker is known not for only its signature aged expression but also for its fearless and award-winning blends.')
-  
+
+dist9 = Distillery.create!(name: 'Glenlivet', region_id: 3, description: 'Made using extra-tall stills for a lighter spirit.')
+
+dist10 = Distillery.create!(name: 'Glenmorangie', region_id: 4, description: 'Made only using local grains and fresh spring water, and barrels sourced from their own forests.')
 
 
 ### BOTTLES ###
@@ -157,6 +160,24 @@ bottle10 = Bottle.create!(name: 'Talisker 10',
                         )
   photo10 = open('https://spirited-app-seeds.s3.amazonaws.com/talisker_10_TW.png')
   bottle10.photo.attach(io: photo10, filename: 'talisker_10_TW.png')
+
+bottle11 = Bottle.create!(name: 'Glenlivet Nadurra', 
+                        description: 'Smoke, pepper, and dried dark fruits. A bold malt bottled at a higher proof with a big mouthfeel and a lingering sweetness.',
+                        distillery_id: 9,
+                        price: 90.99,
+                        user_id: 4,
+                        )
+  photo11 = open('https://spirited-app-seeds.s3.amazonaws.com/glenlivet_nadurra_TW.png')
+  bottle11.photo.attach(io: photo11, filename: 'glenlivet_nadurra_TW.png')
+
+bottle12 = Bottle.create!(name: 'Glenmorangie Quinta Ruban', 
+                        description: 'Butterscotch, port and a hint of mint. Aged for at least 10 years in bourbon barrels, and finished for another 2 years in port casks.',
+                        distillery_id: 10,
+                        price: 56.99,
+                        user_id: 3,
+                        )
+  photo12 = open('https://spirited-app-seeds.s3.amazonaws.com/glenmorangie_quinta_ruban.png')
+  bottle12.photo.attach(io: photo12, filename: 'glenmorangie_quinta_ruban.png')
 
 
 

@@ -2,10 +2,8 @@ class Api::SearchController < ApplicationController
 
   def index
     query = search_params[:query].downcase
-
     @results = Bottle.where("name iLIKE '#{query}%'")
-    
-    if @results
+    if @results.length > 0
       render :index
     else
       render json: ['No results found. Create this Bottle?'], status: 404

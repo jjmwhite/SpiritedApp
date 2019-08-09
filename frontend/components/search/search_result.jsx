@@ -34,6 +34,7 @@ class SearchResult extends React.Component {
                 </Link>
       })
     } else if (this.props.results === 0 && this.props.errors.length > 0) {
+      debugger
       li = this.props.errors.map( err => {
         return <Link to='/bottles/create' 
                       key='search-error'>

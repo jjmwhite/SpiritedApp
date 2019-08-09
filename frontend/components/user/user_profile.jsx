@@ -44,7 +44,7 @@ class UserProfile extends React.Component {
         ratings={this.props.ratings}
       />
     })
-
+    
     return (
       <div className='user-profile'>
         <aside className='user-profile-detail'>
@@ -53,7 +53,7 @@ class UserProfile extends React.Component {
           <h5>Bottles Rated:</h5>
           <h3>{allRatings.length}</h3>
           <h5>Bottles Added:</h5>
-          <h3>{ratedBottles.length}</h3>
+          <h3>{userBottles.length}</h3>
         </aside>
         <main className='user-content'>
           <div className='profile-ratings'>

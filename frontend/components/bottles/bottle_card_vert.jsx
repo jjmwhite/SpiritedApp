@@ -4,7 +4,15 @@ import { Link } from 'react-router-dom';
 
 const msp = (state, ownProps) => {
   const distillery = ownProps.distillery
-  const region = ownProps.regions[distillery.region_id]
+  // const region = ownProps.regions[distillery.region_id]
+  let region;
+  if (state.entities.region[distillery.region_id] === undefined) {
+    debugger
+    region = {}
+  } else {
+    debugger
+    region = state.entities.region[distillery.region_id]
+  }
   return({
     distillery: {
       id: distillery.id,
@@ -15,7 +23,24 @@ const msp = (state, ownProps) => {
   })
 }
 
-const BottleCardVert = ({ bottle, distillery, region, fetchBottle }) => {
+class BottleCardVert extends React.Component {
+
+  componentDidMount() {
+    debugger
+    this.props.fetchBottle();
+  }
+
+  render() {
+    const { bottle } = this.props;
+    const { distillery } = this.props;
+    const { region } = this.region;
+    const { fetchBottle } = this.props.fetchBottle;
+    
+    debugger
+
+    if (_.isEmpty(region)) {
+      return <div className='loading-small'>Loading...</div>
+    }
 
     return(
       <section className='bottle-card-vert'>
@@ -30,6 +55,7 @@ const BottleCardVert = ({ bottle, distillery, region, fetchBottle }) => {
         </div>
       </section>
     )
+  }
 
 }
 export default connect(msp)(BottleCardVert);

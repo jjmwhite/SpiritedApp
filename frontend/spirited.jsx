@@ -29,5 +29,11 @@ document.addEventListener('DOMContentLoaded', () => {
 
   /////////////
 
+  document.body.addEventListener('keyup', (e) => {
+    if (e.which === 9) {
+      document.documentElement.classList.remove('no-focus-outline')
+    }
+  })
+
   ReactDOM.render(<Root store={store} />, root)
 })

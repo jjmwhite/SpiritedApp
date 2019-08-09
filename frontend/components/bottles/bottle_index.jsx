@@ -18,8 +18,8 @@ class BottleIndex extends React.Component {
     } else {
       createBottleButton = <button className='index-bottle-create-button' onClick={() => openSessionModal('login')}>Create Bottle</button>
     }
-    
-    if (this.props.bottles === {} || this.props.distilleries.length === 0 ) {
+    debugger
+    if (this.props.bottles.length === 0 || this.props.distilleries.length === 0 || Object.values(this.props.regions).length < 6) {
       return (
         <div className='loading'>Loading...</div>
       )
