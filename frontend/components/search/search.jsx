@@ -19,6 +19,8 @@ class Search extends React.Component {
   }
 
   showResults() {
+    const ul = document.getElementById('search-results');
+    ul.style.display = 'block';
     const lis = document.getElementsByClassName('search-result');
     Object.values(lis).forEach(li => {
       li.style.display = 'block';

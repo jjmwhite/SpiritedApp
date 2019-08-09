@@ -2,7 +2,6 @@ import { connect } from 'react-redux';
 import SearchResult from './search_result';
 
 const msp = (state) => {
-  debugger
   const results = Object.values(state.ui.search)
   return({
     results,
