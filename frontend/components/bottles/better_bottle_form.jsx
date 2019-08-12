@@ -86,7 +86,7 @@ class BetterBottleForm extends React.Component {
 
   handleDelete() {
     this.props.removeBottle(this.props.bottleId)
-      .then(() => this.props.history.push('/'))
+    this.props.history.push('/')
   }
 
   render() {
