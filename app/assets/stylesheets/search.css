@@ -13,8 +13,9 @@
 
 .fa-search {
   color: #c9c8c8;
-  left: 50px;
-  position: relative;
+  left: 278px;
+  top: 26px;
+  position: absolute;
 }
 
 #search-results {

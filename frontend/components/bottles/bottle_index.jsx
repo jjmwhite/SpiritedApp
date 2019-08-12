@@ -9,7 +9,7 @@ class BottleIndex extends React.Component {
     this.props.fetchBottles();
   }
 
-  render() {    
+  render() {
     const openSessionModal = this.props.openSessionModal;
 
     let createBottleButton;

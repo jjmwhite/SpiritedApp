@@ -4,7 +4,7 @@ import BottleErrors from './bottle_errors';
 class BetterBottleForm extends React.Component {
   constructor(props) {
     super(props);
-
+    
     this.state = {
       name: this.props.name,
       description: this.props.description,
@@ -27,13 +27,29 @@ class BetterBottleForm extends React.Component {
   }
 
   componentDidMount() {
+    // this.props.fetchDistilleries()
+    //     .then(() => {
+    //       debugger
+    //       this.setState( this.props )})
+    // if (this.props.formType === 'Edit This Bottle') {
+    //   debugger
+    //   this.props.fetchBottle(this.props.match.params.bottleId)
+    //     .then(() => {
+    //       debugger
+    //       this.setState( this.props )})
+    // } 
     this.props.fetchDistilleries()
-        .then(() => this.setState( this.props ))
-    if (this.props.formType === 'Edit This Bottle') {
-      this.props.fetchBottle(this.props.match.params.bottleId)
-        .then(() => this.setState( this.props ))
-    } 
+      .then( () => { this.setState(this.props, 
+        () => { 
+          if (this.props.formType === 'Edit This Bottle') {
+            this.props.fetchBottle(this.props.match.params.bottleId)
+                      .then(() => this.setState(this.props))
+          }
+        })
+      })
   }
+           
+        
 
   componentWillUnmount() {
     this.props.clearBottleErrors()
