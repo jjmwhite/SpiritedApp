@@ -31,7 +31,7 @@ class Api::BottlesController < ApplicationController
     end
 
     if params[:bottle][:price] != '' 
-      params[:bottle][:price] = params[:bottle][:price].to_f
+      params[:bottle][:price] = params[:bottle][:price].split(',').join('').to_f
     end
 
     params[:bottle][:name] = params[:bottle][:name].titleize
@@ -51,8 +51,12 @@ class Api::BottlesController < ApplicationController
     if @bottle.user_id != current_user.id
       render json: ['You can only edit your own bottles'], status: 403
     else 
-      @bottle.name = @bottle.name.titleize
-      if @bottle.update!(bottle_params)
+      params[:bottle][:name] = params[:bottle][:name].titleize
+      if params[:bottle][:price] != ''
+        params[:bottle][:price] = params[:bottle][:price].split(',').join('').to_f
+      end
+
+      if @bottle.update(bottle_params)
         render :show
       else
         render json: @bottle.errors.full_messages, status: 422

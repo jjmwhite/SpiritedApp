@@ -15,8 +15,11 @@
 #
 
 class Bottle < ApplicationRecord
+  include ActiveModel::Validations
+
   validates :name, presence: true, uniqueness: true
   validates :description, :distillery_id, :price, :user_id, presence: true
+  validates_with PriceValidator
 
   belongs_to :user, class_name: :User, foreign_key: :user_id
   belongs_to :distillery, class_name: :Distillery, foreign_key: :distillery_id
