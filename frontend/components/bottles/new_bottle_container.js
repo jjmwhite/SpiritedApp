@@ -1,5 +1,5 @@
 import { connect } from 'react-redux';
-import BetterBottleForm from './better_bottle_form';
+import BottleForm from './bottle_form';
 import { createBottle, clearBottleErrors } from '../../actions/bottle_actions';
 import { fetchDistilleries } from '../../actions/distillery_actions';
 
@@ -26,4 +26,4 @@ const mdp = dispatch => {
   })
 }
 
-export default connect(msp, mdp)(BetterBottleForm)
+export default connect(msp, mdp)(BottleForm)

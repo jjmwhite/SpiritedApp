@@ -45,6 +45,7 @@
 
 .optional {
   color: darkgray;
+  padding: 0 5px;
 }
 
 .required {
