@@ -1,5 +1,6 @@
 import React from 'react';
 import BottleErrors from './bottle_errors';
+import CropPhoto from './crop_photo';
 
 class BetterBottleForm extends React.Component {
   constructor(props) {
@@ -13,10 +14,11 @@ class BetterBottleForm extends React.Component {
       release_year: this.props.release_year,
       price: this.props.price,
       photoFile: null,
+      photoUrl: null,
       distilleries: (this.props.distilleries),
     }
 
-    this.handleFile = this.handleFile.bind(this);
+    // this.handleFile = this.handleFile.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
     this.goBack = this.goBack.bind(this);
     this.handleDelete = this.handleDelete.bind(this);
@@ -27,17 +29,6 @@ class BetterBottleForm extends React.Component {
   }
 
   componentDidMount() {
-    // this.props.fetchDistilleries()
-    //     .then(() => {
-    //       debugger
-    //       this.setState( this.props )})
-    // if (this.props.formType === 'Edit This Bottle') {
-    //   debugger
-    //   this.props.fetchBottle(this.props.match.params.bottleId)
-    //     .then(() => {
-    //       debugger
-    //       this.setState( this.props )})
-    // } 
     this.props.fetchDistilleries()
       .then( () => { this.setState(this.props, 
         () => { 
@@ -49,8 +40,6 @@ class BetterBottleForm extends React.Component {
       })
   }
            
-        
-
   componentWillUnmount() {
     this.props.clearBottleErrors()
   }
@@ -61,9 +50,20 @@ class BetterBottleForm extends React.Component {
     )
   }
 
-  handleFile(e) {
-    this.setState({ photoFile: e.currentTarget.files[0] });
-  }
+  // handleFile(e) {
+  //   const photo = e.target.files[0];
+  //   const fileReader = new FileReader();
+  //   fileReader.onloadend = () => {
+  //     this.setState({
+  //       photoFile: photo,
+  //       photoUrl: fileReader.result
+  //     })
+  //   }
+  //   if (photo) { 
+  //     debugger
+  //     fileReader.readAsDataURL(photo)
+  //   }
+  // }
 
   handleSubmit(e) {
     e.preventDefault();
@@ -99,19 +99,22 @@ class BetterBottleForm extends React.Component {
       return <option key={`${distillery.name}-${idx}`} value={distillery.id}>{distillery.name}</option>
     })}
 
-    let imgMessage;
-    if (this.props.formType === 'Add a New Bottle') {
-      imgMessage =
-        <div>
-          <label>Upload Image:</label>
-          <p className='required'>*</p>
-        </div>
-    } else {
-      imgMessage = <div>
-        <label>Upload a New Image:</label>
-        <p className='optional'>(optional)</p>
-      </div>
-    }
+    // const photoPreview = this.state.photoUrl ? <img className='photo-preview' src={this.state.photoUrl} /> : null
+    const photoPreview = this.state.photoUrl ? <CropPhoto photoUrl={this.state.photoUrl} formType={this.props.formType}/> : null
+
+    // let imgMessage;
+    // if (this.props.formType === 'Add a New Bottle') {
+    //   imgMessage =
+    //     <div>
+    //       <label>Upload Image:</label>
+    //       <p className='required'>*</p>
+    //     </div>
+    // } else {
+    //   imgMessage = <div>
+    //     <label>Upload a New Image:</label>
+    //     <p className='optional'>(optional)</p>
+    //   </div>
+    // }
 
     let deleteButton;
     if (this.props.formType === 'Edit This Bottle') {
@@ -130,7 +133,7 @@ class BetterBottleForm extends React.Component {
       <div className='bottle-form-background'>
         <div className='clear-space'></div>
         <form className='bottle-form-section'>
-          <img onClick={this.goBack} src={cancel} alt="Cancel" />
+          <img className='cancel-icon' onClick={this.goBack} src={cancel} alt="Cancel" />
           <h1>{this.props.formType}</h1>
 
           <div>
@@ -172,10 +175,12 @@ class BetterBottleForm extends React.Component {
             <p className='required'>*</p>
           </div>
           <input type="text" value={this.state.price} placeholder='e.g. 75.00' onChange={this.handleChange('price')} />
-
-          {imgMessage}
-          <input type="file" onChange={this.handleFile} />
-
+           {/* {imgMessage}
+           <input type="file" onChange={this.handleFile} /> */}
+           <div className='crop-zone'>
+             {photoPreview}
+           </div>
+          
           {deleteButton}
           <BottleErrors errors={this.props.errors} />
 

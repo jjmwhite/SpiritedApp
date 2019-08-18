@@ -18,11 +18,12 @@
   padding: 50px;
 }
 
-.bottle-form-section > img {
-  height: 25px;
-  width: 25px;
-  padding: 5px;
+.photo-preview {
+  height: 300px;
+  width: 150px;
+  padding: 35px 0 0 0;
   cursor: pointer;
+  align-self: center;
 }
 
 .bottle-form-section > h1 {
