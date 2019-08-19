@@ -16,7 +16,7 @@ class UpdateRatingForm extends React.Component {
   }
 
   toggleForm(e) {
-    const form = document.getElementById(`update-rating-review-section`);
+    const form = document.getElementById(`update-rating-review-section-${this.props.rating.id}`);
     const prevReview = document.getElementById(`bottle-show-rating-detail-${this.props.rating.id}`)
 
     if (e.target.innerText === 'Cancel' && form.style.display === 'block') {
@@ -52,12 +52,11 @@ class UpdateRatingForm extends React.Component {
     const removeRating = this.props.removeRating;
 
     let editForm;
-    if (this.props.currentUser !== this.props.rating.user_id) {
-      editForm = <></>
-    } else {
+    if (this.props.currentUser === this.props.rating.user_id || this.props.currentUser === 1) {
       editForm = 
       <>
         <textarea
+          className='update-review-textarea'
           value={this.state.review}
           cols="30" rows="3"
           onChange={this.handleChange('review')}
@@ -67,10 +66,12 @@ class UpdateRatingForm extends React.Component {
         <button className='rating-cancel' onClick={this.toggleForm}>Cancel</button>
         <button className='rating-delete' onClick={() => removeRating(this.state.bottle_id, this.state.id)}>Delete</button>
       </>
+    } else {
+      editForm = <></>
     }
 
     return (
-      <form id={`update-rating-review-section`}>
+      <form id={`update-rating-review-section-${this.props.rating.id}`}>
         <div className='rating-stars'>
           <span onClick={this.handleRating}>
             <i

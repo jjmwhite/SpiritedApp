@@ -9,7 +9,7 @@ class BottleShowRating extends React.Component {
   }
 
   showForm() {
-    const form = document.getElementById(`update-rating-review-section`);
+    const form = document.getElementById(`update-rating-review-section-${this.props.rating.id}`);
     const prevReview = document.getElementById(`bottle-show-rating-detail-${this.props.rating.id}`)
     if (form.style.display === 'none' || form.style.display === '') {
       form.style.display = 'block';
@@ -24,7 +24,7 @@ class BottleShowRating extends React.Component {
 
     let editButton;
     let editForm;
-    if (currentUser === rating.user_id) {
+    if (currentUser === rating.user_id || currentUser === 1) {
       editButton = <button className='rating-edit' onClick={this.showForm}>Edit Rating</button>
       editForm = <UpdateRatingContainer rating={rating} currentUser={currentUser} />
     } else {
@@ -42,7 +42,6 @@ class BottleShowRating extends React.Component {
           </figcaption>
         </div>
         <div className='bottle-rating-toggle'>
-          {editForm}
           <div id={`bottle-show-rating-detail-${rating.id}`}>
             <div className='rating-stars'>
               <span>
@@ -64,6 +63,7 @@ class BottleShowRating extends React.Component {
             <p>{rating.review}</p>
             {editButton}
           </div>
+          {editForm}
         </div>
         
       </section>

@@ -24,17 +24,17 @@ class SessionForm extends React.Component {
   handleSubmit(e) {
     e.preventDefault();
     this.props.formAction(this.state)
-              .then(this.props.closeSessionModal)
-              // .then(this.props.history.push('/'))
+      .then(this.props.closeSessionModal)
+
   }
 
   handleDemo(e) {
     e.preventDefault();
     this.props.demoAction({
-      email: 'test@test.com',
+      email: 'demo@user.com',
       password: 'password123',
     })
-              .then(this.props.closeSessionModal())
+      .then(this.props.closeSessionModal())
   }
 
   render() {

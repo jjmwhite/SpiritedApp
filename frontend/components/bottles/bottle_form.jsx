@@ -37,8 +37,6 @@ class BottleForm extends React.Component {
         })
       })
   }
-           
-        
 
   componentWillUnmount() {
     this.props.clearBottleErrors()

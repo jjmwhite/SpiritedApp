@@ -16,6 +16,7 @@ user4 = User.create!(email: 'iloveislays@yahoo.com', first_name: 'Elizabeth', la
 user5 = User.create!(email: 'maester5@hotmail.com', first_name: 'Sam', last_name: 'Tarley', password:'password123', session_token: 'ad9gydfaiughad8dfgh')
 user6 = User.create!(email: 'spimpernel@gmail.com', first_name: 'Percy', last_name: 'Blakeney', password:'password123', session_token: 'asdf8yadfguhaidufhg')
 user7 = User.create!(email: 'seanthecon@gmail.com', first_name: 'Sean', last_name: 'Connery', password:'password123', session_token: 'dfhsfghhjdghjjkhjfk')
+user8 = User.create!(email: 'demo@user.com', first_name: 'Guest', last_name: 'User', password: 'password123', session_token: 'aoshfoant4wo5y38na')
 
 
 ### REGION ###
@@ -165,7 +166,7 @@ bottle11 = Bottle.create!(name: 'Glenlivet Nadurra',
                         description: 'Smoke, pepper, and dried dark fruits. A bold malt bottled at a higher proof with a big mouthfeel and a lingering sweetness.',
                         distillery_id: 9,
                         price: 90.99,
-                        user_id: 4,
+                        user_id: 8,
                         )
   photo11 = open('https://spirited-app-seeds.s3.amazonaws.com/glenlivet_nadurra_TW.png')
   bottle11.photo.attach(io: photo11, filename: 'glenlivet_nadurra_TW.png')
@@ -174,7 +175,7 @@ bottle12 = Bottle.create!(name: 'Glenmorangie Quinta Ruban',
                         description: 'Butterscotch, port and a hint of mint. Aged for at least 10 years in bourbon barrels, and finished for another 2 years in port casks.',
                         distillery_id: 10,
                         price: 56.99,
-                        user_id: 3,
+                        user_id: 8,
                         )
   photo12 = open('https://spirited-app-seeds.s3.amazonaws.com/glenmorangie_quinta_ruban.png')
   bottle12.photo.attach(io: photo12, filename: 'glenmorangie_quinta_ruban.png')
@@ -218,11 +219,11 @@ r6 = Rating.create!(user_id: 4,
                     date: 'Mar 14, 2017'
                     )
 
-r7 = Rating.create!(user_id: 3, 
+r7 = Rating.create!(user_id: 8, 
                     bottle_id: 2, 
                     rating: 4,
                     review: 'Vanilla with hints of ginger, dried fruits, sherry sweetness and wood smoke.',
-                    date: 'Aug 01, 2018'
+                    date: 'Aug 01, 2019'
                     )
 
 r8 = Rating.create!(user_id: 2, 
@@ -266,6 +267,21 @@ r13 = Rating.create!(user_id: 5,
                     review: 'I went to a Macallan tasing where they served dried figs alongside sipping this scotch and that pairing sold me on it forever. So good!',
                     date: 'Jul 02, 2017'
                     )
+
+r14 = Rating.create!(user_id: 8,
+                    bottle_id: 11,
+                    rating: 5,
+                    review: 'Really enjoyed the smoke and spice of this one! For something that hits hard up front, it also had a lighter finish than I expected.',
+                    date: 'Jul 02, 2019'
+                    )
+
+r15 = Rating.create!(user_id: 8,
+                    bottle_id: 6,
+                    rating: 4,
+                    review: 'The bourbon cask finish gives the Springbank 10 one a nice hint of honey, and it improves with a few drops of water to open it up.',
+                    date: 'Aug 19, 2019'
+                    )
+
 
   ### OTHER IMAGE CREDITS:
   # 'X' icon by https://www.flaticon.com/authors/hadrien

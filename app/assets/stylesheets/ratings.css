@@ -67,11 +67,11 @@
   margin-top: 10px;
 }
 
-#update-rating-review-section {
+form[id^="update-rating-review-section-"] {
   display: none;
 }
 
-#update-rating-review-section > textarea {
+.update-review-textarea {
   border: 1px solid lightgray;
   width: 100%;
   margin-top: 10px;

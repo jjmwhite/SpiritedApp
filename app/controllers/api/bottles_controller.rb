@@ -48,7 +48,7 @@ class Api::BottlesController < ApplicationController
 
   def update
     @bottle = Bottle.find(params[:id])
-    if @bottle.user_id != current_user.id
+    unless @bottle.user_id == current_user.id || @bottle.user_id == 1
       render json: ['You can only edit your own bottles'], status: 403
     else 
       params[:bottle][:name] = params[:bottle][:name].titleize
