@@ -7,7 +7,7 @@ class Search extends React.Component {
     this.state = { query: '' }
 
     this.fetchSearchResults = this.props.fetchSearchResults;
-    this.debouncedSearch = this._debounce(this.fetchSearchResults, 300)
+    this.debouncedSearch = this._debounce(this.fetchSearchResults, 400)
     this.handleChange = this.handleChange.bind(this);
     this.resetSearchState = this.resetSearchState.bind(this);
     this.showResults = this.showResults.bind(this);
@@ -69,10 +69,11 @@ class Search extends React.Component {
         <i className="fas fa-search"></i>
         <input id='search-input' 
           type="search" 
-          placeholder={`Search any Scotch`}
+          placeholder={'Search any Scotch'}
+          autoComplete="off"
           value={this.state.search}
           onChange={this.handleChange}
-          onBlur={this.hideResults}
+          // onFocusCapture={this.hideResults}
           />
         <SearchResultContainer updateSearchState={this.updateSearchState}/>
       </nav>

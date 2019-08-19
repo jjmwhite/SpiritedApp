@@ -6,7 +6,7 @@ class Api::SearchController < ApplicationController
     if @results.length > 0
       render :index
     else
-      render json: ['No results found. Create this Bottle?'], status: 404
+      render json: ['No results found. Add this Bottle?'], status: 404
     end
 
   end

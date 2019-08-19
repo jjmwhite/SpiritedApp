@@ -11,7 +11,6 @@ export const receiveSearchResults = (results) => {
 }
 
 export const receiveSearchErrors = (errors) => {
-  // debugger
   return({
     type: RECEIVE_SEARCH_ERRORS,
     errors: errors.responseJSON
@@ -23,6 +22,5 @@ export const fetchSearchResults = (query) => dispatch => {
   return SearchApiUtil.executeSearch(query)
                       .then( (results) => dispatch(receiveSearchResults(results)))
                       .fail( (errors) => {
-                        // debugger
                         dispatch(receiveSearchErrors(errors))});
 }
