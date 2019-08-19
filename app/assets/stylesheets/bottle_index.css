@@ -15,6 +15,27 @@
   min-width: 200px;
 }
 
+.bottle-vert-rating {
+  position: relative;
+  top: 22%;
+  left: 15%;
+}
+
+.bottle-vert-rating p {
+  color: #bbb9b9;
+  position: absolute;
+  top: 15px;
+  left: 5px;
+  font-size: 14px;
+  width: 80px;
+  text-align: center;
+}
+
+.bottle-vert-rating div {
+  position: absolute;
+  top: 35px;
+}
+
 .bottle-card-vert > a > img {
   height: 260px;
   position: relative;

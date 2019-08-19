@@ -12,8 +12,19 @@ json.bottles @bottles.each do |bottle|
     json.price bottle.price
     json.user_id bottle.user_id
     json.photoUrl url_for(bottle.photo)
+    
+    ratings = bottle.ratings.to_a
+    if ratings.length > 0 
+      sum = 0
+      bottle.ratings.each do |entry|
+        sum += entry.rating
+      end
+      avg_rating = sum / bottle.ratings.length
+    else
+      avg_rating = 0
+    end
+    json.avg_rating avg_rating
 
-    # ratings.concat(bottle.ratings)
   end
 end
 
@@ -32,14 +43,6 @@ json.regions @bottles.each do |bottle|
     json.name bottle.region.name
   end
 end
-
-# json.ratings do
-#   ratings.each do |rating|
-#     json.set! rating.id do
-#       json.partial! '/api/ratings/rating', rating: rating
-#     end
-#   end
-# end
 
 # json.users do 
 #   users.each do |user|

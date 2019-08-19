@@ -7,10 +7,12 @@ const msp = state => {
   const bottles = Object.values(state.entities.bottles);
   const distilleries = Object.values(state.entities.distilleries);
   const regions = state.entities.regions;
+  const ratings = state.entities.ratings;
   return({
     bottles,
     distilleries,
     regions,
+    ratings,
     loggedIn: Boolean(state.session.currentUserId)
   })
 }
