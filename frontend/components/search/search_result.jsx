@@ -12,6 +12,7 @@ class SearchResult extends React.Component {
   // if errors only, render one thing
   // if results, render all things
   resetSearch() {
+    debugger
     const ul = document.getElementById('search-results');
     ul.style.display = 'none';
     const lis = document.getElementsByClassName('search-result');

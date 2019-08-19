@@ -71,7 +71,9 @@ class Search extends React.Component {
           type="search" 
           placeholder={`Search any Scotch`}
           value={this.state.search}
-          onChange={this.handleChange}/>
+          onChange={this.handleChange}
+          onBlur={this.hideResults}
+          />
         <SearchResultContainer updateSearchState={this.updateSearchState}/>
       </nav>
     )
