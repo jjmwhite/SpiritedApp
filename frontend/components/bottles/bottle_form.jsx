@@ -159,7 +159,7 @@ class BottleForm extends React.Component {
             <label>Price:</label>
             <p className='required'>*</p>
           </div>
-          <input type="text" value={this.state.price} placeholder='e.g. 75.00' onChange={this.handleChange('price')} />
+          <input type="number" value={this.state.price} placeholder='e.g. 75.00' onChange={this.handleChange('price')} />
 
           {imgMessage}
           <input type="file" onChange={this.handleFile} />
