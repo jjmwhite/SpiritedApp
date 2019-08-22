@@ -44,18 +44,32 @@ dist3 = Distillery.create!(name: 'Macallan', region_id: 4, description: 'One of 
   dist3.photo.attach(io: photo3, filename: 'macallan_by-dima-fedorov.jpg')
 
 dist4 = Distillery.create!(name: 'Dalwhinnie', region_id: 4, description: 'Situated on the border ofthe Highland and Speyside regions, Dalwhinnie produces superior Highland spirits with great complexity.')
+  photo4 = open('https://spirited-app-seeds.s3.amazonaws.com/dalwhinnie_by-jaap-mol.jpg')
+  dist4.photo.attach(io: photo4, filename: 'dalwhinnie_by-jaap-mol.jpg')
 
 dist5 = Distillery.create!(name: 'Glenkinchie', region_id: 5, description: 'One of only six distilleries in the Lowland region, Glenkinchie is known for its unique floral notes.')
+  photo5 = open('https://spirited-app-seeds.s3.amazonaws.com/glenkinchie_by-jim-divine.jpg')
+  dist5.photo.attach(io: photo5, filename: 'glenkinchie_by-jim-divine.jpg')
 
 dist6 = Distillery.create!(name: 'Springbank', region_id: 6, description: 'Proud to be family-owned whisky distillery on the Kintyre Peninsula, and one of the last surviving distilleries in the Cambeltown region.')
+  photo6 = open('https://spirited-app-seeds.s3.amazonaws.com/springbank-dist.jpg')
+  dist6.photo.attach(io: photo6, filename: 'springbank-dist.jpg')
 
 dist7 = Distillery.create!(name: 'Caol Ila', region_id: 1, description: 'Overlooking the straight between Islay and Jura, every whiskey from the Caol Ila distillery carries with it a taste of the pure sea air.')
+  photo7 = open('https://spirited-app-seeds.s3.amazonaws.com/caol_ils_dist.jpg')
+  dist7.photo.attach(io: photo7, filename: 'caol_ils_dist.jpg')
 
 dist8 = Distillery.create!(name: 'Talisker', region_id: 2, description: 'The only distillery on the Isle of Skye, Talisker is known not for only its signature aged expression but also for its fearless and award-winning blends.')
+  photo8 = open('https://spirited-app-seeds.s3.amazonaws.com/talisker-dist.jpg')
+  dist8.photo.attach(io: photo8, filename: 'talisker-dist.jpg')
 
 dist9 = Distillery.create!(name: 'Glenlivet', region_id: 3, description: 'Made using extra-tall stills for a lighter spirit.')
+  photo9 = open('https://spirited-app-seeds.s3.amazonaws.com/glenlivet_by-dylan-de-jonge.jpg')
+  dist9.photo.attach(io: photo9, filename: 'glenlivet_by-dylan-de-jonge.jpg')
 
 dist10 = Distillery.create!(name: 'Glenmorangie', region_id: 4, description: 'Made only using local grains and fresh spring water, and barrels sourced from their own forests.')
+  photo10 = open('https://spirited-app-seeds.s3.amazonaws.com/Glenmorangie_distillery_wikimedia.jpg')
+  dist10.photo.attach(io: photo10, filename: 'Glenmorangie_distillery_wikimedia.jpg')
 
 
 ### BOTTLES ###

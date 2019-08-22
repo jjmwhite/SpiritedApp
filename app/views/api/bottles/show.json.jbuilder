@@ -5,7 +5,11 @@ json.bottle do
 end
 
 json.distillery do
-  json.partial! 'api/distilleries/distillery', distillery: @bottle.distillery
+  json.id bottle.distillery.id 
+  json.name bottle.distillery.name
+  json.region_id bottle.distillery.region_id
+  json.description bottle.distillery.description
+  json.bottles distillery.bottle_ids
 end
 
 json.region do 
