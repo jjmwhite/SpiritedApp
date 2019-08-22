@@ -141,13 +141,13 @@ class BottleForm extends React.Component {
             <label>Age:</label>
             <p className='optional'>(if specified)</p>
           </div>
-          <input type="text" value={this.state.age} placeholder='e.g. 12' onChange={this.handleChange('age')} />
+          <input type="number" value={this.state.age} placeholder='e.g. 12' onChange={this.handleChange('age')} />
 
           <div>
             <label>Release Year:</label>
             <p className='optional'>(if specified)</p>
           </div>
-          <input type="text" value={this.state.release_year} placeholder='e.g. 2017' onChange={this.handleChange('release_year')} />
+          <input type="number" value={this.state.release_year} placeholder='e.g. 2017' onChange={this.handleChange('release_year')} />
 
           <div>
             <label>Description:</label>
