@@ -65,7 +65,6 @@ class BottleShowRating extends React.Component {
           </div>
           {editForm}
         </div>
-        
       </section>
     )
    

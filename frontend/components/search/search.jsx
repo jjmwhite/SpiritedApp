@@ -73,7 +73,6 @@ class Search extends React.Component {
           autoComplete="off"
           value={this.state.search}
           onChange={this.handleChange}
-          // onFocusCapture={this.hideResults}
           />
         <SearchResultContainer updateSearchState={this.updateSearchState}/>
       </nav>

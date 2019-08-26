@@ -33,7 +33,6 @@ class Greeting extends React.Component {
       <span className='greeting-bar'>
         <div className='greeting-top-left'>
           <h1 className='app-name'><Link to='/'>SPIRITED</Link></h1>
-          {/* <input className='search-input' type="text" placeholder='Search will go here...'/> */}
           <SearchContainer />
         </div>
         {userGreeting}
