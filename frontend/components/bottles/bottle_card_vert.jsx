@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
 
 const msp = (state, ownProps) => {
+  debugger
   const distillery = ownProps.distillery
   const region = ownProps.regions[distillery.region_id]
   return({
@@ -18,11 +19,10 @@ const msp = (state, ownProps) => {
 class BottleCardVert extends React.Component {
   
   render() {
-
+    debugger
     const { bottle } = this.props;
     const { distillery } = this.props;
     const { region } = this.props;
-    const { fetchBottle } = this.props.fetchBottle;
     if (_.isEmpty(region)) {
       return <div className='loading-small'>Loading...</div>
     }

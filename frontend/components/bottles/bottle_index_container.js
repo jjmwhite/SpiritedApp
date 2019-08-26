@@ -1,6 +1,6 @@
 import { connect } from 'react-redux';
 import BottleIndex from './bottle_index';
-import { fetchBottle, fetchBottles } from '../../actions/bottle_actions';
+import { fetchBottles } from '../../actions/bottle_actions';
 import { openSessionModal } from '../../actions/session_modal_actions';
 
 const msp = state => {
@@ -20,7 +20,6 @@ const msp = state => {
 const mdp = dispatch => {
   return({
     fetchBottles: () => dispatch(fetchBottles()),
-    fetchBottle: (id) => dispatch(fetchBottle(id)),
     openSessionModal: (type) => dispatch(openSessionModal(type))
   })
 }

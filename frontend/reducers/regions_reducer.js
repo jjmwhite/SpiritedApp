@@ -1,6 +1,7 @@
 import { RECEIVE_ALL_BOTTLES, RECEIVE_BOTTLE } from '../actions/bottle_actions';
 import { merge } from 'lodash';
 import { RECEIVE_USER_PROFILE } from '../actions/user_actions';
+import { RECEIVE_DISTILLERY } from '../actions/distillery_actions';
 
 const regionsReducer = (state = {}, action) => {
   const prevState = Object.freeze(state);
@@ -14,6 +15,10 @@ const regionsReducer = (state = {}, action) => {
       return newState;
     case RECEIVE_USER_PROFILE:
       newState = merge({}, prevState, action.payload.regions);
+      return newState;
+    case RECEIVE_DISTILLERY:
+      debugger
+      newState = merge({}, prevState, action.payload.region);
       return newState;
     default:
       return state;

@@ -10,10 +10,10 @@ export const receiveAllDistilleries = (payload) => {
   })
 }
 
-export const receiveDistillery = (distillery) => {
+export const receiveDistillery = (payload) => {
   return({
     type: RECEIVE_DISTILLERY,
-    distillery
+    payload
   })
 }
 

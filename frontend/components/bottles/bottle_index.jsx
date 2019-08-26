@@ -33,7 +33,6 @@ class BottleIndex extends React.Component {
           bottle={bottle} 
           distillery={distilleries[bottle.distillery_id]}
           regions={this.props.regions}
-          fetchBottle={this.props.fetchBottle} 
           rating={this.props.ratings[bottle.id]}/>
       })
 

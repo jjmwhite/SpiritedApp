@@ -7,6 +7,7 @@ import BottleShowContainer from './bottles/bottle_show_container';
 import NewBottleContainer from './bottles/new_bottle_container';
 import UpdateBottleContainer from './bottles/update_bottle_container';
 import UserProfileContainer from './user/user_profile_container';
+import DistilleryShowContainer from './distilleries/distillery_show_container';
 import Footer from './footer/footer';
 import { ProtectedRoute, UserRoute } from '../util/route_util';
 
@@ -22,6 +23,7 @@ const App = () => {
           <ProtectedRoute exact path='/bottles/:bottleId/edit' component={UpdateBottleContainer} />
           <UserRoute exact path='/:userId/profile' component={UserProfileContainer} />
           <Route exact path='/bottles/:bottleId' component={BottleShowContainer} />
+          <Route exact path='/distilleries/:distId' component={DistilleryShowContainer} />
           <Route path='/' component={BottleIndexContainer} />
         </Switch>
 

@@ -1,4 +1,5 @@
 import { RECEIVE_ALL_BOTTLES, RECEIVE_BOTTLE, REMOVE_BOTTLE } from '../actions/bottle_actions';
+import { RECEIVE_DISTILLERY } from '../actions/distillery_actions';
 import { RECEIVE_USER_PROFILE } from '../actions/user_actions';
 import { merge } from 'lodash';
 
@@ -17,6 +18,9 @@ const bottlesReducer = (state = {}, action) => {
       delete newState[action.bottleId];
       return newState;
     case RECEIVE_USER_PROFILE:
+      newState = merge({}, prevState, action.payload.bottles);
+      return newState;
+    case RECEIVE_DISTILLERY:
       newState = merge({}, prevState, action.payload.bottles);
       return newState;
     default:
