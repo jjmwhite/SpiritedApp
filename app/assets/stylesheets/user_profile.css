@@ -117,9 +117,13 @@ main.user-content {
 }
 
 .bottle-subtitle {
-  font-size: 16px;
+  font-size: 14px;
   margin: 8px 0;
   font-weight: lighter;
+}
+
+.bottle-subtitle:hover {
+  text-decoration: underline;
 }
 
 .bottle-detail > a > h4 {
@@ -127,6 +131,10 @@ main.user-content {
   font-family: 'Ubuntu', sans-serif;
   font-size: 22px;
   text-decoration: none;
+}
+
+.bottle-detail > a > h4:hover {
+  text-decoration: underline;
 }
 
 .bottle-detail > span {
@@ -140,8 +148,8 @@ main.user-content {
 }
 
 .rating-detail > h5 {
-  font-size: 16px;
-  padding: 10px 0 0 20px;
+  font-size: 15px;
+  padding: 10px 0 0 25px;
 }
 
 .rating-detail > h2 {

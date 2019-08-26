@@ -3,7 +3,6 @@ import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
 
 const msp = (state, ownProps) => {
-  debugger
   const distillery = ownProps.distillery
   const region = ownProps.regions[distillery.region_id]
   return({
