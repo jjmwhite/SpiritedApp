@@ -1,0 +1,49 @@
+.distillery-show-section {
+  flex-direction: column;
+  align-items: center;
+  background: white;
+  width: 80%;
+  margin-top: 30px;
+  display: flex;
+  box-shadow: 0px 10px 7px lightgrey;
+  position: relative;
+  max-width: 1220px;
+}
+
+.distillery-show-section > img {
+  width: 100%;
+  object-fit: cover;
+  max-height: 400px;
+}
+
+.distillery-show-details {
+  display: flex;
+  flex-direction: column;
+  margin: 20px 100px;
+  min-width: 300px;
+}
+
+.distillery-show-details > h1 {
+  font-size: 28px;
+  font-family: 'Ubuntu', sans-serif;
+  margin: 20px 0;
+  color: #135470;
+}
+
+.distillery-show-details > a {
+  text-decoration: none;
+  color: #bebcbb;
+  font-size: 20px;
+  font-weight: lighter;
+}
+
+.distillery-show-details > a:hover {
+  text-decoration: underline;
+}
+
+.distillery-show-details > p {
+  margin: 20px 0;
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 1.3;
+}

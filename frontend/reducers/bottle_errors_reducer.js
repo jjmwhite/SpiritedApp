@@ -5,7 +5,6 @@ const bottleErrorsReducer = (state = [], action) => {
   let newState;
   switch (action.type) {
     case RECEIVE_BOTTLE_ERRORS:
-      debugger
       newState = action.errors;
       return newState;
     case RECEIVE_BOTTLE:

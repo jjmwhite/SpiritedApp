@@ -13,6 +13,7 @@ class BottleShow extends React.Component {
   componentDidUpdate(prevProps) {
     if (this.props.match.params.bottleId != prevProps.match.params.bottleId) {
       this.props.fetchBottle(this.props.match.params.bottleId);
+      window.scrollTo(0, 0);
     }
   }
 

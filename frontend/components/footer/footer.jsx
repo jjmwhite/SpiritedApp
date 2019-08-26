@@ -21,7 +21,7 @@ export default () => {
       </div>
       <div className='footer-contact'>
         <h1>Spirited</h1>
-        <p>a 'Vivino.com' clone by Jessica White</p>
+        <p>a site by Jessica White</p>
         <a target="_blank" href="https://github.com/jjmwhite/SpiritedApp">
           <img src={github} alt="View Project on Github" />
         </a>

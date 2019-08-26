@@ -18,7 +18,6 @@ const msp = (state, ownProps) => {
 class BottleCardVert extends React.Component {
   
   render() {
-    debugger
     const { bottle } = this.props;
     const { distillery } = this.props;
     const { region } = this.props;
