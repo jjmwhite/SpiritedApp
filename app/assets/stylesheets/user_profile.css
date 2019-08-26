@@ -145,21 +145,29 @@ main.user-content {
 .rating-detail {
   margin: 20px 20px 20px 0;
   border-top: 1px solid lightgray;
+  display: flex;
 }
 
-.rating-detail > h5 {
-  font-size: 15px;
-  padding: 10px 0 0 25px;
+.rating-detail > div {
+  min-width: 90px;
+  margin: 10px 0px;
 }
 
-.rating-detail > h2 {
-  font-size: 26px;
-  margin: 10px 0 15px 35px;
+.rating-detail > div > h5 {
+  font-size: 16px;
+  padding: 10px 0px;
   color: #135470;
-  padding: 0 20px;
+}
+
+.rating-detail > div > h2 {
+  font-size: 26px;
+  color: #135470;
   font-weight: bold;
+  text-align: center;
+  width: 75px;
 }
 
 .rating-detail > p {
   color: #135470;
+  margin: 20px 10px 0 10px;
 }

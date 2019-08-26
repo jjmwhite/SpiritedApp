@@ -23,8 +23,10 @@ const BottleCardHorz = ({ bottle, distillery, region, ratings }) => {
     if (rating.bottle_id === bottle.id) {
       userReview = 
         <>
-          <h5>My Rating:</h5>
-          <h2>{rating.rating}</h2>
+          <div>
+            <h5>My Rating:</h5>
+            <h2>{rating.rating}</h2>
+          </div>
           <p>"{rating.review}"</p>
         </>
     }
