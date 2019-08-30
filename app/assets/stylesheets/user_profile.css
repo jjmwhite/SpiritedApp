@@ -45,8 +45,8 @@
 }
 
 main.user-content {
-    display: flex;
-    flex-direction: column;
+  display: flex;
+  flex-direction: column;
 }
 
 .profile-ratings {

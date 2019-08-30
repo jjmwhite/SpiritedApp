@@ -1,4 +1,4 @@
-import { RECEIVE_BOTTLE, RECEIVE_ALL_BOTTLES } from '../actions/bottle_actions';
+import { RECEIVE_BOTTLE } from '../actions/bottle_actions';
 import { RECEIVE_USER_PROFILE } from '../actions/user_actions';
 import { RECEIVE_RATING, RECEIVE_RATINGS, REMOVE_RATING } from '../actions/rating_actions';
 import { merge } from 'lodash';
