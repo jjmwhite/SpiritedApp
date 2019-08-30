@@ -35,7 +35,7 @@ class BottleShowRating extends React.Component {
     return(
       <section className='bottle-rating'>
         <div className='bottle-rating-user'>
-          <img src={"https://upload.wikimedia.org/wikipedia/commons/d/d3/SCOport-fr-economy.png"} />
+          <img src={userImg} />
           <figcaption>
             <h2>{users[rating.user_id].first_name}</h2>
             <h5>Rated on {rating.date}</h5>

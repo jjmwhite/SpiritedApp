@@ -24,7 +24,7 @@ class Api::RatingsController < ApplicationController
   def update
     @rating = Rating.find(params[:id])
 
-    if @rating.user_id != current_user.id
+    unless @rating.user_id == current_user.id || current_user.id == 1
       render json: ['You can only edit your own ratings'], status: 403
     else
       if @rating.update!(rating_params)
@@ -37,7 +37,7 @@ class Api::RatingsController < ApplicationController
 
   def destroy
     rating = Rating.find_by(id: params[:id])
-    if rating
+    if rating && (rating.user_id == current_user.id || current_user.id == 1)
       render json: { ratingId: params[:id] }
       rating.destroy
     else
