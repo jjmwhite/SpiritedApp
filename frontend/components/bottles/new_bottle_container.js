@@ -15,15 +15,15 @@ const msp = state => {
     price: '',
     distilleries,
     errors: state.errors.bottles || [],
-  })
-}
+  });
+};
 
 const mdp = dispatch => {
   return ({
     fetchDistilleries: () => dispatch(fetchDistilleries()),
     formAction: (bottle) => dispatch(createBottle(bottle)),
     clearBottleErrors: () => dispatch(clearBottleErrors()),
-  })
-}
+  });
+};
 
-export default connect(msp, mdp)(BottleForm)
+export default connect(msp, mdp)(BottleForm);

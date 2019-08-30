@@ -9,15 +9,15 @@ class UpdateRatingForm extends React.Component {
     this.toggleForm = this.toggleForm.bind(this);
     this.handleRating = this.handleRating.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
-  }
+  };
 
   componentWillUnmount() {
     this.props.clearRatingErrors();
-  }
+  };
 
   toggleForm(e) {
     const form = document.getElementById(`update-rating-review-section-${this.props.rating.id}`);
-    const prevReview = document.getElementById(`bottle-show-rating-detail-${this.props.rating.id}`)
+    const prevReview = document.getElementById(`bottle-show-rating-detail-${this.props.rating.id}`);
 
     if (e.target.innerText === 'Cancel' && form.style.display === 'block') {
       this.setState({ rating: this.props.rating.rating })
@@ -28,29 +28,26 @@ class UpdateRatingForm extends React.Component {
       prevReview.style.display = 'block';
     } else {
       form.style.display = 'block';
-      prevReview.style.display = 'none'
-    }
-  }
+      prevReview.style.display = 'none';
+    };
+  };
 
   handleRating(e) {
-    this.setState({ rating: e._targetInst.pendingProps.value })
-  }
+    this.setState({ rating: e._targetInst.pendingProps.value });
+  };
 
   handleChange(input) {
-    return (
-      e => this.setState({ [input]: e.target.value })
-    )
-  }
+    return ( e => this.setState({ [input]: e.target.value }) );
+  };
 
   handleSubmit(e) {
     e.preventDefault();
     this.props.updateRating(this.state.bottle_id, this.state);
     this.toggleForm(e);
-  }
+  };
 
   render() {
     const removeRating = this.props.removeRating;
-
     let editForm;
     if (this.props.currentUser === this.props.rating.user_id || this.props.currentUser === 1) {
       editForm = 
@@ -68,7 +65,7 @@ class UpdateRatingForm extends React.Component {
       </>
     } else {
       editForm = <></>
-    }
+    };
 
     return (
       <form id={`update-rating-review-section-${this.props.rating.id}`}>
@@ -110,9 +107,8 @@ class UpdateRatingForm extends React.Component {
         </div>
         {editForm}
       </form>
-    )
-  }
-
-}
+    );
+  };
+};
 
 export default UpdateRatingForm;

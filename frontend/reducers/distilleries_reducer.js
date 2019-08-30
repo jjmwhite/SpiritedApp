@@ -23,7 +23,7 @@ const distilleriesReducer = (state = {}, action) => {
       return newState;
     default:
       return state;
-  }
-}
+  };
+};
 
 export default distilleriesReducer;

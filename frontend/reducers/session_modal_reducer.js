@@ -12,7 +12,7 @@ const sessionModalReducer = (state = null, action) => {
       return newState;
     default:
       return state;
-  }
-}
+  };
+};
 
 export default sessionModalReducer;

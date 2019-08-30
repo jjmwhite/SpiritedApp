@@ -1,12 +1,11 @@
 import React from 'react';
 import BottleCardHorz from '../bottles/bottle_card_horz';
-import { merge } from 'lodash';
 
 class UserProfile extends React.Component {
 
   componentDidMount() {
-    this.props.fetchUserProfile(this.props.currentUser.id)
-  }
+    this.props.fetchUserProfile(this.props.currentUser.id);
+  };
 
   render() {
     const { currentUser } = this.props;
@@ -15,10 +14,10 @@ class UserProfile extends React.Component {
       return (
         <div className='loading'>Loading...</div>
       )
-    } 
+    };
 
     const { bottles } = this.props;  // BOTTLES is an object
-    const userBottles = [] 
+    const userBottles = [] ;
     Object.values(this.props.bottles).forEach(bottle => {
       if (bottle.user_id === currentUser.id) {
         userBottles.push(
@@ -29,15 +28,15 @@ class UserProfile extends React.Component {
             regions={this.props.regions}
             ratings={this.props.ratings}
           />)
-      }
-    })
+      };
+    });
 
-    const ratedBottles = []
+    const ratedBottles = [];
     Object.values(this.props.ratings).map(rating => { // RATINGS is an object
       if (bottles[rating.bottle_id]) {
         ratedBottles.push(bottles[rating.bottle_id])
-      }
-    })
+      };
+    });
     
     const allRatings = ratedBottles.map( bottle => {
       return <BottleCardHorz
@@ -47,12 +46,12 @@ class UserProfile extends React.Component {
         regions={this.props.regions}
         ratings={this.props.ratings}
       />
-    })
+    });
     
     return (
       <div className='user-profile'>
         <aside className='user-profile-detail'>
-          <img src={"https://upload.wikimedia.org/wikipedia/commons/d/d3/SCOport-fr-economy.png"} />
+          <img src={userImg} />
           <h2>{currentUser.first_name}</h2>
           <h5>Bottles Rated:</h5>
           <h3>{allRatings.length}</h3>
@@ -71,7 +70,7 @@ class UserProfile extends React.Component {
         </main>
       </div>
     )
-  }
-}
+  };
+};
 
 export default UserProfile;

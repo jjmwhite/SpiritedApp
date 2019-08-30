@@ -7,20 +7,19 @@ export const receiveSearchResults = (results) => {
   return({
     type: RECEIVE_SEARCH_RESULTS,
     results
-  })
-}
+  });
+};
 
 export const receiveSearchErrors = (errors) => {
   return({
     type: RECEIVE_SEARCH_ERRORS,
     errors: errors.responseJSON
-  })
-}
+  });
+};
 
 export const fetchSearchResults = (query) => dispatch => {
   if (query.query === '') return;
   return SearchApiUtil.executeSearch(query)
                       .then( (results) => dispatch(receiveSearchResults(results)))
-                      .fail( (errors) => {
-                        dispatch(receiveSearchErrors(errors))});
-}
+                      .fail( (errors) => dispatch(receiveSearchErrors(errors)));
+};

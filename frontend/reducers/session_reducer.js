@@ -1,9 +1,7 @@
 import { RECEIVE_CURRENT_USER, LOGOUT_CURRENT_USER } from '../actions/session_actions';
 import { merge } from 'lodash';
 
-const _nullSession = {
-  currentUserId: null
-};
+const _nullSession = { currentUserId: null };
 
 const sessionReducer = (state = _nullSession, action) => {
   Object.freeze(state);
@@ -17,7 +15,7 @@ const sessionReducer = (state = _nullSession, action) => {
       return newState;
     default:
       return state;
-  }
-}
+  };
+};
 
 export default sessionReducer;

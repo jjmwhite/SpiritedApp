@@ -7,7 +7,7 @@ class BottleIndex extends React.Component {
 
   componentDidMount() {
     this.props.fetchBottles();
-  }
+  };
 
   render() {
     const openSessionModal = this.props.openSessionModal;
@@ -17,7 +17,8 @@ class BottleIndex extends React.Component {
       createBottleButton = <Link to='/bottles/create'><button className='index-bottle-create-button'>Create Bottle</button></Link>
     } else {
       createBottleButton = <button className='index-bottle-create-button' onClick={() => openSessionModal('login')}>Create Bottle</button>
-    }
+    };
+
     if (this.props.bottles.length === 0 || this.props.distilleries.length === 0 || Object.values(this.props.regions).length < 6) {
       return (
         <div className='loading'>Loading...</div>
@@ -35,7 +36,7 @@ class BottleIndex extends React.Component {
           regions={this.props.regions}
           fetchBottle={this.props.fetchBottle} 
           rating={this.props.ratings[bottle.id]}/>
-      })
+      });
 
       return(
         <>
@@ -44,9 +45,9 @@ class BottleIndex extends React.Component {
           </div>
           {createBottleButton}
         </>
-      )
-    }
-  }
-}
+      );
+    };
+  };
+};
 
 export default BottleIndex;

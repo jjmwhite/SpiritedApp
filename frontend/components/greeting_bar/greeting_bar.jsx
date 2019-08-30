@@ -3,7 +3,6 @@ import { Link } from 'react-router-dom';
 import SearchContainer from '../search/search_container';
 
 class Greeting extends React.Component {
-
   render() {
     const openSessionModal = this.props.openSessionModal;
     const currentUser = this.props.currentUser;
@@ -27,7 +26,7 @@ class Greeting extends React.Component {
         <button className='signup-button' onClick={() => openSessionModal('signup')}>Join Us</button>
         <button className='login-button' onClick={() => openSessionModal('login')}>Log In</button>
       </div>)
-    }
+    };
 
     return(
       <span className='greeting-bar'>
@@ -38,9 +37,9 @@ class Greeting extends React.Component {
         </div>
         {userGreeting}
       </span>
-    )
-  }
-}
+    );
+  };
+};
 
 
 export default Greeting;

@@ -7,8 +7,8 @@ const msp = (state, ownProps) => {
     rating: ownProps.rating,
     errors: state.errors.ratings || [],
     currentUser: state.session.currentUserId || ''
-  })
-}
+  });
+};
 
 const mdp = dispatch => {
   return ({
@@ -16,7 +16,7 @@ const mdp = dispatch => {
     updateRating: (bottleId, rating) => dispatch(updateRating(bottleId, rating)),
     removeRating: (bottleId, ratingId) => dispatch(removeRating(bottleId, ratingId)),
     clearRatingErrors: () => dispatch(clearRatingErrors())
-  })
-}
+  });
+};
 
 export default connect(msp, mdp)(UpdateRatingForm);

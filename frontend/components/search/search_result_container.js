@@ -8,13 +8,13 @@ const msp = (state) => {
     results,
     noResult: state.errors.search,
     currentUser: Boolean(state.session.currentUserId)
-  })
-}
+  });
+};
 
 const mdp = dispatch => {
   return({
     openSessionModal: (type) => dispatch(openSessionModal(type))
-  })
-}
+  });
+};
 
 export default connect(msp, mdp)(SearchResult);

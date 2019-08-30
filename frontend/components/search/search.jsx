@@ -3,8 +3,8 @@ import SearchResultContainer from './search_result_container';
 
 class Search extends React.Component {
   constructor(props) {
-    super(props)
-    this.state = { query: '' }
+    super(props);
+    this.state = { query: '' };
 
     this.fetchSearchResults = this.props.fetchSearchResults;
     this.debouncedSearch = this._debounce(this.fetchSearchResults, 400)
@@ -12,11 +12,11 @@ class Search extends React.Component {
     this.resetSearchState = this.resetSearchState.bind(this);
     this.showResults = this.showResults.bind(this);
     this.hideResults = this.hideResults.bind(this);
-  }
+  };
 
   resetSearchState() {
-    this.setState( {query: ''}, () => this.hideResults())
-  }
+    this.setState( {query: ''}, () => this.hideResults());
+  };
 
   showResults() {
     const ul = document.getElementById('search-results');
@@ -24,8 +24,8 @@ class Search extends React.Component {
     const lis = document.getElementsByClassName('search-result');
     Object.values(lis).forEach(li => {
       li.style.display = 'block';
-    })
-  }
+    });
+  };
 
   hideResults() {
     const ul = document.getElementById('search-results');
@@ -33,8 +33,8 @@ class Search extends React.Component {
     const lis = document.getElementsByClassName('search-result');
     Object.values(lis).forEach( li => {
       li.style.display = 'none';
-    })
-  }
+    });
+  };
 
   handleChange(e) {
     this.showResults();
@@ -44,9 +44,9 @@ class Search extends React.Component {
         this.debouncedSearch(this.state);
       } else {
         this.resetSearchState()
-      }
-    })
-  }
+      };
+    });
+  };
 
   _debounce(func, wait) {
     let timeout;
@@ -56,12 +56,12 @@ class Search extends React.Component {
       const delayedFunc = () => {
         timeout = null;
         func.apply(context, args);
-      }
+      };
 
       clearTimeout(timeout);
       timeout = setTimeout(delayedFunc, wait);
-    }
-  }
+    };
+  };
 
   render() {
     return(
@@ -78,9 +78,7 @@ class Search extends React.Component {
         <SearchResultContainer updateSearchState={this.updateSearchState}/>
       </nav>
     )
-  }
-
-
-}
+  };
+};
 
 export default Search;

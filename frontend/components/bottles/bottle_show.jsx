@@ -7,14 +7,14 @@ class BottleShow extends React.Component {
 
   componentDidMount() {
     const bottleId = this.props.match.params.bottleId;
-    this.props.fetchBottle(bottleId)
-  }
+    this.props.fetchBottle(bottleId);
+  };
 
   componentDidUpdate(prevProps) {
     if (this.props.match.params.bottleId != prevProps.match.params.bottleId) {
       this.props.fetchBottle(this.props.match.params.bottleId);
-    }
-  }
+    };
+  };
 
   render() {
     const { bottle } = this.props;
@@ -25,8 +25,8 @@ class BottleShow extends React.Component {
     if (!bottle) {
       return (
         <div className='loading'>Loading...</div>
-      )
-    }
+      );
+    };
 
     let allRatings;
     if (this.props.ratings.length === 0) {
@@ -37,15 +37,15 @@ class BottleShow extends React.Component {
           key={`rating-id-${rating.id}`} 
           rating={rating} 
           users={users} />
-      })
-    }
+      });
+    };
 
     let editButton;
     if (this.props.currentUserId === bottle.user_id || this.props.currentUserId === 1) {
       editButton = <button className='show-bottle-edit-button'><Link to={`/bottles/${bottle.id}/edit`}>Edit This Bottle</Link></button>
     } else {
       editButton = <></>
-    }
+    };
 
     return (
       <>
@@ -77,8 +77,8 @@ class BottleShow extends React.Component {
           </main>
         </div>
       </>
-    )
-  }
-}
+    );
+  };
+};
 
 export default BottleShow;

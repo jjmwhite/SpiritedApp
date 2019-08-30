@@ -13,7 +13,7 @@ const ratingErrorsReducer = (state = [], action) => {
       return newState;
     default:
         return state;
-  }
-}
+  };
+};
 
 export default ratingErrorsReducer;

@@ -16,10 +16,10 @@ const msp = (state = {}, ownProps) => {
     region = state.entities.regions[distillery.region_id];
     Object.values(state.entities.ratings).map( rating => {
       if (rating.bottle_id === bottle.id) { ratings.push(rating) }
-    })
-  }
+    });
+  };
 
-  const currentUserId = state.session.currentUserId || 0
+  const currentUserId = state.session.currentUserId || 0;
   return({
     bottle,
     distillery,
@@ -27,8 +27,8 @@ const msp = (state = {}, ownProps) => {
     ratings,
     users: state.entities.users,
     currentUserId
-  })
-}
+  });
+};
 
 const mdp = dispatch => {
   return({
@@ -36,7 +36,7 @@ const mdp = dispatch => {
     createBottle: (bottle) => dispatch(createBottle(bottle)),
     updateBottle: (bottle, id) => dispatch(updateBottle(bottle, id)),
     removeBottle: (id) => dispatch(removeBottle(id)),
-  })
-}
+  });
+};
 
 export default connect(msp, mdp)(BottleShow);

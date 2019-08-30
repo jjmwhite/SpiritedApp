@@ -1,8 +1,7 @@
-import React from 'react'
+import React from 'react';
 import RatingErrors from './rating_errors';
 
 class NewRatingForm extends React.Component {
-
   constructor(props) {
     super(props);
     this.state = this.props.rating;
@@ -10,59 +9,57 @@ class NewRatingForm extends React.Component {
     this.showForm = this.showForm.bind(this);
     this.hideForm = this.hideForm.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
-  }
+  };
 
   componentWillUnmount() {
     this.props.clearRatingErrors();
-  }
+  };
 
   showForm() {
     const form = document.getElementById('rating-review-section');
     if (form.style.display === 'none' || form.style.display === '') {
       form.style.display = 'block';
-    } 
-  }
+    };
+  };
 
   hideForm() {
     const form = document.getElementById('rating-review-section');
     const stars = [...document.getElementsByClassName('new-gold-star')];
     stars.forEach(star => {
-      star.classList.value = 'fas fa-star new-gray-star'} )
-
+      star.classList.value = 'fas fa-star new-gray-star'
+    });
     if (form.style.display === 'block') {
       form.style.display = 'none';
-    } 
-    this.setState({rating: 0})
-  }
+    } ;
+    this.setState({rating: 0});
+  };
 
   handleRating(e) {
     this.showForm();
-    this.setState({ rating: e._targetInst.pendingProps.value })
-  }
+    this.setState({ rating: e._targetInst.pendingProps.value });
+  };
 
   handleChange(input) {
-    return (
-      e => this.setState({ [input]: e.target.value })
-    )
-  }
+    return ( e => this.setState({ [input]: e.target.value }) )
+  };
 
   handleSubmit(e) {
     e.preventDefault();
     this.props.createRating(this.props.bottleId, this.state)
       .then( () => this.hideForm());
-  }
+  };
 
   render() {
-    const openSessionModal = this.props.openSessionModal
+    const openSessionModal = this.props.openSessionModal;
 
     let submit;
     if (this.props.loggedIn) {
       submit = <button className='rating-submit' onClick={this.handleSubmit}>Submit</button>
     } else {
       submit = <button className='rating-submit' onClick={() => openSessionModal('login')}>Submit</button>
-    }
+    };
 
-    return(
+    return (
       <form className='new-rating-form'>
         <span onClick={this.handleRating}>
           <i 
@@ -98,7 +95,6 @@ class NewRatingForm extends React.Component {
             value='5'>
           </i>
         </span>
-
         <div id='rating-review-section'>
           <textarea 
             value={this.state.review}
@@ -111,8 +107,7 @@ class NewRatingForm extends React.Component {
         </div>
       </form>
     )
-  }
-
-}
+  };
+};
 
 export default NewRatingForm;

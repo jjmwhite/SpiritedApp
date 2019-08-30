@@ -12,20 +12,18 @@ const msp = (state, ownProps) => {
       region_id: distillery.region_id,
     },
     region
-  })
-}
+  });
+};
 
 class BottleCardVert extends React.Component {
-  
   render() {
-
     const { bottle } = this.props;
     const { distillery } = this.props;
     const { region } = this.props;
     const { fetchBottle } = this.props.fetchBottle;
     if (_.isEmpty(region)) {
       return <div className='loading-small'>Loading...</div>
-    }
+    };
     
     let ratingBox;
     if (bottle.avg_rating > 0) {
@@ -55,7 +53,7 @@ class BottleCardVert extends React.Component {
         <div className='bottle-vert-rating'>
           <p>Be the first to rate this dram</p>
         </div>
-    }
+    };
 
     return(
       <section className='bottle-card-vert'>
@@ -68,8 +66,8 @@ class BottleCardVert extends React.Component {
           <span>${bottle.price}</span>
         </div>
       </section>
-    )
-  }
+    );
+  };
+};
 
-}
 export default connect(msp)(BottleCardVert);

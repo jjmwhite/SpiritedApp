@@ -12,15 +12,15 @@ const msp = (state, ownProps) => {
     },
     errors: state.errors.ratings || [],
     loggedIn: Boolean(state.session.currentUserId)
-  })
-}
+  });
+};
 
 const mdp = dispatch => {
   return({
     createRating: (rating, bottleId) => dispatch(createRating(rating, bottleId)),
     clearRatingErrors: () => dispatch(clearRatingErrors()),
     openSessionModal: (type) => dispatch(openSessionModal(type))
-  })
-}
+  });
+};
 
 export default connect(msp, mdp)(NewRatingForm);

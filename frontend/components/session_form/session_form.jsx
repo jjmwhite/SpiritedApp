@@ -9,24 +9,23 @@ class SessionForm extends React.Component {
     this.handleSubmit = this.handleSubmit.bind(this);
     this.handleDemo = this.handleDemo.bind(this);
     this.closeSessionModal = this.props.closeSessionModal.bind(this);
-  }
+  };
 
   componentWillUnmount() {
     this.props.clearSessionErrors()
-  }
+  };
 
   handleChange(input) {
     return (
       e => this.setState({ [input]: e.target.value })
     );
-  }
+  };
 
   handleSubmit(e) {
     e.preventDefault();
     this.props.formAction(this.state)
       .then(this.props.closeSessionModal)
-
-  }
+  };
 
   handleDemo(e) {
     e.preventDefault();
@@ -35,10 +34,9 @@ class SessionForm extends React.Component {
       password: 'password123',
     })
       .then(this.props.closeSessionModal())
-  }
+  };
 
   render() {
-
     if (this.props.formType === 'signup') {
       return (
         <div className='session-window'>
@@ -82,7 +80,7 @@ class SessionForm extends React.Component {
         </div>
       )
     }
-  }
-}
+  };
+};
 
 export default SessionForm;

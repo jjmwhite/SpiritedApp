@@ -9,4 +9,4 @@ export default combineReducers({
   bottles: bottleErrorsReducer,
   ratings: ratingErrorsReducer,
   search: searchErrorsReducer,
-})
+});

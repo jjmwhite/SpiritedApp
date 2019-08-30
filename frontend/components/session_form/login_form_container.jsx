@@ -1,7 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import SessionForm from './session_form';
-import { login, clearSessionErrors } from '../../actions/session_actions'
+import { login, clearSessionErrors } from '../../actions/session_actions';
 import { openSessionModal, closeSessionModal } from '../../actions/session_modal_actions';
 
 const msp = state => {
@@ -13,8 +13,8 @@ const msp = state => {
       password: '',
     },
     errors: state.errors.session || []
-  })
-}
+  });
+};
 
 const mdp = dispatch => {
   return ({
@@ -25,7 +25,7 @@ const mdp = dispatch => {
       <button onClick={() => dispatch(openSessionModal('signup'))}>Join Spirited</button>
     ),
     clearSessionErrors: () => dispatch(clearSessionErrors())
-  })
-}
+  });
+};
 
 export default connect(msp, mdp)(SessionForm);
