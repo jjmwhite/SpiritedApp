@@ -7,23 +7,23 @@ export const receiveAllDistilleries = (payload) => {
   return({
     type: RECEIVE_ALL_DISTILLERIES,
     payload
-  })
-}
+  });
+};
 
 export const receiveDistillery = (payload) => {
   return({
     type: RECEIVE_DISTILLERY,
-    payload
-  })
-}
+    distillery
+  });
+};
 
 
 export const fetchDistilleries = () => dispatch => {
   return DistilleryApiUtil.fetchDistilleries()
                           .then((distilleries) => dispatch(receiveAllDistilleries(distilleries)));
-}
+};
 
 export const fetchDistillery = (id) => dispatch => {
   return DistilleryApiUtil.fetchDistillery(id)
                           .then((distillery) => dispatch(receiveDistillery(distillery)));
-}
+};

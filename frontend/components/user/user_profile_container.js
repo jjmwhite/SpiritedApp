@@ -6,7 +6,6 @@ import { merge } from 'lodash';
 const msp = (state, ownProps) => {
   const userId = ownProps.match.params.userId;
   const currentUser = state.entities.users[userId];
-  // should just be the user's bottles
   const bottles = state.entities.bottles
   const distilleries = state.entities.distilleries;
   const regions = state.entities.regions;

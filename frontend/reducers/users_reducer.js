@@ -11,13 +11,12 @@ const usersReducer = (state = {}, action) => {
       newState = merge({}, prevState, { [action.payload.user.id]: action.payload.user });
       return newState;
     case RECEIVE_USER_PROFILE:
-      newState = merge({}, prevState, action.payload.users)
     case RECEIVE_BOTTLE:
-      newState = merge({}, prevState, action.payload.users)
+      newState = merge({}, prevState, action.payload.users);
       return newState;
     default:
       return state;
-  }
-}
+  };
+};
 
 export default usersReducer;

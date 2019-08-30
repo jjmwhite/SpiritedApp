@@ -1,12 +1,12 @@
 import { connect } from 'react-redux';
 import BottleForm from './bottle_form';
 import { fetchBottle, updateBottle, removeBottle, clearBottleErrors } from '../../actions/bottle_actions';
-import { fetchDistilleries } from '../../actions/distillery_actions'
+import { fetchDistilleries } from '../../actions/distillery_actions';
 
 const msp = (state, ownProps) => {
   const bottleId = ownProps.match.params.bottleId;
   const bottle = state.entities.bottles[bottleId] || {} ;
-  const distilleries = Object.values(state.entities.distilleries) || [];
+  const distilleries = Object.values(state.entities.distilleries) || [] ;
   return ({
     formType: 'Edit This Bottle',
     name: bottle.name,
@@ -17,10 +17,9 @@ const msp = (state, ownProps) => {
     price: bottle.price,
     bottleId,
     distilleries,
-    
     errors: state.errors.bottles || []
-  })
-}
+  });
+};
 
 const mdp = dispatch => {
   return ({
@@ -29,7 +28,7 @@ const mdp = dispatch => {
     removeBottle: (id) => dispatch(removeBottle(id)),
     clearBottleErrors: () => dispatch(clearBottleErrors()),
     fetchDistilleries: () => dispatch(fetchDistilleries()),
-  })
-}
+  });
+};
 
-export default connect(msp, mdp)(BottleForm)
+export default connect(msp, mdp)(BottleForm);

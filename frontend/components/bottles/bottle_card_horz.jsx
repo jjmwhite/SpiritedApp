@@ -12,13 +12,11 @@ const msp = (state, ownProps) => {
       region_id: distillery.region_id,
     },
     region,
-  })
-}
+  });
+};
 
 const BottleCardHorz = ({ bottle, distillery, region, ratings }) => {
-
   let userReview;
-  
   Object.values(ratings).forEach( rating => {
     if (rating.bottle_id === bottle.id) {
       userReview = 
@@ -29,8 +27,8 @@ const BottleCardHorz = ({ bottle, distillery, region, ratings }) => {
           </div>
           <p>"{rating.review}"</p>
         </>
-    }
-  })
+    };
+  });
 
   return (
     <section className='bottle-card-horz'>
@@ -47,6 +45,6 @@ const BottleCardHorz = ({ bottle, distillery, region, ratings }) => {
         </div>
       </div>
     </section>
-  )
-}
+  );
+};
 export default connect(msp)(BottleCardHorz);

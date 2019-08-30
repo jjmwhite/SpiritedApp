@@ -2,11 +2,10 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 class SearchResult extends React.Component {
-
   constructor(props) {
-    super(props)
+    super(props);
     this.resetSearch = this.resetSearch.bind(this);
-  }
+  };
 
   resetSearch() {
     const ul = document.getElementById('search-results');
@@ -14,10 +13,10 @@ class SearchResult extends React.Component {
     const lis = document.getElementsByClassName('search-result');
     Object.values(lis).forEach(li => {
       li.style.display = 'none';
-    })
+    });
     const search = document.getElementById('search-input');
     search.value = '';
-  }
+  };
 
   render() {
     let li;
@@ -29,7 +28,7 @@ class SearchResult extends React.Component {
                      onClick={this.resetSearch}
                      >{result.name}</li>
                 </Link>
-      })
+      });
     } else if (this.props.noResult.length > 0 && this.props.currentUser) {
       li = 
         <Link to='/bottles/create'
@@ -48,14 +47,14 @@ class SearchResult extends React.Component {
         </a>
     } else {
       li = null;
-    }
+    };
 
     return(
       <ul id='search-results'>
         {li}
       </ul>
     )
-  }
-}
+  };
+};
 
 export default SearchResult;

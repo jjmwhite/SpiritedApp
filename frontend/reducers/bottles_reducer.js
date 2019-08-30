@@ -25,7 +25,7 @@ const bottlesReducer = (state = {}, action) => {
       return newState;
     default:
       return state;
-  }
-}
+  };
+};
 
 export default bottlesReducer;

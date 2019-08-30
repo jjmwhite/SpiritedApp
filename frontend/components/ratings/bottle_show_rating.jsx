@@ -2,20 +2,19 @@ import React from 'react';
 import UpdateRatingContainer from './update_rating_container';
 
 class BottleShowRating extends React.Component {
-
   constructor(props) {
     super(props);
     this.showForm = this.showForm.bind(this);
-  }
+  };
 
   showForm() {
     const form = document.getElementById(`update-rating-review-section-${this.props.rating.id}`);
-    const prevReview = document.getElementById(`bottle-show-rating-detail-${this.props.rating.id}`)
+    const prevReview = document.getElementById(`bottle-show-rating-detail-${this.props.rating.id}`);
     if (form.style.display === 'none' || form.style.display === '') {
       form.style.display = 'block';
       prevReview.style.display = 'none';
-    }
-  }
+    };
+  };
 
   render() {
     const rating = this.props.rating;
@@ -30,7 +29,7 @@ class BottleShowRating extends React.Component {
     } else {
       editButton = <></>
       editForm = <></>
-    }
+    };
 
     return(
       <section className='bottle-rating'>
@@ -67,8 +66,7 @@ class BottleShowRating extends React.Component {
         </div>
       </section>
     )
-   
-  }
-}
+  };
+};
 
 export default BottleShowRating;

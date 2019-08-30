@@ -21,7 +21,7 @@ const regionsReducer = (state = {}, action) => {
       return newState;
     default:
       return state;
-  }
-}
+  };
+};
 
 export default regionsReducer;

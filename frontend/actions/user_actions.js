@@ -6,10 +6,10 @@ export const receiveUserProfile = payload => {
   return ({
     type: RECEIVE_USER_PROFILE,
     payload
-  })
-}
+  });
+};
 
 export const fetchUserProfile = id => dispatch => {
   return UserApiUtil.fetchUserProfile(id)
                     .then( (payload) => dispatch(receiveUserProfile(payload)));
-}
+};

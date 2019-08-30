@@ -36,5 +36,5 @@ export default () => {
         </a>
       </div>
     </footer>
-  )
-}
+  );
+};

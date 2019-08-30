@@ -14,14 +14,14 @@ const msp = state => {
     regions,
     ratings,
     loggedIn: Boolean(state.session.currentUserId)
-  })
-}
+  });
+};
 
 const mdp = dispatch => {
   return({
     fetchBottles: () => dispatch(fetchBottles()),
     openSessionModal: (type) => dispatch(openSessionModal(type))
-  })
-}
+  });
+};
 
 export default connect(msp, mdp)(BottleIndex);

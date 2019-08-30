@@ -7,12 +7,12 @@ export const receiveAllRegions = (regions) => {
   return({
     type: RECEIVE_ALL_REGIONS,
     regions
-  })
-}
+  });
+};
 
 export const receiveRegion = (region) => {
   return({
     type: RECEIVE_REGION,
     region
-  })
-}
+  });
+};

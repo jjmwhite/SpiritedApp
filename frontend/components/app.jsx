@@ -17,7 +17,7 @@ const App = () => {
       <SessionModal />
       <div className='app-body'>
         <GreetingBarContainer />
-      
+
         <Switch>
           <ProtectedRoute exact path='/bottles/create' component={NewBottleContainer} />
           <ProtectedRoute exact path='/bottles/:bottleId/edit' component={UpdateBottleContainer} />
@@ -32,6 +32,6 @@ const App = () => {
       
     </>
   )
-}
+};
 
 export default App;

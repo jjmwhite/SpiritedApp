@@ -7,14 +7,14 @@ import CreateFormContainer from '../session_form/create_form_container';
 const msp = state => {
   return ({
     sessionModal: state.ui.sessionModal
-  })
-}
+  });
+};
 
 const mdp = dispatch => {
   return ({
     closeSessionModal: () => dispatch(closeSessionModal())
-  })
-}
+  });
+};
 
 const SessionModal = ({ sessionModal, closeSessionModal }) => {
   if (!sessionModal) return null;
@@ -29,7 +29,7 @@ const SessionModal = ({ sessionModal, closeSessionModal }) => {
       break;
     default:
       return null;
-  }
+  };
 
   return (
       <div className='modal-background' onClick={() => closeSessionModal()}>
@@ -40,6 +40,6 @@ const SessionModal = ({ sessionModal, closeSessionModal }) => {
       </div>
   )
 
-}
+};
 
-export default connect(msp, mdp)(SessionModal)
+export default connect(msp, mdp)(SessionModal);

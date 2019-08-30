@@ -8,14 +8,14 @@ const msp = state => {
     return { currentUser: null }
   } else {
     return { currentUser: state.entities.users[state.session.currentUserId] }
-  }
-}
+  };
+};
 
 const mdp = dispatch => {
   return ({
     openSessionModal: (type) => dispatch(openSessionModal(type)),
     logout: () => dispatch(logout())
-  })
-}
+  });
+};
 
 export default connect(msp, mdp)(GreetingBar);
