@@ -29,9 +29,9 @@ class Api::BottlesController < ApplicationController
     else 
       params[:bottle][:release_year] = nil
     end
-
     if params[:bottle][:price] != '' 
-      params[:bottle][:price] = params[:bottle][:price].split(',').join('').to_f
+      float_price = params[:bottle][:price].split(',').join('').to_f
+      params[:bottle][:price] = "%.2f" % float_price
     end
 
     params[:bottle][:name] = params[:bottle][:name].titleize
@@ -48,12 +48,14 @@ class Api::BottlesController < ApplicationController
 
   def update
     @bottle = Bottle.find(params[:id])
-    unless @bottle.user_id == current_user.id || @bottle.user_id == 1
+    unless @bottle.user_id == current_user.id || current_user.id == 1
       render json: ['You can only edit your own bottles'], status: 403
     else 
       params[:bottle][:name] = params[:bottle][:name].titleize
-      if params[:bottle][:price] != ''
-        params[:bottle][:price] = params[:bottle][:price].split(',').join('').to_f
+      
+      if params[:bottle][:price] != '' 
+        float_price = params[:bottle][:price].split(',').join('').to_f
+        params[:bottle][:price] = "%.2f" % float_price
       end
 
       if @bottle.update(bottle_params)
@@ -65,10 +67,9 @@ class Api::BottlesController < ApplicationController
   end
 
   def destroy
-    bottle = current_user.bottles.find_by(id: params[:id])
-
-    if bottle
-      bottle.destroy 
+    bottle = Bottle.find(params[:id])
+    if bottle.user_id == current_user.id || current_user.id == 1
+      bottle.destroy
       render json: ['Bottle successfully removed']
     else
       render json: ['You can only delete your own bottles'], status: 403

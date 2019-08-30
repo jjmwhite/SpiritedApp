@@ -22,7 +22,10 @@ export default () => {
       <div className='footer-contact'>
         <h1>Spirited</h1>
         <p>a site by Jessica White</p>
-        <a target="_blank" href="https://github.com/jjmwhite/SpiritedApp">
+        <a target="_blank" href="https://jessicajmwhite.com">
+          <img src={personalSite} alt="Visit Jessica's Site" />
+        </a>
+        <a target="_blank" href="https://github.com/jjmwhite">
           <img src={github} alt="View Project on Github" />
         </a>
         <a target="_blank" href="https://www.linkedin.com/in/jessicajmwhite/">

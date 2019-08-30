@@ -14,7 +14,7 @@ class Greeting extends React.Component {
       (<div className='user-greeting'>
         <h2>Welcome, {currentUser.first_name}</h2>
         <div className='user-dropdown'>
-          <button className='user-dropdown-button'><img src={"https://upload.wikimedia.org/wikipedia/commons/d/d3/SCOport-fr-economy.png"}/></button>
+          <button className='user-dropdown-button'><img src={userImg}/></button>
           <div className='user-dropdown-content'>
             <button><Link to={`/${currentUser.id}/profile`}>Profile</Link></button>
             <button className='logout-button' onClick={this.props.logout}><a>Log Out</a></button>
