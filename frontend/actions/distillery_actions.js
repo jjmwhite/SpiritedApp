@@ -11,9 +11,10 @@ export const receiveAllDistilleries = (payload) => {
 };
 
 export const receiveDistillery = (payload) => {
+  debugger
   return({
     type: RECEIVE_DISTILLERY,
-    distillery
+    payload
   });
 };
 
