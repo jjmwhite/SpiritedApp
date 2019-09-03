@@ -1,6 +1,6 @@
 import React from 'react';
 import BottleCardVert from './bottle_card_vert';
-import { Link } from 'react-router-dom';
+import CreateBottleButton from '../bottles/create_bottle_button';
 import { merge } from 'lodash';
 
 class BottleIndex extends React.Component {
@@ -10,15 +10,6 @@ class BottleIndex extends React.Component {
   };
 
   render() {
-    const openSessionModal = this.props.openSessionModal;
-
-    let createBottleButton;
-    if (this.props.loggedIn) {
-      createBottleButton = <Link to='/bottles/create'><button className='index-bottle-create-button'>Create Bottle</button></Link>
-    } else {
-      createBottleButton = <button className='index-bottle-create-button' onClick={() => openSessionModal('login')}>Create Bottle</button>
-    };
-
     if (this.props.bottles.length === 0 || this.props.distilleries.length === 0 || Object.values(this.props.regions).length < 6) {
       return (
         <div className='loading'>Loading...</div>
@@ -27,7 +18,8 @@ class BottleIndex extends React.Component {
       const distilleries = {};
       this.props.distilleries.map( dist => {
         return merge(distilleries, { [dist.id]: dist })
-      })
+      });
+
       const allBottles = this.props.bottles.map( bottle => {
         return <BottleCardVert 
           key={`${bottle.name}-card-vert`}
@@ -42,9 +34,9 @@ class BottleIndex extends React.Component {
           <div className='bottle-index-container'>
             {allBottles}
           </div>
-          {createBottleButton}
+          <CreateBottleButton />
         </>
-      );
+      )
     };
   };
 };
