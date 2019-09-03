@@ -1,7 +1,7 @@
-<header style="display: flex; align-items: center;">
-  <img src="app/assets/images/user_img_wide_lines.png" style="width: 45px; height:45px; padding-right: 10px">
-  <h1>SPIRITED</h1>
-</header>
+<p style="text-align: center;">
+  <img src="app/assets/images/user_img_50px.png">
+  <h1 style="text-align: center;">SPIRITED</h1>
+</p>
 
 Welcome to **[Spirited](https://spirited-app.herokuapp.com/#/)**, where Single Malt Scotch lovers can rate and review their favorite whiskies, and search our database to discover new drams. Built using React and Ruby on Rails.
 
