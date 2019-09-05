@@ -16,7 +16,7 @@ class UserProfile extends React.Component {
       )
     };
 
-    const { bottles } = this.props;  // BOTTLES is an object
+    const { bottles } = this.props;
     const userBottles = [] ;
     Object.values(this.props.bottles).forEach(bottle => {
       if (bottle.user_id === currentUser.id) {
@@ -32,7 +32,7 @@ class UserProfile extends React.Component {
     });
 
     const ratedBottles = [];
-    Object.values(this.props.ratings).map(rating => { // RATINGS is an object
+    Object.values(this.props.ratings).map(rating => {
       if (bottles[rating.bottle_id]) {
         ratedBottles.push(bottles[rating.bottle_id])
       };
@@ -51,7 +51,7 @@ class UserProfile extends React.Component {
     return (
       <div className='user-profile'>
         <aside className='user-profile-detail'>
-          <img src={userImg} />
+          <img src={userProfileImg} />
           <h2>{currentUser.first_name}</h2>
           <h5>Bottles Rated:</h5>
           <h3>{allRatings.length}</h3>
